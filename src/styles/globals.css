@@ -87,3 +87,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.apexcharts-tooltip {
+  background: #fff;
+  color: rgb(46, 45, 45);
+  box-shadow: none;
+  padding: 20px 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+.auth {
+  background: rgb(54, 54, 228);
+  background: radial-gradient(
+    circle,
+    rgba(54, 54, 228, 1) 0%,
+    rgba(82, 117, 240, 1) 49%,
+    rgba(93, 128, 244, 1) 50%,
+    rgba(93, 128, 244, 1) 100%
+  );
+}

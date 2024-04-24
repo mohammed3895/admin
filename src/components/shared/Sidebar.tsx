@@ -14,7 +14,7 @@ import { cn } from "~/lib/utils";
 
 const Sidebar = () => {
   const pathname = usePathname();
-  console.log(pathname);
+
   return (
     <div className="h-full w-full py-2">
       <div className="flex h-full flex-col items-center justify-between gap-5">

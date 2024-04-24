@@ -1,6 +1,10 @@
+import { auth } from "auth";
 import React from "react";
 
-const ProjectsPage = () => {
+const ProjectsPage = async () => {
+  const session = await auth();
+
+  console.log(session);
   return <div>ProjectsPage</div>;
 };
 

@@ -26,14 +26,12 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
             Latest updates
           </h2>
           <ScrollArea className="flex h-[40vh] flex-col gap-3.5 space-y-3.5">
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
-            <UpdatesCard />
+            <UpdatesCard details="New Income #7" />
+            <UpdatesCard details="You have 2 Requests to resolve" />
+            <UpdatesCard details="New Income #4" />
+            <UpdatesCard details="Email notification sent" />
+            <UpdatesCard details="Item sale #76" />
+            <UpdatesCard details="Upload Files complete" />
           </ScrollArea>
         </div>
       </div>

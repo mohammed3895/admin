@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "../ui/button";
@@ -11,7 +11,7 @@ const BackToHome = () => {
         href="/"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "text-muted-foreground flex items-center gap-4"
+          "flex items-center gap-4 text-muted-foreground",
         )}
       >
         <Home /> Back To Home

@@ -1,7 +1,7 @@
 "use server";
 import { signIn } from "auth";
 import { AuthError } from "next-auth";
-import { z } from "zod";
+import type z from "zod";
 import { singinformSchema } from "~/lib/validations";
 
 export const login = async (values: z.infer<typeof singinformSchema>) => {

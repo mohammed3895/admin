@@ -20,6 +20,7 @@ import Image from "next/image";
 import { Loader2, Lock, Mail, User } from "lucide-react";
 import AuthTitle from "./AuthTitle";
 import GoogleBtn from "./GoogleBtn";
+import Link from "next/link";
 
 const SignUpForm = () => {
   const form = useForm<z.infer<typeof singinformSchema>>({
@@ -131,6 +132,13 @@ const SignUpForm = () => {
           <div className="h-px w-full bg-input" />
         </div>
         <GoogleBtn />
+
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Allready have an account?{" "}
+          <Link href="/sign-in" className="ml-1 font-medium text-primary">
+            Login Now
+          </Link>
+        </p>
       </div>
     </div>
   );

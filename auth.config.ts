@@ -45,6 +45,13 @@ export default {
       console.log(user);
       return true;
     },
+    async jwt({ token, session }) {
+      if (token && !token.sub) {
+        return { ...token, iat: Date.now() / 1000 };
+      }
+
+      return token;
+    },
   },
   secret: process.env.AUTH_SECRET,
 } satisfies NextAuthConfig;

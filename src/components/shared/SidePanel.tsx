@@ -49,6 +49,9 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
           <UpcomingEventCard />
         </ScrollArea>
       </div>
+      <h1 className="text-lg font-black uppercase text-muted-foreground">
+        Mohammed Sammeer
+      </h1>
     </div>
   );
 };

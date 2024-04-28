@@ -8,7 +8,7 @@ const GoogleBtn = () => {
   return (
     <Button
       variant="secondary"
-      className="flex w-full items-center justify-center gap-4 py-3.5 text-sm font-semibold capitalize text-primary md:text-base"
+      className="flex w-full items-center justify-center gap-4 py-3.5 text-sm font-semibold capitalize text-zinc-700 md:text-base"
       onClick={() => signIn("google")}
     >
       <Image
@@ -16,6 +16,7 @@ const GoogleBtn = () => {
         width={24}
         height={24}
         alt="google"
+        className=" fill-zinc-700"
       />
       Continue with google
     </Button>

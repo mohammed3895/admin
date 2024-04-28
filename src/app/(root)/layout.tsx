@@ -1,9 +1,14 @@
+import { type Metadata } from "next";
 import React from "react";
 import Navbar from "~/components/shared/header/Navbar";
 import Sidebar from "~/components/shared/Sidebar";
 import SidePanel from "~/components/shared/SidePanel";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import "~/styles/globals.css";
+
+export const metadata: Metadata = {
+  title: "Admin - Modern Dashboard",
+};
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (

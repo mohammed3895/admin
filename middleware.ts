@@ -1,16 +1,14 @@
 import authConfig from "auth.config";
 import NextAuth from "next-auth";
+import { type NextAuthRequest } from "node_modules/next-auth/lib";
 import { apiPrefix, authRoutes, protectedRoutes } from "routes";
 
 const { auth } = NextAuth(authConfig);
 
 // MIDDLEWARE
-export default auth((req) => {
+export default auth((req: NextAuthRequest) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
-
-  console.log("URL: ", nextUrl.pathname);
-  console.log("LOGGEDIN: ", isLoggedIn);
 
   const apiRoute = nextUrl.pathname.startsWith(apiPrefix);
   const authRoute = authRoutes.includes(nextUrl.pathname);

@@ -104,7 +104,7 @@ const AreaChart = () => {
           options={areachartOpts}
           series={areachartOpts.series}
           height={300}
-          className="h-full w-full"
+          className="h-full w-full text-sm font-normal text-gray-500"
         />
       )}
     </div>

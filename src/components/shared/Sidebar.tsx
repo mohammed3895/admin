@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { SidebarTabs } from "~/constants/sidebarTabs";
 import {
   Tooltip,
@@ -9,11 +9,10 @@ import {
 } from "../ui/tooltip";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "~/lib/utils";
 
 const Sidebar = () => {
-  const pathname = usePathname();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="h-full w-full py-2">
@@ -41,13 +40,17 @@ const Sidebar = () => {
                     className={cn(
                       "flex w-20 items-center justify-center border-r border-transparent transition-all duration-500 ease-in-out",
                       {
-                        "border-primary ": pathname === tab.path,
+                        "border-primary ": activeIndex === i,
                       },
                     )}
+                    onClick={() => setActiveIndex(i)}
                   >
                     <Link
                       href={tab.path}
-                      className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-2"
+                      className={cn(
+                        "flex h-10 w-10 items-center justify-center rounded-lg bg-transparent transition-all duration-500",
+                        { "bg-purple-2": activeIndex === i },
+                      )}
                     >
                       <Image
                         src={tab.icon}
@@ -66,7 +69,9 @@ const Sidebar = () => {
           </TooltipProvider>
         </div>
 
-        <div>88</div>
+        {/* <div className="-rotate-90 text-nowrap text-sm font-semibold">
+          Mohammed Sameer
+        </div> */}
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const areachartOpts: ApexOptions = {
   },
   legend: {
     show: true,
-    fontSize: "14px",
+    fontSize: "12px",
     fontWeight: "500",
     itemMargin: {
       horizontal: 14,
@@ -78,7 +78,7 @@ const RadialChart = () => {
           options={areachartOpts}
           series={areachartOpts.series}
           height={350}
-          className="h-full w-full"
+          className="h-full w-full text-sm font-medium text-gray-500"
         />
       )}
     </div>

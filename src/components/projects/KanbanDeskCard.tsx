@@ -3,8 +3,26 @@ import MoreBtn from "../buttons/MoreBtn";
 import { Progress } from "../ui/progress";
 import { ListChecks } from "lucide-react";
 import Image from "next/image";
+import { type ProjectProps } from "./tabs/TasksTab";
+interface Props extends ProjectProps {
+  i: number;
+}
 
-const KanbanDeskCard = () => {
+const KanbanDeskCard = ({ project, i }: Props) => {
+  const usersNum = project.users.length;
+  const tasksNum = project.tasks[i]!.rounds;
+
+  const task = project.tasks[i]?.completed;
+  console.log(task);
+
+  function getProgressColor(
+    task: number,
+  ): "bg-green-1" | "bg-yellow-1" | "bg-red-1" {
+    if (task * 10 === tasksNum * 10) return "bg-green-1";
+    if (task >= tasksNum / 2) return "bg-yellow-1";
+    return "bg-red-1";
+  }
+
   return (
     <div
       className="flex h-44 w-full cursor-grab flex-col justify-between rounded-lg border p-4"
@@ -16,7 +34,9 @@ const KanbanDeskCard = () => {
       {/*  */}
       <div className="flex w-full items-center justify-between gap-6">
         <div className="flex flex-col items-start justify-start">
-          <h2 className="text-sm font-semibold capitalize">Title</h2>
+          <h2 className="text-sm font-semibold capitalize">
+            {project.tasks[i]?.name}
+          </h2>
           <h3 className="text-xs font-medium capitalize text-muted-foreground">
             Desc
           </h3>
@@ -31,9 +51,16 @@ const KanbanDeskCard = () => {
             <ListChecks size={16} />{" "}
             <span className="text-sm font-semibold ">Progress</span>
           </div>
-          <span>3 / 12</span>
+          <span>
+            {task} / {tasksNum}
+          </span>
         </div>
-        <Progress value={30} max={120} className="h-1 w-full bg-gray-100" />
+        <Progress
+          value={task! * 10}
+          max={tasksNum * 10}
+          className="h-1 w-full bg-gray-100"
+          indicatorBg={getProgressColor(project.tasks[i]!.completed)}
+        />
       </div>
 
       {/*  */}
@@ -60,9 +87,11 @@ const KanbanDeskCard = () => {
             </div>
           ))}
 
-          <div className="flex h-5 w-5 items-center justify-center rounded-md bg-input text-xs text-muted-foreground md:h-7 md:w-7">
-            +3
-          </div>
+          {usersNum - 3 > 0 && (
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-input text-xs text-muted-foreground md:h-8 md:w-8">
+              +{usersNum - 3}
+            </div>
+          )}
         </div>
       </div>
     </div>

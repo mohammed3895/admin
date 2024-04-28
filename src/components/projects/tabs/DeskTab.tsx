@@ -3,11 +3,19 @@ import { PlusCircle } from "lucide-react";
 import React, { useState } from "react";
 import { Button } from "~/components/ui/button";
 import KanbanDeskCard from "../KanbanDeskCard";
+import { type ProjectProps } from "./TasksTab";
 
-const DeskTab = () => {
+const DeskTab = ({ project }: ProjectProps) => {
   const [toDo, setToDo] = useState([]);
   const [inProgress, setIn] = useState([]);
   const [done, setdDone] = useState([]);
+
+  const todoTasks = project.tasks.filter((task) => task.status === "on hold");
+  const inProgressTasks = project.tasks.filter(
+    (task) => task.status === "pending",
+  );
+  const doneTasks = project.tasks.filter((task) => task.status === "done");
+  console.log(todoTasks);
 
   return (
     <div className="flex h-full min-h-svh w-full flex-1 items-start justify-between gap-6">
@@ -23,9 +31,9 @@ const DeskTab = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <KanbanDeskCard />
-          <KanbanDeskCard />
-          <KanbanDeskCard />
+          {todoTasks.map((task, i) => (
+            <KanbanDeskCard i={i} project={project} key={i} />
+          ))}
         </div>
       </div>
 
@@ -36,8 +44,9 @@ const DeskTab = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <KanbanDeskCard />
-          <KanbanDeskCard />
+          {inProgressTasks.map((task, i) => (
+            <KanbanDeskCard i={i} project={project} key={i} />
+          ))}
         </div>
       </div>
 
@@ -48,7 +57,9 @@ const DeskTab = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <KanbanDeskCard />
+          {doneTasks.map((task, i) => (
+            <KanbanDeskCard i={i} project={project} key={i} />
+          ))}
         </div>
       </div>
     </div>

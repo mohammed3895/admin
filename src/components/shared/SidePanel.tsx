@@ -2,6 +2,7 @@ import React from "react";
 import UpdatesCard from "./UpdatesCard";
 import UpcomingEventCard from "./UpcomingEventCard";
 import { ScrollArea } from "../ui/scroll-area";
+import Link from "next/link";
 
 const SidePanel = ({ children }: { children?: React.ReactNode }) => {
   return (
@@ -9,11 +10,11 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       {/* USER INFO */}
       <div className="h-[15vh] w-full">
         <div className="flex flex-col items-start justify-start">
-          <div className="mb-2.5 flex h-16 w-16 items-center justify-center rounded-2xl bg-black-1 text-white">
-            <h1 className="text-5xl font-bold">M</h1>
+          <div className="mb-2.5 flex h-14 w-14 items-center justify-center rounded-lg bg-black-1 p-2 text-white">
+            <h1 className="text-4xl font-bold">M</h1>
           </div>
-          <p className="text-lg font-semibold text-black-1">Michael Zhang</p>
-          <p className="text-sm font-normal text-gray-2">
+          <p className="text-base font-semibold text-black-1">Michael Zhang</p>
+          <p className="text-xs font-normal text-gray-2">
             michaelzhang@mail.com
           </p>
         </div>
@@ -22,7 +23,7 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       {/* UPDATES */}
       <div className="h-[50vh] w-full">
         <div className="flex h-full w-full flex-col">
-          <h2 className="mb-5 text-base font-semibold capitalize text-black-1">
+          <h2 className="mb-3 text-base font-semibold capitalize text-black-1">
             Latest updates
           </h2>
           <ScrollArea className="flex h-[40vh] flex-col gap-3.5 space-y-3.5">
@@ -38,7 +39,7 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
 
       {/* EVENTS */}
       <div className="h-[30vh] w-full">
-        <h2 className="mb-5 text-base font-semibold capitalize text-black-1">
+        <h2 className="mb-3 text-base font-semibold capitalize text-black-1">
           Upcoming events
         </h2>
 
@@ -49,9 +50,13 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
           <UpcomingEventCard />
         </ScrollArea>
       </div>
-      <h1 className="text-lg font-black uppercase text-muted-foreground">
+      <Link
+        href="https://www.linkedin.com/in/mohammed-sameer-bb81b3151/"
+        target="_blank"
+        className="rounded-lg bg-green-2 p-4 text-lg font-black text-green-1"
+      >
         Mohammed Sammeer
-      </h1>
+      </Link>
     </div>
   );
 };

@@ -23,10 +23,10 @@ const ProjectCard = ({ project }: ProjectProps) => {
   }
 
   return (
-    <Card className="border py-3.5 shadow-none">
+    <Card className="border border-none py-3.5 shadow-none">
       <CardContent>
         <div className="flex w-full flex-col items-center gap-4">
-          <div className="flex w-full items-center justify-between gap-3">
+          <div className="flex w-full items-start justify-between gap-3 pt-3">
             <Progress
               className="h-1.5 w-10 bg-gray-100 text-green-1"
               indicatorBg={getProgressColor(task)}

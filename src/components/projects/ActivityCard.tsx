@@ -33,7 +33,7 @@ interface Props {
 
 const ActivityCard = ({ activity }: Props) => {
   return (
-    <div className="mx-auto mb-3 flex w-full max-w-xs flex-col items-start gap-1 rounded-xl border p-4 sm:max-w-sm md:max-w-full">
+    <div className="mb-3 flex w-full max-w-xs flex-col items-start gap-1 rounded-xl border p-4 sm:max-w-sm md:max-w-full">
       <div className="mb-1 flex w-full items-center justify-between">
         <h2 className="font-semibold tracking-tight">{activity.name}</h2>
         <MoreBtn />

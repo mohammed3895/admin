@@ -29,11 +29,6 @@ const tabsList = [
     component: TasksTab,
   },
   {
-    name: "desk",
-    icon: Tv2,
-    component: DeskTab,
-  },
-  {
     name: "activity",
     icon: Activity,
     component: ActivityTab,
@@ -43,11 +38,7 @@ const tabsList = [
     icon: FolderClosed,
     component: FilesTab,
   },
-  {
-    name: "reports",
-    icon: MessageSquareWarning,
-    component: ReportsTab,
-  },
+
   {
     name: "settings",
     icon: Settings,
@@ -61,9 +52,9 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
   });
 
   return (
-    <div className="h-full w-full flex-col rounded-xl bg-white p-4">
+    <div className="h-full w-full flex-col rounded-xl bg-gray-50 p-4">
       <Tabs defaultValue="tasks" className="h-full w-full">
-        <TabsList className="flex h-full w-full flex-wrap justify-start gap-2.5 bg-transparent lg:flex-nowrap">
+        <TabsList className="flex h-full w-full  justify-start gap-1.5 bg-transparent lg:flex-nowrap">
           {tabsList.map((tab, i) => (
             <TabsTrigger
               value={tab.name}

@@ -34,11 +34,11 @@ const NavItems = ({
               <Link
                 href={tab.path}
                 className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-lg bg-transparent transition-all duration-500",
+                  "flex h-12 w-12 items-center justify-center rounded-lg bg-transparent transition-all duration-500",
                   { "bg-purple-2": activeIndex === i },
                 )}
               >
-                <Image src={tab.icon} alt={tab.name} width={20} height={20} />
+                <Image src={tab.icon} alt={tab.name} width={24} height={24} />
               </Link>
             </div>
           </TooltipTrigger>

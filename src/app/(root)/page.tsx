@@ -11,21 +11,21 @@ export default async function Home() {
   // if (!session) redirect("/sign-in");
 
   return (
-    <div className="h-full w-full px-1">
-      <div className="grid h-full w-full grid-cols-1  gap-7 pb-16 pt-8 xl:grid-cols-2">
-        <AnalyticsCard title="Your sales" actions="calendar">
-          <RadialChart />
-        </AnalyticsCard>
+    <div className="h-full w-full px-2 md:px-4">
+      <div className="grid h-full w-full grid-cols-1  gap-16 pb-16 pt-8 md:gap-6 lg:grid-cols-2">
         <AnalyticsCard
           title="Latest Events"
           actions="button"
-          btnText="view all"
+          btnText="View All"
         >
-          <div className="flex w-full flex-col gap-4">
+          <div className="flex w-full flex-col gap-2 lg:mt-2">
             {eventsData.map((event, i) => (
               <EventsCard key={i} event={event} />
             ))}
           </div>
+        </AnalyticsCard>
+        <AnalyticsCard title="Your sales" actions="calendar">
+          <RadialChart />
         </AnalyticsCard>
         <AnalyticsCard title="Income breakdown" actions="calendar">
           <PieChart />

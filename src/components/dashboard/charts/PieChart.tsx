@@ -4,51 +4,80 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 const areachartOpts: ApexOptions = {
+  series: [
+    {
+      data: [
+        {
+          x: "2008",
+          y: [2800, 4500],
+        },
+        {
+          x: "2009",
+          y: [3200, 4100],
+        },
+        {
+          x: "2010",
+          y: [2950, 7800],
+        },
+        {
+          x: "2011",
+          y: [3000, 4600],
+        },
+        {
+          x: "2012",
+          y: [3500, 4100],
+        },
+        {
+          x: "2013",
+          y: [4500, 6500],
+        },
+        {
+          x: "2014",
+          y: [4100, 5600],
+        },
+      ],
+    },
+  ],
   chart: {
-    type: "bar",
-    toolbar: { show: false },
-    zoom: { enabled: false },
-    width: "100%",
-    stacked: true,
+    height: 350,
+    type: "rangeBar",
+    zoom: {
+      enabled: false,
+    },
+    toolbar: {
+      show: false,
+    },
   },
   plotOptions: {
     bar: {
-      rangeBarOverlap: false,
-      horizontal: true,
-      distributed: true,
-      dataLabels: {
-        position: "left",
-        total: {
-          enabled: false,
-        },
-      },
-      borderRadius: 2,
-      borderRadiusApplication: "around",
+      isDumbbell: true,
+      columnWidth: 3,
+      dumbbellColors: [["#008FFB", "#00E396"]],
     },
-  },
-  tooltip: {
-    x: {
-      format: "dd MMM yyyy",
-    },
-  },
-  colors: ["#52D199", "#5E81F4", "#DF34F9", "#F2C861"],
-  theme: {
-    palette: "palette1",
-    mode: "light",
   },
   dataLabels: {
     enabled: false,
   },
-  markers: {
-    strokeColors: ["#52D199", "#5E81F4", "#DF34F9"],
-    radius: 50,
-    shape: "circle",
+  legend: {
+    show: true,
+    showForSingleSeries: true,
+    position: "top",
+    horizontalAlign: "left",
+    customLegendItems: ["Product A", "Product B"],
   },
-  labels: ["a", "b", "c", "d", "e"],
+  fill: {
+    type: "gradient",
+    gradient: {
+      type: "vertical",
+      gradientToColors: ["#00E396"],
+      inverseColors: true,
+      stops: [0, 100],
+    },
+  },
   grid: {
     xaxis: {
       lines: {
-        show: false,
+        show: true,
       },
     },
     yaxis: {
@@ -56,22 +85,10 @@ const areachartOpts: ApexOptions = {
         show: false,
       },
     },
-    show: false,
   },
-  series: [
-    {
-      name: "Series 1",
-      data: [45, 52, 39, 23, 42],
-    },
-    {
-      name: "Series 1",
-      data: [51, 52, 24, 43, 39],
-    },
-    {
-      name: "Series 1",
-      data: [55, 42, 49, 33, 32],
-    },
-  ],
+  xaxis: {
+    tickPlacement: "on",
+  },
 };
 
 const PieChart = () => {

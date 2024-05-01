@@ -24,10 +24,10 @@ export const eventsData = [
     details: "$118.00",
     icon: FilePlus2,
   },
-  {
-    title: "Invoice #AA-BB-CC",
-    data: "New Madietion",
-    details: "$118.00",
-    icon: MapPinned,
-  },
+  // {
+  //   title: "Invoice #AA-BB-CC",
+  //   data: "New Madietion",
+  //   details: "$118.00",
+  //   icon: MapPinned,
+  // },
 ];

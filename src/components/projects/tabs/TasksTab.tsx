@@ -16,7 +16,7 @@ const TasksTab = ({ project }: ProjectProps) => {
   }
 
   return (
-    <div className="flex w-full flex-col space-y-2">
+    <div className="flex w-full flex-col space-y-2 px-3">
       <div className="flex h-16 w-full items-center justify-start gap-3 rounded-lg border border-dashed p-3">
         <Checkbox />
         <h3 className="text-base font-bold">Add New Task</h3>

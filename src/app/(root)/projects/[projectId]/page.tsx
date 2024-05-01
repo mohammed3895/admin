@@ -61,9 +61,9 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
   });
 
   return (
-    <div className="h-full w-full flex-col">
-      <Tabs defaultValue="tasks" className="w-full">
-        <TabsList className="flex w-full flex-wrap justify-start gap-2.5 bg-transparent lg:flex-nowrap">
+    <div className="h-full w-full flex-col rounded-xl bg-white p-4">
+      <Tabs defaultValue="tasks" className="h-full w-full">
+        <TabsList className="flex h-full w-full flex-wrap justify-start gap-2.5 bg-transparent lg:flex-nowrap">
           {tabsList.map((tab, i) => (
             <TabsTrigger
               value={tab.name}
@@ -76,7 +76,11 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
           ))}
         </TabsList>
         {tabsList.map((tab, i) => (
-          <TabsContent key={i} value={tab.name.toLowerCase()}>
+          <TabsContent
+            key={i}
+            value={tab.name.toLowerCase()}
+            className="flex w-full"
+          >
             <tab.component project={project!} />
           </TabsContent>
         ))}

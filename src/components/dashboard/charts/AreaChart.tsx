@@ -9,7 +9,7 @@ const areachartOpts: ApexOptions = {
     type: "area",
     toolbar: { show: false },
     zoom: { enabled: false },
-    width: "100%",
+    width: 450,
     stacked: true,
     foreColor: "#999",
   },
@@ -104,7 +104,7 @@ const AreaChart = () => {
           options={areachartOpts}
           series={areachartOpts.series}
           height={300}
-          className="h-full w-full text-sm font-normal text-gray-500"
+          className="h-full w-full px-0 text-sm font-normal text-gray-500"
         />
       )}
     </div>

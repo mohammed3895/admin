@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const SidePanel = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="hidden h-screen w-96 flex-col justify-between gap-6 border-r bg-white px-4 py-6 lg:flex">
+    <div className="hidden h-dvh flex-col justify-between gap-6 border-r bg-white px-4 py-6 md:w-72 lg:flex lg:w-80">
       {/* USER INFO */}
-      <div className="h-[15vh] w-full">
+      <div className="h-[14vh] w-full">
         <div className="flex flex-col items-start justify-start">
           <div className="mb-2.5 flex h-14 w-14 items-center justify-center rounded-lg bg-black-1 p-2 text-white">
             <h1 className="text-4xl font-bold">M</h1>
@@ -21,12 +21,12 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       </div>
 
       {/* UPDATES */}
-      <div className="h-[50vh] w-full">
+      <div className="h-[45vh] w-full">
         <div className="flex h-full w-full flex-col">
-          <h2 className="mb-3 text-base font-semibold capitalize text-black-1">
+          <h2 className="mb-3 text-sm font-semibold capitalize text-black-1 md:text-base">
             Latest updates
           </h2>
-          <ScrollArea className="flex h-[40vh] flex-col gap-3.5 space-y-3.5">
+          <ScrollArea className="flex h-[40vh] flex-col gap-3.5 ">
             <UpdatesCard details="New Income #7" />
             <UpdatesCard details="You have 2 Requests to resolve" />
             <UpdatesCard details="New Income #4" />

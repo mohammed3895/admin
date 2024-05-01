@@ -6,15 +6,15 @@ import React from "react";
 const AuthBanner = () => {
   const pathname = usePathname();
   return (
-    <div className="auth hidden h-full w-1/2  items-center justify-center lg:flex">
+    <div className="auth flex h-full w-full flex-col items-center  justify-center lg:w-1/2 lg:flex-row">
       <Image
         src={
           pathname === "/sign-in"
             ? "/assets/images/auth-right.png"
             : "/assets/images/auth-bg.svg"
         }
-        width={400}
-        height={400}
+        width={240}
+        height={240}
         alt="bg"
       />
     </div>

@@ -37,16 +37,16 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-lg bg-white py-6 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-l-lg lg:rounded-t-none lg:rounded-tl-lg">
+    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-xl bg-white pb-4 pt-10 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-l-xl lg:rounded-t-none lg:rounded-tl-xl">
       <div className="flex min-w-80 max-w-md flex-col items-center justify-center px-3">
-        <AuthTitle title="Login to your account" />
+        {/* <AuthTitle title="Login to your account" /> */}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full ">
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem className="mb-6 w-full">
+                <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
                   <FormControl>
                     <div className="relative w-full">
@@ -68,7 +68,7 @@ const SignInForm = () => {
               control={form.control}
               name="password"
               render={({ field }) => (
-                <FormItem className="mb-4 w-full">
+                <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">
                     Password
                   </FormLabel> */}
@@ -88,7 +88,7 @@ const SignInForm = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="my-2.5 w-full font-semibold">
+            <Button type="submit" className=" w-full font-semibold">
               {isPending ? (
                 <div className="flex items-center justify-center gap-3.5">
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -98,21 +98,21 @@ const SignInForm = () => {
                 "Log in"
               )}
             </Button>
+            <div className="my-2 flex w-full items-center justify-center gap-2.5 text-input">
+              <div className="h-px w-full bg-input" />
+              OR
+              <div className="h-px w-full bg-input" />
+            </div>
+            <GoogleBtn />
+
+            <p className="mt-4 text-center text-xs font-medium text-muted-foreground md:text-sm">
+              Don&apos;t have an account?{" "}
+              <Link href="/sign-up" className="ml-1 font-medium text-primary">
+                Create One
+              </Link>
+            </p>
           </form>
         </Form>
-        <div className="my-3.5 flex w-full items-center justify-center gap-2.5 text-input">
-          <div className="h-px w-full bg-input" />
-          OR
-          <div className="h-px w-full bg-input" />
-        </div>
-        <GoogleBtn />
-
-        <p className="mt-6 text-center text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
-          <Link href="/sign-up" className="ml-1 font-medium text-primary">
-            Create One
-          </Link>
-        </p>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Lato } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Toaster } from "~/components/ui/toaster";
 import "~/styles/globals.css";
+import PrelineScript from "~/components/PrelineScript";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Toaster />
         </body>
       </TRPCReactProvider>
+      {/* <PrelineScript /> */}
     </html>
   );
 }

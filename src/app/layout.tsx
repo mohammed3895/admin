@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <TRPCReactProvider>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="system">
           <body className={`${lato.className} bg-accent text-black-1`}>
             <main className="flex min-h-screen  w-full flex-1 antialiased">
               {children}

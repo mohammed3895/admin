@@ -19,17 +19,17 @@ const AnalyticsCard = ({
   onClick,
 }: AnalyticsCardProps) => {
   return (
-    <Card className="h-full rounded-xl border-none bg-gray-50 py-2 shadow-none outline-none ring-0 md:bg-white">
-      <CardHeader className="p-0">
-        <div className="flex w-full items-center justify-between  px-2 py-3 md:px-4 md:py-5">
-          <h2 className="text-nowrap text-sm font-semibold capitalize text-black-1 lg:text-base">
+    <Card className=" h-full rounded-xl  border-none bg-white py-2 shadow-none outline-none ring-0 dark:bg-card">
+      <CardHeader className="">
+        <div className="flex w-full items-center justify-between">
+          <h2 className="text-nowrap text-sm font-semibold capitalize text-black-1 dark:text-muted-foreground lg:text-base">
             {title}
           </h2>
           <div>
             {actions === "button" ? (
               <Button
-                variant="outline"
-                className="text-xs shadow-none"
+                variant="secondary"
+                className="border-none text-xs shadow-none outline-none"
                 onClick={onClick}
               >
                 {btnText}

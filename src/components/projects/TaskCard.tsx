@@ -1,5 +1,4 @@
 import React from "react";
-import { Dialog, DialogTrigger } from "../ui/dialog";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import { Link2, ListChecks, MessagesSquare } from "lucide-react";
@@ -17,15 +16,15 @@ export interface TaskProps {
 
 const TaskCard = ({ task, user }: TaskProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg border p-3 md:flex-row">
+    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg border p-3 dark:border-primary/5 md:flex-row">
       <div className="flex w-full items-center justify-start gap-2.5 md:w-1/3">
         <Checkbox
           id={task.name}
-          className="h-4 w-4 border bg-transparent shadow-none transition-colors ease-in-out"
+          className="h-4 w-4 border bg-transparent shadow-none transition-colors ease-in-out dark:bg-input "
         />
         <Label
           htmlFor={task.name}
-          className="truncate text-sm font-bold md:text-base"
+          className="truncate text-sm font-bold text-foreground md:text-base"
         >
           {task.name}
         </Label>
@@ -46,7 +45,7 @@ const TaskCard = ({ task, user }: TaskProps) => {
 
         <div
           className={cn(
-            "flex items-center justify-center rounded-md bg-green-2 px-2 py-1 text-xs capitalize text-green-1 md:text-sm",
+            "flex items-center justify-center rounded-md bg-green-2 px-2 py-1 text-[8px] capitalize text-green-1 md:text-xs",
             { "bg-purple-2 text-purple-1": task.status === "on hold" },
             { "bg-yellow-2 text-yellow-1": task.status === "pending" },
           )}

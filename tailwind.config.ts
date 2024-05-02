@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        inside: "inset 0 4px 20px 12px rgba(0, 0, 0, 0.3)",
+      },
       colors: {
         "yellow-1": "hsl(var(--yellow-1))",
         "yellow-2": "hsla(var(--yellow-2))",

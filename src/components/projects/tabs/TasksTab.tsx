@@ -17,9 +17,11 @@ const TasksTab = ({ project }: ProjectProps) => {
 
   return (
     <div className="flex w-full flex-col space-y-2 px-3">
-      <div className="flex h-16 w-full items-center justify-start gap-3 rounded-lg border border-dashed p-3">
-        <Checkbox />
-        <h3 className="text-base font-bold">Add New Task</h3>
+      <div className="flex h-16 w-full items-center justify-start gap-3 rounded-lg border border-dashed p-3 dark:border-primary/5">
+        <Checkbox className="border dark:border-primary/5" />
+        <h3 className="text-base font-bold text-muted-foreground">
+          Add New Task
+        </h3>
       </div>
       {tasks.map((task, i) => (
         <TaskCard

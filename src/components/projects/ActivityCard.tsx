@@ -33,9 +33,11 @@ interface Props {
 
 const ActivityCard = ({ activity }: Props) => {
   return (
-    <div className="mb-3 flex w-full max-w-xs flex-col items-start gap-1 rounded-xl border p-4 sm:max-w-sm md:max-w-full">
+    <div className="mb-3 flex w-full max-w-sm flex-col items-start gap-1 rounded-xl border p-4 dark:border-primary/5 sm:max-w-sm md:max-w-full">
       <div className="mb-1 flex w-full items-center justify-between">
-        <h2 className="font-semibold tracking-tight">{activity.name}</h2>
+        <h2 className="font-semibold tracking-tight dark:text-gray-50">
+          {activity.name}
+        </h2>
         <MoreBtn />
       </div>
 
@@ -73,7 +75,7 @@ const ActivityCard = ({ activity }: Props) => {
             className="h-full w-full rounded-md object-cover"
           />
         </div>
-        <h3 className="text-sm font-bold capitalize tracking-wide">
+        <h3 className="text-sm font-bold capitalize tracking-wide text-muted-foreground">
           {activity.author.name}
         </h3>
       </div>

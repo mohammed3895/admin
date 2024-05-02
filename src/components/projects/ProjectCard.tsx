@@ -23,12 +23,12 @@ const ProjectCard = ({ project }: ProjectProps) => {
   }
 
   return (
-    <Card className="border border-none py-3.5 shadow-none">
+    <Card className="border border-none py-2.5 shadow-none">
       <CardContent>
-        <div className="flex w-full flex-col items-center gap-4">
+        <div className="flex w-full flex-col items-center gap-3">
           <div className="flex w-full items-start justify-between gap-3 pt-3">
             <Progress
-              className="h-1.5 w-10 bg-gray-100 text-green-1"
+              className="h-1.5 w-10 bg-input text-green-1"
               indicatorBg={getProgressColor(task)}
               value={task * 10}
               max={tasksNum * 10}
@@ -48,7 +48,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
             <h3 className="tesxt-md font-semibold capitalize md:text-lg lg:text-lg">
               {project.title}
             </h3>
-            <p className="text-md font-medium text-muted-foreground">
+            <p className="text-sm font-medium text-muted-foreground">
               {project.role}
             </p>
           </div>
@@ -56,14 +56,14 @@ const ProjectCard = ({ project }: ProjectProps) => {
             <h3 className="text-base font-semibold">
               {task} / {tasksNum}
             </h3>
-            <p className="text-sm font-medium text-muted-foreground">
+            <p className="text-xs font-medium text-muted-foreground">
               Tasks Completed
             </p>
           </div>
 
-          <div className="mt-4 flex w-full items-center justify-center gap-px">
+          <div className="mt-1.5 flex w-full items-center justify-center gap-px">
             {project.users.slice(0, 3).map((user, i) => (
-              <div className="h-6 w-6 rounded-md md:h-8 md:w-8 " key={i}>
+              <div className="h-5 w-5 rounded-md md:h-6 md:w-6 " key={i}>
                 <Image
                   src={user.image}
                   alt=""
@@ -75,7 +75,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
             ))}
 
             {usersNum - 3 > 0 && (
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-input text-xs text-muted-foreground md:h-8 md:w-8">
+              <div className="flex h-5 w-5 items-center justify-center rounded-md bg-input text-xs text-muted-foreground md:h-6 md:w-6">
                 +{usersNum - 3}
               </div>
             )}

@@ -15,7 +15,7 @@ const IconButton = ({ iconSrc, className, onClick }: IconButtonProps) => {
       asChild
       onClick={onClick}
       className={cn(
-        "flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-[#F0F0F3] p-2.5  shadow-none hover:bg-gray-200",
+        "flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-purple-2 p-2.5  shadow-none hover:bg-gray-200",
         className,
       )}
     >
@@ -24,7 +24,7 @@ const IconButton = ({ iconSrc, className, onClick }: IconButtonProps) => {
         alt=""
         width={20}
         height={20}
-        className="h-9 w-9 text-[#8F8FAF]"
+        className="h-10 w-10 text-[#8F8FAF]"
         color="#8F8FAF"
       />
     </Button>

@@ -1,17 +1,7 @@
-import {
-  Activity,
-  FolderClosed,
-  ListChecks,
-  MessageSquareWarning,
-  Settings,
-  Tv2,
-} from "lucide-react";
+import { Activity, FolderClosed, ListChecks, Settings } from "lucide-react";
 import React from "react";
-import KanbanDeskCard from "~/components/projects/KanbanDeskCard";
 import ActivityTab from "~/components/projects/tabs/ActivityTab";
-import DeskTab from "~/components/projects/tabs/DeskTab";
 import FilesTab from "~/components/projects/tabs/FilesTab";
-import ReportsTab from "~/components/projects/tabs/ReportsTab";
 import SettingsTab from "~/components/projects/tabs/SettingsTab";
 import TasksTab from "~/components/projects/tabs/TasksTab";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
@@ -52,30 +42,32 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
   });
 
   return (
-    <div className="h-full w-full flex-col rounded-xl bg-gray-50 p-4">
-      <Tabs defaultValue="tasks" className="h-full w-full">
-        <TabsList className="flex h-full w-full  justify-start gap-1.5 bg-transparent lg:flex-nowrap">
+    <div className="mx-0 h-full w-full  flex-col items-center overflow-x-hidden rounded-none bg-card p-2 md:rounded-xl">
+      <div className="mx-auto w-full">
+        <Tabs defaultValue="tasks" className="h-full w-full">
+          <TabsList className="flex h-full w-full justify-between gap-1 bg-transparent md:justify-start lg:flex-nowrap">
+            {tabsList.map((tab, i) => (
+              <TabsTrigger
+                value={tab.name}
+                key={i}
+                className="flex items-center justify-center gap-2"
+              >
+                <tab.icon size={16} />
+                <span className="text-xs">{tab.name.toUpperCase()}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
           {tabsList.map((tab, i) => (
-            <TabsTrigger
-              value={tab.name}
+            <TabsContent
               key={i}
-              className="flex items-center justify-center gap-2"
+              value={tab.name.toLowerCase()}
+              className="flex w-full"
             >
-              <tab.icon size={16} />
-              <span className="text-xs">{tab.name.toUpperCase()}</span>
-            </TabsTrigger>
+              <tab.component project={project!} />
+            </TabsContent>
           ))}
-        </TabsList>
-        {tabsList.map((tab, i) => (
-          <TabsContent
-            key={i}
-            value={tab.name.toLowerCase()}
-            className="flex w-full"
-          >
-            <tab.component project={project!} />
-          </TabsContent>
-        ))}
-      </Tabs>
+        </Tabs>
+      </div>
     </div>
   );
 };

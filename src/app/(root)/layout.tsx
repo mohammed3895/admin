@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="flex h-screen w-full overflow-y-hidden bg-gray-50">
+    <section className="flex h-screen w-full">
       <MobileSidebar />
       <div className="hidden h-screen border-r md:flex">
         <Sidebar />
       </div>
       <SidePanel />
-      <ScrollArea className="flex w-full p-0 md:p-4">
+      <ScrollArea className="container m-0 flex w-full p-0 md:p-4">
         <Navbar />
         {children}
       </ScrollArea>

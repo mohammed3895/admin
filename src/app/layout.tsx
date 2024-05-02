@@ -3,7 +3,7 @@ import { Lato } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Toaster } from "~/components/ui/toaster";
 import "~/styles/globals.css";
-import PrelineScript from "~/components/PrelineScript";
+import ThemeProvider from "~/components/theme-provider";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -17,14 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <TRPCReactProvider>
-        <body className={`${lato.className} bg-gray-1 text-black-1`}>
-          <main className="flex min-h-screen  w-full flex-1 antialiased">
-            {children}
-          </main>
-          <Toaster />
-        </body>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <body className={`${lato.className} bg-accent text-black-1`}>
+            <main className="flex min-h-screen  w-full flex-1 antialiased">
+              {children}
+            </main>
+            <Toaster />
+          </body>
+        </ThemeProvider>
       </TRPCReactProvider>
       {/* <PrelineScript /> */}
     </html>

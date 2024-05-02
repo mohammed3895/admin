@@ -3,7 +3,7 @@ import React from "react";
 
 const MoreBtn = () => {
   return (
-    <button className="flex h-8 w-8 items-center justify-center rounded-md border text-gray-400 shadow-none">
+    <button className="flex h-8 w-8 items-center justify-center rounded-md border text-gray-400 shadow-none dark:border-primary/5">
       <LucideMoreHorizontal className="h-5 w-5 text-gray-400" />
     </button>
   );

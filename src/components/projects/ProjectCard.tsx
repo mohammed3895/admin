@@ -23,7 +23,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
   }
 
   return (
-    <Card className="border border-none py-2.5 shadow-none dark:bg-accent">
+    <Card className="border border-none py-2.5 shadow-none duration-300 animate-in dark:bg-accent">
       <CardContent>
         <div className="flex w-full flex-col items-center gap-3">
           <div className="flex w-full items-start justify-between gap-3 pt-3">

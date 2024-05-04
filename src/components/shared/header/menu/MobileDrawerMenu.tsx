@@ -1,14 +1,14 @@
 import React from "react";
-import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "../../../ui/drawer";
 import { type LucideIcon } from "lucide-react";
-import IconButton from "./IconButton";
+import IconButton from "../../IconButton";
 
 interface DrawerProps {
   isOpen?: boolean;
   icon?: LucideIcon;
 }
 
-const DrawerMenu = ({
+const MobileDrawerMenu = ({
   children,
   props,
 }: {
@@ -25,4 +25,4 @@ const DrawerMenu = ({
   );
 };
 
-export default DrawerMenu;
+export default MobileDrawerMenu;

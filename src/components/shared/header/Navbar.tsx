@@ -3,7 +3,10 @@ import React from "react";
 import IconButton from "../IconButton";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "~/components/ToggleTheme";
-import DrawerMenu from "../DrawerMenu";
+import MobileDrawerMenu from "./menu/MobileDrawerMenu";
+import MenuItems from "./menu/MenuItems";
+import DeskTopAddMenu from "./menu/DeskTopAddMenu";
+import Search from "../Search";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -12,15 +15,15 @@ const Navbar = () => {
   return (
     <div className="flex h-16 w-full items-center justify-between">
       <div className="flex w-full items-center justify-between md:hidden">
-        <DrawerMenu>
-          <div className="flex w-full flex-col"></div>
-        </DrawerMenu>
+        <MobileDrawerMenu>
+          <MenuItems />
+        </MobileDrawerMenu>
         <div className="flex items-center justify-between gap-3.5 md:justify-start">
           <h2 className="text-lg font-semibold capitalize text-black-1 dark:text-white">
             {isHomePage ? "Dashboard" : pathname.split("/")[1]}
           </h2>
         </div>
-        <IconButton iconSrc="/assets/icons/search.svg" />
+        <Search />
       </div>
 
       {/*  */}
@@ -32,10 +35,8 @@ const Navbar = () => {
         </div>
         <div className="flex items-center justify-end gap-3">
           <ModeToggle />
-          <DrawerMenu>
-            <div className="flex w-full flex-col"></div>
-          </DrawerMenu>
-          <IconButton iconSrc="/assets/icons/search.svg" />
+          <Search />
+          <DeskTopAddMenu />
         </div>
       </div>
     </div>

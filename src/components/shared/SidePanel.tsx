@@ -50,13 +50,13 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
           <UpcomingEventCard />
         </ScrollArea>
       </div>
-      <Link
+      {/* <Link
         href="https://www.linkedin.com/in/mohammed-sameer-bb81b3151/"
         target="_blank"
         className="rounded-lg bg-green-2 p-4 text-lg font-black text-green-1"
       >
         Mohammed Sammeer
-      </Link>
+      </Link> */}
     </div>
   );
 };

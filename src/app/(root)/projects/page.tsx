@@ -8,7 +8,7 @@ const ProjectsPage = async () => {
 
   return (
     <div className="flex h-full w-full">
-      <div className="grid w-full grid-cols-1 gap-2.5 rounded-lg p-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid w-full grid-cols-1 gap-2.5 rounded-lg md:grid-cols-2 xl:grid-cols-4">
         {PROJECTS.map((project, i) => (
           <ProjectCard key={i} project={project} />
         ))}

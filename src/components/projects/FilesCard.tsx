@@ -9,7 +9,7 @@ interface FileProps {
 
 const FilesCard = ({ file }: FileProps) => {
   return (
-    <div className="flex w-full max-w-sm items-center justify-between gap-2.5 rounded-xl border px-6 py-5 dark:border-primary/5 sm:max-w-lg  md:max-w-full ">
+    <div className="flex w-full items-center justify-between gap-2.5 rounded-xl border px-6 py-5 dark:border-primary/5">
       <div className="flex items-center justify-start gap-2.5">
         <div
           className={`flex h-12 w-12 items-center justify-center rounded-lg ${file.bgColor} ${file.color}`}

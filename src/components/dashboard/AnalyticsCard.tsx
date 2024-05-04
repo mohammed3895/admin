@@ -19,7 +19,7 @@ const AnalyticsCard = ({
   onClick,
 }: AnalyticsCardProps) => {
   return (
-    <Card className=" h-full rounded-xl  border-none bg-white py-2 shadow-none outline-none ring-0 dark:bg-card">
+    <Card className=" h-full rounded-xl  border-none bg-white py-2 shadow-none outline-none ring-0 dark:bg-accent">
       <CardHeader className="">
         <div className="flex w-full items-center justify-between">
           <h2 className="text-nowrap text-sm font-semibold capitalize text-black-1 dark:text-muted-foreground lg:text-base">

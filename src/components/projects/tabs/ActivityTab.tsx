@@ -5,18 +5,15 @@ import { Calendar } from "lucide-react";
 
 const ActivityTab = () => {
   return (
-    <div className="flex h-full w-full flex-1 flex-col">
-      <div className="flex h-full w-full flex-col items-start justify-start rounded-xl p-2 md:p-6">
+    <div className="h-full w-full">
+      <div className="flex w-full flex-col items-start justify-start rounded-xl">
         {ACTIVITIES.map((event, i) => (
-          <div
-            key={i}
-            className="mx-auto mb-4 flex w-full flex-col justify-center"
-          >
+          <div key={i} className="mb-2.5 flex w-full flex-col justify-center">
             <div className="mb-3 flex items-center justify-start gap-2.5 text-purple-1">
               <Calendar size={14} />
               <h3 className=" text-xs font-bold tracking-wide">{event.date}</h3>
             </div>
-            <div className="flex h-full w-full flex-col gap-4">
+            <div className="flex flex-col gap-2.5">
               {event.activity.map((activity, i) => (
                 <ActivityCard key={i} activity={activity} />
               ))}

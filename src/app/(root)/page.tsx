@@ -11,8 +11,8 @@ export default async function Home() {
   // if (!session) redirect("/sign-in");
 
   return (
-    <div className="h-full w-full px-2 md:px-4">
-      <div className="grid h-full w-full grid-cols-1  gap-16 pb-16 pt-8 md:gap-6 lg:grid-cols-2">
+    <div className="h-full w-full">
+      <div className="grid h-full w-full grid-cols-1  gap-16 pb-16 pt-4 md:gap-6 lg:grid-cols-2">
         <AnalyticsCard
           title="Latest Events"
           actions="button"

@@ -33,7 +33,7 @@ interface Props {
 
 const ActivityCard = ({ activity }: Props) => {
   return (
-    <div className="mb-3 flex w-full max-w-sm flex-col items-start gap-1 rounded-xl border p-4 dark:border-primary/5 sm:max-w-sm md:max-w-full">
+    <div className="mb-3 flex w-full flex-col items-start gap-1 rounded-xl border p-4 dark:border-primary/5">
       <div className="mb-1 flex w-full items-center justify-between">
         <h2 className="font-semibold tracking-tight dark:text-gray-50">
           {activity.name}
@@ -48,9 +48,9 @@ const ActivityCard = ({ activity }: Props) => {
       </div>
 
       {activity.images && (
-        <div className="mt-2 flex w-full items-center justify-start gap-2.5">
+        <div className="mt-2 grid w-full grid-cols-3 items-center justify-start gap-2.5">
           {activity.images.map((img, i) => (
-            <div className="h-20 w-40 rounded-lg md:h-36" key={i}>
+            <div className="h-20 w-20 rounded-lg md:h-36 md:w-40" key={i}>
               <Image
                 src={img.src}
                 alt={`Activity image ${i + 1}`}

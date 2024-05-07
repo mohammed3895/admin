@@ -2,12 +2,14 @@ import React from "react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import CalendarItems from "./CalendarItems";
+import { cn } from "~/lib/utils";
 
 interface AnalyticsCardProps {
   title: string;
   children: React.ReactNode;
   actions: "button" | "calendar";
   btnText?: string;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -16,10 +18,16 @@ const AnalyticsCard = ({
   children,
   title,
   btnText,
+  className,
   onClick,
 }: AnalyticsCardProps) => {
   return (
-    <Card className=" h-full rounded-xl  border-none bg-white py-2 shadow-none outline-none ring-0 dark:bg-accent">
+    <Card
+      className={cn(
+        " h-full rounded-md border-none bg-white pb-4 shadow-none outline-none ring-0 dark:bg-zinc-900",
+        className,
+      )}
+    >
       <CardHeader className="">
         <div className="flex w-full items-center justify-between">
           <h2 className="text-nowrap text-sm font-semibold capitalize text-black-1 dark:text-muted-foreground lg:text-base">
@@ -41,9 +49,7 @@ const AnalyticsCard = ({
         </div>
       </CardHeader>
       <CardContent className="w-full p-0">
-        <div className="flex w-full items-center px-2 md:px-4 lg:px-6">
-          {children}
-        </div>
+        <div className="flex h-full w-full items-center">{children}</div>
       </CardContent>
     </Card>
   );

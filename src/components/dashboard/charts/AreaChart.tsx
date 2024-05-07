@@ -3,112 +3,102 @@ import { type ApexOptions } from "apexcharts";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { renderToString } from "react-dom/server";
+import {
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  YAxis,
+  XAxis,
+  Tooltip,
+  type TooltipProps,
+} from "recharts";
+import dayjs from "dayjs";
+import {
+  type ValueType,
+  type NameType,
+} from "recharts/types/component/DefaultTooltipContent";
 
-const areachartOpts: ApexOptions = {
-  chart: {
-    type: "area",
-    toolbar: { show: false },
-    zoom: { enabled: false },
-    width: 450,
-    stacked: true,
-    foreColor: "#999",
-  },
-  stroke: {
-    curve: "smooth",
-    width: 2,
-  },
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: TooltipProps<ValueType, NameType>) => {
+  if (active) {
+    return (
+      <div className="flex h-20 w-40 flex-col items-center justify-center gap-4 rounded-lg bg-background p-4 shadow-lg">
+        <div className="flex flex-col items-start justify-center gap-2">
+          <p className="texl-sm font-semibold text-gray-2">
+            {dayjs(label as unknown as Date).format("MMMM DD")}
+          </p>
+          <p className="text-xl font-bold text-muted-foreground">
+            ${payload![0]?.value}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
-  plotOptions: {
-    area: {
-      fillTo: "origin",
-    },
-  },
-  tooltip: {
-    x: {
-      show: false,
-    },
-  },
-  colors: ["#A6F5C9"],
-  theme: {
-    palette: "palette1",
-    mode: "light",
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  series: [
-    {
-      name: "Series 1",
-      data: [45, 52, 29, 43, 32],
-    },
-  ],
-  grid: {
-    xaxis: {
-      lines: {
-        show: false,
-      },
-    },
-    show: false,
-    yaxis: {
-      lines: {
-        show: false,
-      },
-    },
-  },
-
-  fill: {
-    type: "gradient",
-    gradient: {
-      colorStops: [
-        {
-          offset: 0,
-          color: "#A6F5C9",
-          opacity: 1,
-        },
-        {
-          offset: 0.6,
-          color: "#A6F5C99c",
-          opacity: 50,
-        },
-        {
-          offset: 100,
-          color: "#A6F5C918",
-          opacity: 1,
-        },
-      ],
-      shadeIntensity: 1,
-      opacityFrom: 0.7,
-      opacityTo: 0.1,
-      stops: [0, 90, 100],
-    },
-  },
-  xaxis: {
-    categories: [
-      "01 Jan",
-      "02 Jan",
-      "03 Jan",
-      "04 Jan",
-      "05 Jan",
-      "06 Jan",
-      "07 Jan",
-    ],
-  },
+  return null;
 };
 
-const AreaChart = () => {
+const data = [
+  {
+    date: new Date().setMonth(8),
+    sales: 2000,
+  },
+  {
+    date: new Date().setMonth(9),
+    sales: 2314,
+  },
+  {
+    date: new Date().setMonth(10),
+    sales: 1354,
+  },
+  {
+    date: new Date().setMonth(11),
+    sales: 2250,
+  },
+  {
+    date: new Date().setMonth(12),
+    sales: 1230,
+  },
+];
+
+const AreaChartComponent = () => {
   return (
-    <div className="flex h-3/4 w-full items-center justify-center">
-      {typeof window !== "undefined" && (
-        <ReactApexChart
-          type="area"
-          options={areachartOpts}
-          series={areachartOpts.series}
-          height={300}
-          className="h-full w-full px-0 text-sm font-normal text-gray-500"
+    <ResponsiveContainer width="100%" height={450} className="m-0 p-0">
+      <AreaChart data={data} className="m-0 p-0">
+        <defs>
+          <linearGradient id="color" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="20%" stopColor="#35CB89" stopOpacity={0.8} />
+            <stop offset="40%" stopColor="#35CB89" stopOpacity={0.6} />
+            <stop offset="60%" stopColor="#35CB89" stopOpacity={0.4} />
+            <stop offset="80%" stopColor="#35CB89" stopOpacity={0.001} />
+          </linearGradient>
+        </defs>
+        <Area
+          dataKey="sales"
+          stroke="#35CB89"
+          fill="url(#color)"
+          className="m-0 p-0"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          type="monotone"
         />
-      )}
-    </div>
+        <XAxis
+          dataKey="date"
+          tickFormatter={(date: Date) => dayjs(date).format("MMM DD")}
+          className="mt-2.5 text-xs"
+          tickLine={false}
+          axisLine={false}
+          tickMargin={14}
+          padding={{ right: 4, left: 4 }}
+        />
+        {/* <YAxis /> */}
+        <Tooltip content={<CustomTooltip />} />
+      </AreaChart>
+    </ResponsiveContainer>
   );
 };
 
-export default AreaChart;
+export default AreaChartComponent;

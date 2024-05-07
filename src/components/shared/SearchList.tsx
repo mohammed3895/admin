@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
 import { type PROJECTS } from "~/constants/projects";
-import ProjectCard from "../projects/ProjectCard";
 import SearchCard from "./SearchCard";
 
 interface Props {

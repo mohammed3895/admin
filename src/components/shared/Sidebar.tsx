@@ -6,7 +6,7 @@ import NavItems from "./NavItems";
 
 const Sidebar = () => {
   return (
-    <div className="h-full w-full py-2">
+    <div className="ml-2 h-full w-full bg-background py-3.5">
       <div className="flex h-full flex-col items-center justify-between gap-5">
         <div className="flex flex-col items-center gap-5">
           <div className="mb-4 py-4">

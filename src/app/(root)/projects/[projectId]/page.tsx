@@ -1,6 +1,6 @@
 "use client";
 import { Activity, FolderClosed, ListChecks, Settings } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ActivityTab from "~/components/projects/tabs/ActivityTab";
 import FilesTab from "~/components/projects/tabs/FilesTab";
 import SettingsTab from "~/components/projects/tabs/SettingsTab";
@@ -41,16 +41,21 @@ const tabsList = [
 
 const ProjectDetailsPage = ({ params }: ParamsProp) => {
   const [activeTab, setActiveTab] = useState(0);
+  const [tabList, setTabList] = useState<typeof tabsList>([]);
 
   const project = PROJECTS.find((el) => {
     return el.id === params.projectId;
   });
 
+  useEffect(() => {
+    setTabList(tabsList);
+  }, []);
+
   return (
     <div defaultValue="tasks">
       <ul className="mb-3 flex h-full flex-wrap justify-start gap-1 bg-transparent">
         {/* <ScrollArea className="flex w-full items-center"> */}
-        {tabsList.map((tab, i) => (
+        {tabList.map((tab, i) => (
           <div
             key={i}
             className={cn(

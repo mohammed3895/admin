@@ -23,7 +23,7 @@ export default function RootLayout({
           <body
             className={`${lato.className} bg-accent text-black-1 dark:bg-card`}
           >
-            <main className="flex min-h-screen  w-full flex-1 antialiased">
+            <main className="flex h-full min-h-screen  w-full flex-1 antialiased">
               {children}
             </main>
             <Toaster />

@@ -1,37 +1,37 @@
 export const SidebarTabs = [
   {
     name: "Dashboard",
-    path: "/",
+    path: "",
     icon: "/assets/icons/dashboard-svgrepo-com.svg",
   },
   {
     name: "Projects",
-    path: "/projects",
+    path: "projects",
     icon: "/assets/icons/briefcase-svgrepo-com.svg",
   },
   {
     name: "Tasks",
-    path: "/tasks",
+    path: "tasks",
     icon: "/assets/icons/document-text-svgrepo-com.svg",
   },
   {
     name: "Kanban",
-    path: "/kanban",
+    path: "kanban",
     icon: "/assets/icons/calendar-alt-svgrepo-com.svg",
   },
   {
     name: "Messages",
-    path: "/messages",
+    path: "messages",
     icon: "/assets/icons/annotation-svgrepo-com.svg",
   },
   {
     name: "Settings",
-    path: "/settings",
+    path: "settings",
     icon: "/assets/icons/cog-svgrepo-com.svg",
   },
   {
     name: "Profile",
-    path: "/profile",
+    path: "profile",
     icon: "/assets/icons/user-square-svgrepo-com.svg",
   },
 ];

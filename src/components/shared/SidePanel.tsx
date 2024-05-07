@@ -6,24 +6,24 @@ import Link from "next/link";
 
 const SidePanel = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="hidden h-dvh flex-col justify-between gap-6 border-r bg-card px-4 py-6 md:w-72 lg:flex lg:w-80 lg:px-6">
+    <div className="hidden h-dvh flex-col justify-between gap-6 border-none bg-background px-4 py-6 md:w-72 lg:flex lg:w-80 lg:px-6">
       {/* USER INFO */}
-      <div className="h-[14vh] w-full">
+      <div className="h-full w-full">
         <div className="flex flex-col items-start justify-start">
           <div className="mb-2.5 flex h-14 w-14 items-center justify-center rounded-lg bg-black-1 p-2 text-white dark:bg-gray-50 dark:text-black-1">
             <h1 className="text-4xl font-bold">M</h1>
           </div>
-          <p className="text-base font-semibold text-black-1 dark:text-gray-50">
-            Michael Zhang
+          <p className="text-2xl font-semibold text-black-1 dark:text-gray-50">
+            WELCOME,
           </p>
-          <p className="text-xs font-normal text-muted-foreground">
-            michaelzhang@mail.com
+          <p className="text-lg font-semibold text-muted-foreground">
+            UI STORE
           </p>
         </div>
       </div>
 
       {/* UPDATES */}
-      <div className="h-[45vh] w-full">
+      <div className="h-full w-full">
         <div className="flex h-full w-full flex-col">
           <h2 className="mb-3 text-sm font-semibold capitalize text-muted-foreground md:text-base">
             Latest updates
@@ -38,7 +38,7 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       </div>
 
       {/* EVENTS */}
-      <div className="h-[30vh] w-full">
+      <div className="h-full w-full">
         <h2 className="mb-3 text-base font-semibold capitalize text-muted-foreground">
           Upcoming events
         </h2>

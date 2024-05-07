@@ -1,24 +1,29 @@
-import { auth } from "auth";
 import AnalyticsCard from "~/components/dashboard/AnalyticsCard";
-import AreaChart from "~/components/dashboard/charts/AreaChart";
-import PieChart from "~/components/dashboard/charts/PieChart";
-import RadialChart from "~/components/dashboard/charts/RadialChart";
 import EventsCard from "~/components/dashboard/EventsCard";
 import { eventsData } from "~/constants/events";
+import dynamic from "next/dynamic";
 
-export default async function Home() {
-  const session = await auth();
-  // if (!session) redirect("/sign-in");
+const AreaChartComponent = dynamic(
+  () => import("~/components/dashboard/charts/AreaChart"),
+);
+const BarChartComponent = dynamic(
+  () => import("~/components/dashboard/charts/BarChart"),
+);
+const RadialChart = dynamic(
+  () => import("~/components/dashboard/charts/RadialChart"),
+);
 
+export default function Home() {
   return (
     <div className="h-full w-full">
-      <div className="grid h-full w-full grid-cols-1  gap-16 pb-16 pt-4 md:gap-6 lg:grid-cols-2">
+      <div className="md:px0 grid h-full w-full  grid-cols-1 gap-3.5 px-3 pb-16 pt-4  md:px-0 lg:grid-cols-2">
         <AnalyticsCard
           title="Latest Events"
           actions="button"
           btnText="View All"
+          className="bg-transparent md:bg-card"
         >
-          <div className="flex w-full flex-col gap-2 lg:mt-2">
+          <div className="flex w-full flex-col gap-3.5 px-3 md:px-5 lg:mt-2">
             {eventsData.map((event, i) => (
               <EventsCard key={i} event={event} />
             ))}
@@ -28,10 +33,10 @@ export default async function Home() {
           <RadialChart />
         </AnalyticsCard>
         <AnalyticsCard title="Income breakdown" actions="calendar">
-          <PieChart />
+          <BarChartComponent />
         </AnalyticsCard>
         <AnalyticsCard title="Income Details" actions="calendar">
-          <AreaChart />
+          <AreaChartComponent />
         </AnalyticsCard>
       </div>
     </div>

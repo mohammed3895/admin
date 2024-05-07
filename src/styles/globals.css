@@ -93,7 +93,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border data-[closed]:outline-none data-[closed]:ring-0 data-[closed]:ring-offset-0;
   }
   body {
     @apply text-foreground;

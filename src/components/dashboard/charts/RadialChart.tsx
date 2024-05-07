@@ -1,88 +1,121 @@
 "use client";
-import { type ApexOptions } from "apexcharts";
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+import {
+  ResponsiveContainer,
+  type TooltipProps,
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  Tooltip,
+} from "recharts";
+import dayjs from "dayjs";
+import {
+  type ValueType,
+  type NameType,
+} from "recharts/types/component/DefaultTooltipContent";
 
-const areachartOpts: ApexOptions = {
-  chart: {
-    type: "radialBar",
-    toolbar: { show: false },
-    zoom: { enabled: false },
-    width: "100%",
-    stacked: true,
-    foreColor: "#999",
-  },
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: TooltipProps<ValueType, NameType>) => {
+  if (active) {
+    return (
+      <div className="flex h-20 w-40 flex-col items-center justify-center gap-4 rounded-lg bg-background p-4 shadow-lg">
+        <div className="flex flex-col items-start justify-center">
+          <p className="texl-xs font-semibold text-gray-2">
+            {dayjs(label as unknown as Date).format("MMMM DD")}
+          </p>
+          <p className="text-xl font-bold text-muted-foreground">
+            ${payload![0]?.value}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
-  stroke: {
-    curve: "smooth",
-    width: 2,
-  },
-
-  plotOptions: {
-    radialBar: {
-      track: {
-        background: "#F9FAFB",
-      },
-      dataLabels: {
-        show: true,
-
-        total: {
-          show: true,
-          label: "TOTAL",
-          fontSize: "22px",
-          color: "#5E81F4",
-        },
-        value: {
-          color: "#C4BBAF",
-          fontSize: "18px",
-          formatter(value: number) {
-            return `${Math.round(value)}%`;
-          },
-        },
-      },
-    },
-  },
-  tooltip: {
-    x: {
-      format: "dd MMM yyyy",
-    },
-  },
-  legend: {
-    show: true,
-    fontSize: "12px",
-    fontWeight: "500",
-    itemMargin: {
-      horizontal: 14,
-      vertical: 8,
-    },
-    position: "bottom",
-  },
-  theme: {
-    palette: "palette1",
-    mode: "light",
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  colors: ["#35CB89", "#F1C047", "#DB12FA"],
-  series: [95, 85, 75],
-  labels: ["MEN", "WOMEN", "KIDS"],
+  return null;
 };
 
-const RadialChart = () => {
+const data = [
+  // {
+  //   date: new Date(),
+  //   fill: "#fef12e",
+  //   sales: 2000,
+  //   sales_2: 1500,
+  // },
+  // {
+  //   date: new Date(),
+  //   fill: "#fef12e",
+  //   sales: 2354,
+  //   sales_2: 3100,
+  // },
+  {
+    date: new Date(),
+    fill: "#FF808A",
+    sales: 3001,
+    sales_2: 2000,
+  },
+  {
+    date: new Date(),
+    fill: "#9597D6",
+    sales: 2000,
+    sales_2: 1000,
+  },
+
+  {
+    date: new Date(),
+    fill: "#35CB89",
+    sales: 1850,
+    sales_2: 3250,
+  },
+  {
+    date: new Date(),
+    fill: "#5E81F4",
+    sales: 2230,
+    sales_2: 2230,
+  },
+];
+const style = {
+  top: "50%",
+  right: 0,
+  transform: "translate(0, -50%)",
+  lineHeight: "24px",
+};
+
+const RadialChartComponent = () => {
   return (
-    <div className="flex h-3/4 w-full items-center justify-center">
-      {typeof window !== "undefined" && (
-        <ReactApexChart
-          type="radialBar"
-          options={areachartOpts}
-          series={areachartOpts.series}
-          height={350}
-          className="h-full w-full text-sm font-medium text-gray-500"
+    <ResponsiveContainer width="100%" height={300} className="relative">
+      <RadialBarChart
+        width={400}
+        height={200}
+        data={data}
+        // startAngle={360}
+        // endAngle={30}
+        barGap={8}
+        barSize={16}
+      >
+        <RadialBar
+          dataKey="sales"
+          height={300}
+          fillRule="evenodd"
+          radius={20}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stitchTiles={20}
+          cornerRadius={20}
         />
-      )}
-    </div>
+        <Legend
+          type="round"
+          iconSize={10}
+          layout="vertical"
+          verticalAlign="middle"
+          wrapperStyle={style}
+        />
+        <Tooltip content={<CustomTooltip />} />
+      </RadialBarChart>
+    </ResponsiveContainer>
   );
 };
 
-export default RadialChart;
+export default RadialChartComponent;

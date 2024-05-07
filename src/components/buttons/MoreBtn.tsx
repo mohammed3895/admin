@@ -2,7 +2,7 @@ import { LucideMoreHorizontal } from "lucide-react";
 import React from "react";
 import { cn } from "~/lib/utils";
 
-const MoreBtn = ({ className }: { className: string }) => {
+const MoreBtn = ({ className }: { className?: string }) => {
   return (
     <button
       className={cn(

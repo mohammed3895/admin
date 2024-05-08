@@ -1,17 +1,19 @@
 import React from "react";
-import IconButton from "../../IconButton";
 import MenuItems from "./MenuItems";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { CirclePlus } from "lucide-react";
 
 const DeskTopAddMenu = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <IconButton iconSrc="/assets/icons/add-circle.svg" />
+      <DropdownMenuTrigger asChild>
+        <button className="flex h-9 w-9 items-center justify-center rounded-md bg-purple-2 text-purple-1">
+          <CirclePlus className="h-4 w-4" />
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mr-8 w-60 border-none shadow-lg">
         <MenuItems />

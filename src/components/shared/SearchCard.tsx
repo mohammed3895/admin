@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { type ProjectProps } from "../projects/tabs/TasksTab";
 import Link from "next/link";
 
 const SearchCard = ({ project }: ProjectProps) => {
+  const [open, setOpen] = useState(false);
+
   const tasksCompleted = project.tasks?.filter(function (el) {
     return el.status === "done";
   });

@@ -5,8 +5,6 @@ import ActivityTab from "~/components/projects/tabs/ActivityTab";
 import FilesTab from "~/components/projects/tabs/FilesTab";
 import SettingsTab from "~/components/projects/tabs/SettingsTab";
 import TasksTab from "~/components/projects/tabs/TasksTab";
-import { ScrollArea } from "~/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { PROJECTS } from "~/constants/projects";
 import { cn } from "~/lib/utils";
 interface ParamsProp {
@@ -53,7 +51,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
 
   return (
     <div defaultValue="tasks">
-      <ul className="mb-3 flex h-full flex-wrap justify-start gap-1 bg-transparent">
+      <ul className="mb-6 flex h-full flex-wrap justify-start gap-1 bg-transparent">
         {/* <ScrollArea className="flex w-full items-center"> */}
         {tabList.map((tab, i) => (
           <div

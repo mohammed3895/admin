@@ -1,13 +1,13 @@
 "use client";
-import { Lato } from "next/font/google";
+import { Kanit } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Toaster } from "~/components/ui/toaster";
-import "~/styles/globals.css";
 import ThemeProvider from "~/components/theme-provider";
+import "~/styles/globals.css";
 
-const lato = Lato({
+const kanit = Kanit({
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["300", "400", "500", "600", "700", "900"],
   variable: "--font-fig",
 });
 
@@ -20,9 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <TRPCReactProvider>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <body
-            className={`${lato.className} bg-accent text-black-1 dark:bg-card`}
-          >
+          <body className={`${kanit.className} bg-background text-black-1`}>
             <main className="flex h-full min-h-screen  w-full flex-1 antialiased">
               {children}
             </main>

@@ -13,29 +13,7 @@ import {
   type ValueType,
   type NameType,
 } from "recharts/types/component/DefaultTooltipContent";
-
-const CustomTooltip = ({
-  active,
-  payload,
-  label,
-}: TooltipProps<ValueType, NameType>) => {
-  if (active) {
-    return (
-      <div className="flex h-20 w-40 flex-col items-center justify-center gap-4 rounded-lg bg-background p-4 shadow-lg">
-        <div className="flex flex-col items-start justify-center">
-          <p className="texl-xs font-semibold text-gray-2">
-            {dayjs(label as unknown as Date).format("MMMM DD")}
-          </p>
-          <p className="text-xl font-bold text-muted-foreground">
-            ${payload![0]?.value}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  return null;
-};
+import { CustomTooltip } from "./CustomToolTip";
 
 const data = [
   // {

@@ -24,13 +24,13 @@ const AnalyticsCard = ({
   return (
     <Card
       className={cn(
-        " h-full rounded-md border-none bg-white pb-4 shadow-none outline-none ring-0 dark:bg-zinc-900",
+        " h-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0 dark:border-none dark:bg-neutral-800",
         className,
       )}
     >
       <CardHeader className="">
         <div className="flex w-full items-center justify-between">
-          <h2 className="text-nowrap text-sm font-semibold capitalize text-black-1 dark:text-muted-foreground lg:text-base">
+          <h2 className="text-nowrap text-base font-medium capitalize text-black-1 dark:text-white lg:text-lg">
             {title}
           </h2>
           <div>

@@ -6,11 +6,11 @@ const MoreBtn = ({ className }: { className?: string }) => {
   return (
     <button
       className={cn(
-        "flex h-6 w-6 items-center justify-center rounded-md border text-muted-foreground shadow-none dark:border-primary/5",
+        "flex h-6 w-6 items-center justify-center rounded border text-muted-foreground shadow-none dark:border-zinc-600",
         className,
       )}
     >
-      <LucideMoreHorizontal className="h-5 w-5 text-gray-400" />
+      <LucideMoreHorizontal className="h-4 w-4 text-muted-foreground dark:text-zinc-600" />
     </button>
   );
 };

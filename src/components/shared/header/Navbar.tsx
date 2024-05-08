@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import IconButton from "../IconButton";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "~/components/ToggleTheme";
 import MobileDrawerMenu from "./menu/MobileDrawerMenu";
@@ -19,7 +18,7 @@ const Navbar = () => {
           <MenuItems />
         </MobileDrawerMenu>
         <div className="flex items-center justify-between gap-3.5 md:justify-start">
-          <h2 className="text-lg font-black capitalize text-black-1 dark:text-white">
+          <h2 className="text-lg font-medium capitalize text-black-1 dark:text-white">
             {isHomePage ? "Dashboard" : pathname.split("/")[1]}
           </h2>
         </div>
@@ -29,7 +28,7 @@ const Navbar = () => {
       {/*  */}
       <div className="hidden h-14 w-full items-center justify-between md:flex">
         <div className="flex items-center justify-between gap-3.5 md:justify-start">
-          <h2 className="text-lg font-black capitalize text-black-1 dark:text-white">
+          <h2 className="text-lg font-medium capitalize text-black-1 dark:text-white">
             {isHomePage ? "Dashboard" : pathname.split("/")[1]}
           </h2>
         </div>

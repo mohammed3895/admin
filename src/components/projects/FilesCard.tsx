@@ -9,21 +9,21 @@ interface FileProps {
 
 const FilesCard = ({ file }: FileProps) => {
   return (
-    <div className="flex w-full items-center justify-between gap-2.5 rounded-xl border px-6 py-5 dark:border-primary/5">
+    <div className="flex w-full items-center justify-between gap-2.5 rounded-xl border border-border px-6 py-5">
       <div className="flex items-center justify-start gap-2.5">
         <div
           className={`flex h-12 w-12 items-center justify-center rounded-lg ${file.bgColor} ${file.color}`}
         >
           <file.icon size={18} className="h-6 w-6" />
         </div>
-        <h1 className="truncate text-base font-semibold tracking-tight text-black-1 dark:text-gray-50">
+        <h1 className="truncate text-base font-medium tracking-tight text-black-1 dark:text-gray-50">
           {file.name}
         </h1>
       </div>
 
       <div className="flex items-center justify-center gap-3 text-muted-foreground">
         <Tags size={18} />
-        <span className="text-sm">Employee</span>
+        <span className="text-sm font-normal">Employee</span>
       </div>
 
       <MoreBtn />

@@ -1,6 +1,5 @@
 import React from "react";
 import MoreBtn from "../buttons/MoreBtn";
-import { type ACTIVITIES } from "~/constants/activities";
 import Image from "next/image";
 
 interface Props {
@@ -33,16 +32,16 @@ interface Props {
 
 const ActivityCard = ({ activity }: Props) => {
   return (
-    <div className="mb-3 flex w-full flex-col items-start gap-1 rounded-xl border p-4 dark:border-primary/5">
+    <div className="mb-3 flex w-full flex-col items-start gap-1 rounded-xl border border-border p-4">
       <div className="mb-1 flex w-full items-center justify-between">
-        <h2 className="font-semibold tracking-tight dark:text-gray-50">
+        <h2 className="font-medium tracking-tight dark:text-gray-50">
           {activity.name}
         </h2>
         <MoreBtn />
       </div>
 
       <div className="w-full">
-        <p className="w-full text-sm font-medium tracking-wide text-muted-foreground md:w-3/4 lg:w-1/2">
+        <p className="w-full text-sm font-light tracking-tight text-muted-foreground md:w-3/4 lg:w-1/2">
           {activity.description}
         </p>
       </div>
@@ -75,7 +74,7 @@ const ActivityCard = ({ activity }: Props) => {
             className="h-full w-full rounded-md object-cover"
           />
         </div>
-        <h3 className="text-sm font-bold capitalize tracking-wide text-muted-foreground">
+        <h3 className="text-sm font-medium capitalize tracking-wide text-muted-foreground">
           {activity.author.name}
         </h3>
       </div>

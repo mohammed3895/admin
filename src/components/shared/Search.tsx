@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import IconButton from "./IconButton";
 import { Input } from "../ui/input";
 import { PROJECTS } from "~/constants/projects";
 import SearchList from "./SearchList";
 import { ScrollArea } from "../ui/scroll-area";
 import { cn } from "~/lib/utils";
+import { SearchIcon } from "lucide-react";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,10 +44,12 @@ const Search = () => {
       }}
     >
       <DialogTrigger>
-        <IconButton
-          iconSrc="/assets/icons/search.svg"
+        <button
           onClick={() => setIsOpen(!isOpen)}
-        />
+          className="flex h-9 w-9 items-center justify-center rounded-md bg-purple-2 text-purple-1"
+        >
+          <SearchIcon className="h-4 w-4" />
+        </button>
       </DialogTrigger>
       <DialogContent className="h-fit w-[70%] rounded-md border-none bg-transparent p-0 outline-none">
         <>

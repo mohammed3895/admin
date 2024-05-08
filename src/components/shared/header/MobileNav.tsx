@@ -1,15 +1,14 @@
+import { Menu } from "lucide-react";
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
-import IconButton from "../IconButton";
 
 const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <IconButton
-          iconSrc="/assets/icons/menu-icon.svg"
-          className="lg:hidden"
-        />
+        <button className="flex h-9 w-9 items-center justify-center rounded-md bg-purple-2 text-purple-1">
+          <Menu className="h-4 w-4" />
+        </button>
       </SheetTrigger>
       <SheetContent></SheetContent>
     </Sheet>

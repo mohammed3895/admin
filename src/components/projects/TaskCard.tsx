@@ -16,7 +16,7 @@ export interface TaskProps {
 
 const TaskCard = ({ task, user }: TaskProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg border p-3 dark:border-primary/5 md:flex-row">
+    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg border border-border p-3 md:flex-row">
       <div className="flex w-full items-center justify-start gap-2.5 md:w-1/3">
         <Checkbox
           id={task.name}
@@ -24,7 +24,7 @@ const TaskCard = ({ task, user }: TaskProps) => {
         />
         <Label
           htmlFor={task.name}
-          className="truncate text-sm font-bold text-foreground md:text-base"
+          className="truncate text-sm font-medium text-foreground md:text-base"
         >
           {task.name}
         </Label>

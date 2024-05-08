@@ -11,7 +11,9 @@ const ActivityTab = () => {
           <div key={i} className="mb-2.5 flex w-full flex-col justify-center">
             <div className="mb-3 flex items-center justify-start gap-2.5 text-purple-1">
               <Calendar size={14} />
-              <h3 className=" text-xs font-bold tracking-wide">{event.date}</h3>
+              <h3 className=" text-xs font-normal tracking-tight">
+                {event.date}
+              </h3>
             </div>
             <div className="flex flex-col gap-2.5">
               {event.activity.map((activity, i) => (

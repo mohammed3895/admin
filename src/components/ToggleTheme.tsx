@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import IconButton from "./shared/IconButton";
+import { LaptopMinimal, Moon, Sun } from "lucide-react";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
@@ -16,24 +16,37 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <>
-          <IconButton
-            iconSrc="/assets/icons/sun.svg"
-            className="flex rotate-0 scale-100 transition-all dark:hidden dark:-rotate-90 dark:scale-0"
-          />
-          <IconButton
-            iconSrc="/assets/icons/moon.svg"
-            className="hidden rotate-0 scale-0 transition-all dark:flex dark:-rotate-90 dark:scale-100"
-          />
+          <button className="flex h-9 w-9  items-center justify-center rounded-md bg-purple-2 text-purple-1  transition-all dark:hidden dark:-rotate-90 dark:scale-0">
+            <Sun className="h-4 w-4 " />
+          </button>
+          <button className="hidden h-9 w-9 rotate-0 scale-0 items-center justify-center rounded-md bg-purple-2 text-purple-1  transition-all dark:flex dark:-rotate-90 dark:scale-100">
+            <Moon className="h-4 w-4" />
+          </button>
         </>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+      <DropdownMenuContent
+        align="end"
+        className="rounded-sm border-none bg-accent p-2.5 text-sm font-normal shadow-lg"
+      >
+        <DropdownMenuItem
+          className="flex w-full cursor-pointer items-center justify-start gap-2 rounded px-3 py-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700"
+          onClick={() => setTheme("light")}
+        >
+          <Sun className="h-4 w-4" />
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem
+          className="flex w-full cursor-pointer items-center justify-start gap-2 rounded px-3 py-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700"
+          onClick={() => setTheme("dark")}
+        >
+          <Moon className="h-4 w-4" />
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          className="flex w-full cursor-pointer items-center justify-start gap-2 rounded px-3 py-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700"
+          onClick={() => setTheme("system")}
+        >
+          <LaptopMinimal className="h-4 w-4" />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

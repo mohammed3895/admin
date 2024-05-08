@@ -5,7 +5,8 @@ import { ScrollArea } from "../ui/scroll-area";
 import Message from "./Message";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { ImageIcon, Mic, Mic2 } from "lucide-react";
+import { ArrowLeft, ImageIcon, Mic } from "lucide-react";
+import Link from "next/link";
 
 export interface MessageProps {
   message: (typeof CONVERSATIONS)[number];
@@ -13,10 +14,16 @@ export interface MessageProps {
 
 const MessagePreview = ({ message }: MessageProps) => {
   return (
-    <div className="relative m-auto flex h-auto w-full flex-col items-center justify-center gap-4 rounded-md bg-card p-4">
-      <div className="mt-auto flex h-[72vh] w-full grow flex-col justify-start gap-4 md:h-[80vh]">
+    <div className="relative m-auto flex h-auto w-full flex-col items-center justify-between gap-4 rounded-md">
+      <div className="mb-3 mt-auto flex h-[70vh] w-full grow flex-col justify-start gap-4 md:h-[82vh]">
         <div className="flex h-20 w-full flex-initial items-center justify-between">
-          <div className="flex items-center justify-start gap-3.5">
+          <div className="flex items-center justify-start gap-3.5 px-4">
+            <Link
+              href="/messages"
+              className="flex h-8 w-8 items-center justify-center rounded-md"
+            >
+              <ArrowLeft />
+            </Link>
             <div className="relative h-12 w-12 rounded-md">
               <Image
                 src={message.sender.avatarUrl}
@@ -39,15 +46,15 @@ const MessagePreview = ({ message }: MessageProps) => {
         </div>
 
         {/* CONVERSATION BODY */}
-        <ScrollArea className="absolute bottom-0 top-0 flex h-full w-full flex-auto grow flex-col-reverse justify-start py-4">
+        <ScrollArea className="absolute bottom-0 top-0 flex h-full w-full flex-auto grow flex-col justify-end self-end p-4">
           {message.messages.map((message, i) => (
             <Message message={message} key={i} />
           ))}
         </ScrollArea>
 
         {/* TOOL BAR */}
-        <div className="h-16 w-full flex-initial rounded-md bg-accent">
-          <div className="flex h-full w-full items-center justify-between px-4">
+        <div className="h-16 w-full flex-initial px-4">
+          <div className="flex h-full w-full items-center justify-between rounded-md bg-accent px-4">
             <Input
               className="w-1/2 border-none bg-transparent px-2 tracking-wide"
               placeholder="Type a Message ..."

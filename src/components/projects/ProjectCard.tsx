@@ -23,12 +23,12 @@ const ProjectCard = ({ project }: ProjectProps) => {
   }
 
   return (
-    <Card className="rounded-md border border-none py-2.5 shadow-none duration-300 animate-in dark:bg-accent">
+    <Card className="rounded-md border border-border bg-transparent py-2.5 shadow-none duration-300 animate-in">
       <CardContent>
         <div className="flex w-full flex-col items-center gap-3">
           <div className="flex w-full items-start justify-between gap-3 pt-3">
             <Progress
-              className="h-1.5 w-10 bg-input text-green-1"
+              className="h-1.5 w-10 bg-input text-green-1 dark:bg-neutral-800"
               indicatorBg={getProgressColor(task)}
               value={task * 10}
               max={tasksNum * 10}
@@ -63,19 +63,19 @@ const ProjectCard = ({ project }: ProjectProps) => {
 
           <div className="mt-1.5 flex w-full items-center justify-center gap-px">
             {project.users.slice(0, 3).map((user, i) => (
-              <div className="h-5 w-5 rounded-md md:h-6 md:w-6 " key={i}>
+              <div className="h-5 w-5 rounded-sm md:h-6 md:w-6 " key={i}>
                 <Image
                   src={user.image}
                   alt=""
                   width={50}
                   height={50}
-                  className="h-full w-full rounded-md object-cover"
+                  className="h-full w-full rounded-sm object-cover"
                 />
               </div>
             ))}
 
             {usersNum - 3 > 0 && (
-              <div className="flex h-5 w-5 items-center justify-center rounded-md bg-input text-xs text-muted-foreground md:h-6 md:w-6">
+              <div className="flex h-5 w-5 items-center justify-center rounded-sm bg-input text-xs text-muted-foreground dark:bg-neutral-700 md:h-6 md:w-6">
                 +{usersNum - 3}
               </div>
             )}

@@ -36,21 +36,21 @@ const DeskTabMobile = ({ project }: ProjectProps) => {
         <TabsContent value="pending">
           <div className="flex flex-col gap-3">
             {inProgressTasks.map((task, i) => (
-              <KanbanDeskCard i={i} project={project} key={i} />
+              <KanbanDeskCard loading i={i} project={project} key={i} />
             ))}
           </div>
         </TabsContent>
         <TabsContent value="onhold">
           <div className="flex flex-col gap-3">
             {todoTasks.map((task, i) => (
-              <KanbanDeskCard i={i} project={project} key={i} />
+              <KanbanDeskCard loading i={i} project={project} key={i} />
             ))}
           </div>
         </TabsContent>
         <TabsContent value="done">
           <div className="flex flex-col gap-3">
             {doneTasks.map((task, i) => (
-              <KanbanDeskCard i={i} project={project} key={i} />
+              <KanbanDeskCard loading i={i} project={project} key={i} />
             ))}
           </div>
         </TabsContent>

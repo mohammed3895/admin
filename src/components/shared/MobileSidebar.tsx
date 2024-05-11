@@ -3,8 +3,8 @@ import NavItems from "./NavItems";
 
 const MobileSidebar = () => {
   return (
-    <div className="fixed bottom-0 z-50 h-16 w-full border-t bg-background shadow-md md:hidden">
-      <div className="flex h-full w-full items-center justify-between gap-3 px-2">
+    <div className="fixed bottom-0 z-50 h-16 w-full border-t bg-background shadow-none md:hidden">
+      <div className="flex h-full w-full items-center justify-between gap-3">
         <NavItems tooltipSide="top" />
       </div>
     </div>

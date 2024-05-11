@@ -106,6 +106,7 @@ const BarChartComponent = () => {
           tickMargin={14}
         />
         {/* <YAxis /> */}
+
         <Tooltip content={<CustomTooltip />} cursor={{ fill: "transparent" }} />
       </BarChart>
     </ResponsiveContainer>

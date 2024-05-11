@@ -6,12 +6,12 @@ import Link from "next/link";
 
 const SidePanel = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="hidden h-dvh flex-col justify-between gap-6 border-r border-dashed bg-background px-4 py-6 dark:border-zinc-700 md:w-72 lg:flex lg:w-80 lg:px-6">
+    <div className="hidden h-dvh w-[30rem] flex-col justify-between gap-6 overflow-hidden border-r border-dashed bg-background px-3 py-6 dark:border-zinc-700 lg:flex">
       {/* USER INFO */}
-      <div className="h-full w-full">
+      <div className=" w-full">
         <div className="flex flex-col items-start justify-start">
           <div className="mb-2.5 flex h-14 w-14 items-center justify-center rounded-lg bg-black-1 p-2 text-white dark:bg-gray-50 dark:text-black-1">
-            <h1 className="text-4xl font-bold">M</h1>
+            <h1 className="text-5xl font-medium">M</h1>
           </div>
           <p className="text-2xl font-semibold text-black-1 dark:text-gray-50">
             WELCOME,
@@ -25,7 +25,7 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       {/* UPDATES */}
       <div className="h-full w-full">
         <div className="flex h-full w-full flex-col">
-          <h2 className="mb-3 text-sm font-semibold capitalize text-black-1 dark:text-white md:text-base">
+          <h2 className="mb-3 text-sm font-medium capitalize text-black-1 dark:text-white md:text-base">
             Latest updates
           </h2>
           <div className="flex h-full flex-col gap-1.5 ">
@@ -38,25 +38,16 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       </div>
 
       {/* EVENTS */}
-      <div className="h-full w-full">
-        <h2 className="mb-3 text-base font-semibold capitalize text-black-1 dark:text-white">
+      <div className="h-fit w-full">
+        <h2 className="mb-3 text-base font-medium capitalize text-black-1 dark:text-white">
           Upcoming events
         </h2>
 
-        <ScrollArea className="flex h-[20vh] flex-col flex-wrap gap-3.5">
+        <div className="flex h-full w-full flex-col overflow-hidden">
           <UpcomingEventCard />
           <UpcomingEventCard />
-          <UpcomingEventCard />
-          <UpcomingEventCard />
-        </ScrollArea>
+        </div>
       </div>
-      {/* <Link
-        href="https://www.linkedin.com/in/mohammed-sameer-bb81b3151/"
-        target="_blank"
-        className="rounded-lg bg-green-2 p-4 text-lg font-black text-green-1"
-      >
-        Mohammed Sammeer
-      </Link> */}
     </div>
   );
 };

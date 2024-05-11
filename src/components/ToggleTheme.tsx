@@ -16,10 +16,10 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <>
-          <button className="flex h-9 w-9  items-center justify-center rounded-md bg-purple-2 text-purple-1  transition-all dark:hidden dark:-rotate-90 dark:scale-0">
+          <button className="flex h-9 w-9  items-center justify-center rounded-md bg-accent text-purple-1  transition-all dark:hidden dark:-rotate-90 dark:scale-0">
             <Sun className="h-4 w-4 " />
           </button>
-          <button className="hidden h-9 w-9 rotate-0 scale-0 items-center justify-center rounded-md bg-purple-2 text-purple-1  transition-all dark:flex dark:-rotate-90 dark:scale-100">
+          <button className="hidden h-9 w-9 rotate-0 scale-0 items-center justify-center rounded-md bg-accent text-purple-1  transition-all dark:flex dark:-rotate-90 dark:scale-100">
             <Moon className="h-4 w-4" />
           </button>
         </>

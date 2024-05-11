@@ -32,9 +32,10 @@ export interface MessageProps {
         timestamp: Date;
         url?: string;
       };
+  reversed: boolean;
 }
 
-const Message = ({ message }: MessageProps) => {
+const Message = ({ message, reversed }: MessageProps) => {
   return (
     <div className="my-2.5 flex h-full w-full items-center justify-start self-end py-2 duration-300 animate-in fade-in-0">
       <div

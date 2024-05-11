@@ -19,7 +19,7 @@ const DeskTab = ({ project }: ProjectProps) => {
 
   return (
     <>
-      <div className="hidden h-full min-h-svh w-full flex-1 items-start justify-between gap-6 overflow-x-auto md:flex">
+      <div className="hidden h-full min-h-svh w-full flex-1 items-start justify-between gap-6 overflow-x-auto px-4 md:flex">
         <div className="h-full w-full rounded-lg border border-dashed p-4">
           <div className="mb-5 flex items-center justify-between">
             <h1 className="text-sm font-bold capitalize">To Do</h1>

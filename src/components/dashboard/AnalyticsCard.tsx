@@ -10,6 +10,7 @@ interface AnalyticsCardProps {
   actions: "button" | "calendar";
   btnText?: string;
   className?: string;
+  loading: boolean;
   onClick?: () => void;
 }
 
@@ -18,13 +19,15 @@ const AnalyticsCard = ({
   children,
   title,
   btnText,
+  loading,
   className,
   onClick,
 }: AnalyticsCardProps) => {
   return (
     <Card
       className={cn(
-        " h-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0 dark:border-none dark:bg-neutral-800",
+        " invisible h-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0 duration-500 ease-linear animate-in fade-in-0 dark:border-none dark:bg-neutral-800",
+        { visible: loading },
         className,
       )}
     >

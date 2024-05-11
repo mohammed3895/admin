@@ -15,13 +15,15 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="flex h-screen w-full">
       <MobileSidebar />
-      <div className="hidden h-screen border-r md:flex">
+      <div className="hidden h-dvh w-20 items-center md:flex md:flex-col">
         <Sidebar />
       </div>
       <SidePanel />
       <ScrollArea className="m-0 flex h-full w-full p-0 md:container md:p-4">
-        <Navbar />
-        {children}
+        <div className="h-full w-full">
+          <Navbar />
+          {children}
+        </div>
       </ScrollArea>
     </section>
   );

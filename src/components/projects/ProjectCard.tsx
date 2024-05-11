@@ -4,8 +4,9 @@ import { Progress } from "../ui/progress";
 import Image from "next/image";
 import ProjectCardMenu from "./ProjectCardMenu";
 import { type ProjectProps } from "./tabs/TasksTab";
+import { cn } from "~/lib/utils";
 
-const ProjectCard = ({ project }: ProjectProps) => {
+const ProjectCard = ({ project, loading }: ProjectProps) => {
   const usersNum = project.users.length;
   const tasksNum = project.tasks?.length;
   const tasksCompleted = project.tasks?.filter(function (el) {
@@ -23,7 +24,12 @@ const ProjectCard = ({ project }: ProjectProps) => {
   }
 
   return (
-    <Card className="rounded-md border border-border bg-transparent py-2.5 shadow-none duration-300 animate-in">
+    <Card
+      className={cn(
+        "invisible rounded-md border border-border bg-transparent py-2.5 shadow-none duration-500 ease-linear animate-in fade-in-0",
+        { visible: loading },
+      )}
+    >
       <CardContent>
         <div className="flex w-full flex-col items-center gap-3">
           <div className="flex w-full items-start justify-between gap-3 pt-3">

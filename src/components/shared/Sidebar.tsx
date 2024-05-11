@@ -6,10 +6,10 @@ import NavItems from "./NavItems";
 
 const Sidebar = () => {
   return (
-    <div className="ml-2 h-full w-full bg-background py-3.5">
-      <div className="flex h-full flex-col items-center justify-between gap-5">
-        <div className="flex flex-col items-center gap-5">
-          <div className="mb-4 py-4">
+    <div className="hidden h-screen w-full flex-col items-center border-r bg-background py-3.5 md:flex">
+      <div className="flex h-full w-full flex-col items-center justify-between gap-5">
+        <div className="flex w-full flex-col items-center justify-center gap-5">
+          <div className="mb-2 py-4">
             <Link
               href="/"
               className="text-center text-lg font-bold text-primary"
@@ -23,7 +23,9 @@ const Sidebar = () => {
               />
             </Link>
           </div>
-          <NavItems tooltipSide="right" />
+          <div className="flex w-full flex-col items-center">
+            <NavItems tooltipSide="right" />
+          </div>
         </div>
 
         {/* <div className="-rotate-90 text-nowrap text-sm font-semibold">

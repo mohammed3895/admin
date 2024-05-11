@@ -21,7 +21,7 @@ export default function RootLayout({
       <TRPCReactProvider>
         <ThemeProvider attribute="class" defaultTheme="system">
           <body className={`${kanit.className} bg-background text-black-1`}>
-            <main className="flex h-full min-h-screen  w-full flex-1 antialiased">
+            <main className="flex h-full max-h-screen  w-full antialiased">
               {children}
             </main>
             <Toaster />

@@ -1,7 +1,13 @@
+"use client";
 import AnalyticsCard from "~/components/dashboard/AnalyticsCard";
 import EventsCard from "~/components/dashboard/EventsCard";
 import { eventsData } from "~/constants/events";
 import dynamic from "next/dynamic";
+import Loading from "./loading";
+import { useEffect, useState } from "react";
+import WelcomeBanner from "~/components/dashboard/WelcomeBanner";
+import Image from "next/image";
+import ProfileCard from "~/components/shared/ProfileCard";
 
 const AreaChartComponent = dynamic(
   () => import("~/components/dashboard/charts/AreaChart"),
@@ -9,15 +15,30 @@ const AreaChartComponent = dynamic(
 const BarChartComponent = dynamic(
   () => import("~/components/dashboard/charts/BarChart"),
 );
-const RadialChart = dynamic(
+const RadialChartComponent = dynamic(
   () => import("~/components/dashboard/charts/RadialChart"),
 );
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 300);
+  }, []);
+
+  if (loading) return <Loading />;
+
   return (
-    <div className="h-full w-full">
-      <div className="md:px0 grid h-full w-full  grid-cols-1 gap-3.5 px-3 pb-16 pt-4  md:px-0 lg:grid-cols-2">
+    <div className="mb-16 h-full w-full p-4">
+      <div className="mb-8 mt-4 flex w-full flex-col-reverse items-center gap-5 md:flex-row">
+        <WelcomeBanner />
+        <ProfileCard />
+      </div>
+      <div className="md:px0 grid h-full w-full  grid-cols-1 gap-3.5  md:px-0 lg:grid-cols-2">
         <AnalyticsCard
+          loading
           title="Latest Events"
           actions="button"
           btnText="View All"
@@ -29,13 +50,18 @@ export default function Home() {
             ))}
           </div>
         </AnalyticsCard>
-        <AnalyticsCard title="Your sales" actions="calendar">
-          <RadialChart />
+        <AnalyticsCard loading title="Your sales" actions="calendar">
+          <RadialChartComponent />
         </AnalyticsCard>
-        <AnalyticsCard title="Income breakdown" actions="calendar">
+        <AnalyticsCard
+          loading
+          title="Income breakdown"
+          actions="calendar"
+          className="col-span-1"
+        >
           <BarChartComponent />
         </AnalyticsCard>
-        <AnalyticsCard title="Income Details" actions="calendar">
+        <AnalyticsCard loading title="Income Details" actions="calendar">
           <AreaChartComponent />
         </AnalyticsCard>
       </div>

@@ -1,14 +1,21 @@
 import React from "react";
+import MoreBtn from "../buttons/MoreBtn";
 
 const UpcomingEventCard = () => {
   return (
-    <div className="mb-2 mt-1 flex h-20 w-full flex-col items-start justify-start gap-2.5 rounded-lg bg-purple-2 p-4">
-      <div className="flex w-full items-center justify-start gap-2.5">
-        <div className="h-2 w-2 rounded-full bg-yellow-1" />
-        <p className="text-xs font-medium text-primary">05:00 AM</p>
+    <div className="my-1 flex w-full flex-col items-start justify-start gap-1 rounded-lg bg-purple-2 px-4 py-5">
+      <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-start gap-2.5">
+          <div className="h-2 w-2 rounded-full bg-green-1" />
+          <p className="text-xs font-normal text-primary">05:00 AM</p>
+        </div>
+        <MoreBtn />
       </div>
-      <h1 className="text-xs font-semibold text-muted-foreground">
+      <h1 className="text-base font-normal tracking-tight text-black-1 dark:text-white">
         Meeting with client
+      </h1>
+      <h1 className="text-sm font-light text-muted-foreground">
+        You have Meeting with new client at 9:30 AM
       </h1>
     </div>
   );

@@ -19,33 +19,30 @@ const NavItems = ({
   const pathname = usePathname();
 
   return (
-    <div className="flex justify-between gap-3.5 md:flex-col md:justify-start">
+    <div className="flex h-full w-full items-center justify-between gap-1 md:flex-col md:justify-start">
       <TooltipProvider delayDuration={0}>
         {SidebarTabs.map((tab, i) => (
           <Tooltip key={i}>
             <TooltipTrigger asChild>
               <div
                 className={cn(
-                  "flex h-full w-full items-center justify-between border-t-2 border-transparent transition-all duration-500 ease-in-out md:w-16 md:justify-center md:border-r-2 md:border-t-0",
+                  "flex h-full w-full items-center justify-center border-t border-transparent transition-all duration-500 ease-in-out md:w-20 md:justify-center md:border-r md:border-t-0",
                   {
-                    "border-primary": tab.path === pathname.split("/")[1],
+                    "border-purple-1": tab.path === pathname.split("/")[1],
                   },
                 )}
               >
                 <Link
                   href={`/${tab.path}`}
                   className={cn(
-                    "flex h-10 w-10 items-center justify-center rounded-md bg-transparent transition-all duration-500",
-                    { "bg-purple-2": tab.path === pathname.split("/")[1] },
+                    "flex h-10 w-10 items-center justify-center rounded bg-transparent text-muted-foreground transition-all duration-500 hover:text-purple-1",
+                    {
+                      "bg-purple-2 text-purple-1":
+                        tab.path === pathname.split("/")[1],
+                    },
                   )}
                 >
-                  <Image
-                    src={tab.icon}
-                    alt={tab.name}
-                    width={24}
-                    height={24}
-                    className="h-6 w-6"
-                  />
+                  <tab.icon strokeWidth={1.5} className="h-5 w-5 " />
                 </Link>
               </div>
             </TooltipTrigger>

@@ -14,17 +14,17 @@ export interface MessageProps {
 
 const MessagePreview = ({ message }: MessageProps) => {
   return (
-    <div className="relative m-auto flex h-auto w-full flex-col items-center justify-between gap-4 rounded-md">
-      <div className="mb-3 mt-auto flex h-[70vh] w-full grow flex-col justify-start gap-4 md:h-[82vh]">
-        <div className="flex h-20 w-full flex-initial items-center justify-between">
-          <div className="flex items-center justify-start gap-3.5 px-4">
+    <div className="relative my-auto flex h-full w-full flex-col items-center justify-between gap-4 rounded-md p-4 shadow-lg">
+      <div className="flex h-full w-full grow flex-col justify-start gap-4">
+        <div className="flex h-20 w-full items-center justify-between">
+          <div className="flex items-start justify-start gap-3.5 px-4">
             <Link
               href="/messages"
-              className="flex h-8 w-8 items-center justify-center rounded-md"
+              className="flex h-8 w-8 items-center justify-center rounded-md bg-accent"
             >
-              <ArrowLeft />
+              <ArrowLeft className="h-4 w-4 text-muted-foreground" />
             </Link>
-            <div className="relative h-12 w-12 rounded-md">
+            <div className="relative h-10 w-10 rounded-md md:h-12 md:w-12">
               <Image
                 src={message.sender.avatarUrl}
                 alt=""
@@ -46,9 +46,9 @@ const MessagePreview = ({ message }: MessageProps) => {
         </div>
 
         {/* CONVERSATION BODY */}
-        <ScrollArea className="absolute bottom-0 top-0 flex h-full w-full flex-auto grow flex-col justify-end self-end p-4">
-          {message.messages.map((message, i) => (
-            <Message message={message} key={i} />
+        <ScrollArea className="flex h-full w-full flex-col-reverse justify-end self-start p-4">
+          {message.messages.reverse().map((message, i) => (
+            <Message reversed message={message} key={i} />
           ))}
         </ScrollArea>
 

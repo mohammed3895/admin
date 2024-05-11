@@ -1,37 +1,47 @@
+import {
+  BriefcaseBusiness,
+  Clipboard,
+  Cog,
+  LayoutDashboard,
+  Mails,
+  Trello,
+  UserRound,
+} from "lucide-react";
+
 export const SidebarTabs = [
   {
     name: "Dashboard",
     path: "",
-    icon: "/assets/icons/dashboard-svgrepo-com.svg",
+    icon: LayoutDashboard,
   },
   {
     name: "Projects",
     path: "projects",
-    icon: "/assets/icons/briefcase-svgrepo-com.svg",
+    icon: BriefcaseBusiness,
   },
   {
     name: "Tasks",
     path: "tasks",
-    icon: "/assets/icons/document-text-svgrepo-com.svg",
+    icon: Clipboard,
   },
   {
     name: "Kanban",
     path: "kanban",
-    icon: "/assets/icons/calendar-alt-svgrepo-com.svg",
+    icon: Trello,
   },
   {
     name: "Messages",
     path: "messages",
-    icon: "/assets/icons/annotation-svgrepo-com.svg",
+    icon: Mails,
   },
   {
     name: "Settings",
     path: "settings",
-    icon: "/assets/icons/cog-svgrepo-com.svg",
+    icon: Cog,
   },
   {
     name: "Profile",
     path: "profile",
-    icon: "/assets/icons/user-square-svgrepo-com.svg",
+    icon: UserRound,
   },
 ];

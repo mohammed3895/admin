@@ -51,13 +51,13 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
 
   return (
     <div defaultValue="tasks">
-      <ul className="mb-6 flex h-full flex-wrap justify-start gap-1 bg-transparent">
+      <ul className="mx-2 mb-6 flex h-full w-fit flex-wrap justify-start gap-1.5 rounded-sm bg-accent p-1">
         {/* <ScrollArea className="flex w-full items-center"> */}
         {tabList.map((tab, i) => (
           <div
             key={i}
             className={cn(
-              "flex cursor-pointer items-center justify-center gap-1.5 rounded bg-purple-2 px-2.5 py-1 text-purple-1 transition-colors ease-in-out hover:bg-purple-1 hover:text-white",
+              "flex cursor-pointer items-center justify-center gap-1.5 rounded bg-background px-3.5 py-2 text-purple-1 transition-colors ease-in-out hover:bg-purple-1 hover:text-white",
               { "bg-purple-1 text-white": activeTab === i },
             )}
             onClick={() => setActiveTab(i)}

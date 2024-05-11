@@ -47,7 +47,7 @@ const data = [
 
 const AreaChartComponent = () => {
   return (
-    <ResponsiveContainer width="100%" height={450} className="m-0 p-4">
+    <ResponsiveContainer width="100%" height={450} className="">
       <LineChart data={data} className="m-0 p-0">
         {/* <defs>
           <linearGradient id="color" x1="0" x2="0" y1="0" y2="1">
@@ -63,8 +63,6 @@ const AreaChartComponent = () => {
           strokeWidth={3}
           fill="url(#color)"
           className="m-0 p-0"
-          strokeLinecap="round"
-          strokeLinejoin="round"
           type="monotone"
         />
         <Line
@@ -84,9 +82,9 @@ const AreaChartComponent = () => {
           tickLine={false}
           axisLine={false}
           // tickMargin={14}
-          padding={{ right: 4, left: 4 }}
         />
         {/* <YAxis /> */}
+
         <Tooltip content={<CustomTooltip />} />
       </LineChart>
     </ResponsiveContainer>

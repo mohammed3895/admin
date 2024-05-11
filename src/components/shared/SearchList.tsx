@@ -9,7 +9,7 @@ interface Props {
 
 export default function SearchList({ filteredProjects }: Props) {
   const filtered = filteredProjects.map((project) => (
-    <SearchCard key={project.id} project={project} />
+    <SearchCard loading key={project.id} project={project} />
   ));
   return (
     <div className="flex h-full w-full flex-col gap-1.5 rounded-md bg-background p-4 duration-300 animate-in">

@@ -71,7 +71,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
       {tabsList.map((tab, i) => (
         <div key={i} className={cn("hidden w-full", { flex: activeTab === i })}>
           <div className="w-full">
-            <tab.component project={project!} />
+            <tab.component loading project={project!} />
           </div>
         </div>
       ))}

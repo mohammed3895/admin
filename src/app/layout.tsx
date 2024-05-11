@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <TRPCReactProvider>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <body className={`${kanit.className} bg-background text-black-1`}>
+          <body
+            className={`${kanit.className} m-0 bg-background p-0 text-black-1 transition-colors duration-300 ease-in-out`}
+          >
             <main className="flex h-full max-h-screen  w-full antialiased">
               {children}
             </main>

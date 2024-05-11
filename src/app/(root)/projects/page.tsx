@@ -19,7 +19,7 @@ const ProjectsPage = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="mb-16 flex h-full w-full p-4">
+    <div className="mb-16 mt-8 flex h-full w-full p-4 md:p-0">
       <div className="grid w-full grid-cols-1 gap-2.5 rounded-lg md:grid-cols-2 xl:grid-cols-4">
         {projects.map((project, i) => (
           <ProjectCard loading key={i} project={project} />

@@ -31,8 +31,8 @@ export default function Home() {
   if (loading) return <Loading />;
 
   return (
-    <div className="mb-16 h-full w-full p-4">
-      <div className="mb-8 mt-4 flex w-full flex-col-reverse items-center gap-5 md:flex-row">
+    <div className="mb-16 h-full w-full">
+      <div className="mb-8 mt-4 flex w-full flex-col items-center gap-5 border-b pb-8 md:flex-row">
         <WelcomeBanner />
         <ProfileCard />
       </div>

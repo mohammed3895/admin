@@ -45,7 +45,7 @@ export const CustomLegend = (props: props) => {
   const { payload } = props;
 
   return (
-    <div className="flex w-full items-center justify-between border-t border-dashed pt-3.5">
+    <div className="flex w-full items-center justify-between border-t border-dashed border-muted-foreground pt-3.5 dark:border-zinc-700">
       {payload?.map((entry, i) => (
         <div
           className="flex h-full w-full items-center justify-center gap-1.5"
@@ -55,7 +55,7 @@ export const CustomLegend = (props: props) => {
             className="h-3 w-3 rounded-full"
             style={{ backgroundColor: entry.color }}
           />
-          <h2 className="text-base font-normal capitalize tracking-tight text-black-1">
+          <h2 className="text-base font-normal capitalize tracking-tight text-black-1 dark:text-white">
             {entry.value}
           </h2>
         </div>
@@ -85,7 +85,6 @@ const RadialChartComponent = () => {
           height={300}
           fillRule="nonzero"
           type="stack"
-          background
           radius={10}
           strokeLinecap="round"
           strokeLinejoin="round"

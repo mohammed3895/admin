@@ -51,18 +51,16 @@ const ProjectCard = ({ project, loading }: ProjectProps) => {
             <ProjectCardMenu id={project.id} />
           </div>
           <div className="flex w-full flex-col items-center">
-            <h3 className="tesxt-md font-semibold capitalize md:text-lg lg:text-lg">
-              {project.title}
-            </h3>
-            <p className="text-sm font-medium text-muted-foreground">
+            <h3 className="text-lg font-medium capitalize">{project.title}</h3>
+            <p className="text-sm font-normal text-muted-foreground">
               {project.role}
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-base font-semibold">
+            <h3 className="text-lg font-medium">
               {task} / {tasksNum}
             </h3>
-            <p className="text-xs font-medium text-muted-foreground">
+            <p className="text-sm font-normal text-muted-foreground">
               Tasks Completed
             </p>
           </div>

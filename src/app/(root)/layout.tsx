@@ -20,7 +20,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
       <SidePanel />
       <ScrollArea className="m-0 flex h-full w-full p-0 md:container md:p-4">
-        <div className="m-0 h-full w-full p-0">
+        <div className="m-0 h-full w-full p-4 md:p-0">
           <Navbar />
           {children}
         </div>

@@ -45,10 +45,10 @@ export const CustomLegend = (props: props) => {
   const { payload } = props;
 
   return (
-    <div className="flex w-full items-center justify-between border-t border-dashed border-muted-foreground pt-3.5 dark:border-zinc-700">
+    <div className="flex w-full items-center justify-center gap-4 border-t border-dashed pt-3.5 dark:border-zinc-700">
       {payload?.map((entry, i) => (
         <div
-          className="flex h-full w-full items-center justify-center gap-1.5"
+          className="flex h-full items-center justify-center gap-1.5"
           key={i}
         >
           <div

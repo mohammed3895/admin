@@ -14,7 +14,7 @@ const MessageDetailsPage = ({ params }: ParamsProp) => {
   });
 
   return (
-    <div className="relative mb-auto flex h-[90%] w-full flex-col justify-center overflow-hidden rounded-lg p-4">
+    <div className="relative flex h-full w-full flex-col justify-center overflow-hidden rounded-lg pb-20">
       <div className="my-auto h-full w-full">
         <MessagePreview message={message!} />
       </div>

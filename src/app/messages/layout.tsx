@@ -8,7 +8,9 @@ const MessagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-dvh w-full">
       <MobileSidebar />
-      <Sidebar />
+      <div className="hidden h-dvh w-20 items-center md:flex md:flex-col">
+        <Sidebar />
+      </div>
       <SidePanel />
       <section className="h-full w-full overflow-hidden p-4">
         <Navbar />

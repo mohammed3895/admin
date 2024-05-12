@@ -14,17 +14,17 @@ export interface MessageProps {
 
 const MessagePreview = ({ message }: MessageProps) => {
   return (
-    <div className="relative my-auto flex h-full w-full flex-col items-center justify-between gap-4 rounded-md p-4 shadow-lg">
+    <div className="relative my-auto mt-6 flex h-full w-full flex-col items-center justify-between">
       <div className="flex h-full w-full grow flex-col justify-start gap-4">
-        <div className="flex h-20 w-full items-center justify-between">
-          <div className="flex items-start justify-start gap-3.5 px-4">
+        <div className="flex h-fit w-full items-center justify-between">
+          <div className="flex items-start justify-start gap-3.5">
             <Link
               href="/messages"
-              className="flex h-8 w-8 items-center justify-center rounded-md bg-accent"
+              className="flex h-7 w-7 items-center justify-center rounded-md bg-accent"
             >
               <ArrowLeft className="h-4 w-4 text-muted-foreground" />
             </Link>
-            <div className="relative h-10 w-10 rounded-md md:h-12 md:w-12">
+            <div className="relative h-9 w-9 rounded-md md:h-12 md:w-12">
               <Image
                 src={message.sender.avatarUrl}
                 alt=""
@@ -46,14 +46,14 @@ const MessagePreview = ({ message }: MessageProps) => {
         </div>
 
         {/* CONVERSATION BODY */}
-        <ScrollArea className="flex h-full w-full flex-col-reverse justify-end self-start p-4">
+        <ScrollArea className="flex h-full w-full flex-col-reverse justify-end self-start">
           {message.messages.reverse().map((message, i) => (
             <Message reversed message={message} key={i} />
           ))}
         </ScrollArea>
 
         {/* TOOL BAR */}
-        <div className="h-16 w-full flex-initial px-4">
+        <div className="mb-16 h-16 w-full flex-initial">
           <div className="flex h-full w-full items-center justify-between rounded-md bg-accent px-4">
             <Input
               className="w-1/2 border-none bg-transparent px-2 tracking-wide"

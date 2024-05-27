@@ -94,7 +94,7 @@ export const PROJECTS = [
       {
         name: "John Doe",
         email: "john.doe@example.com",
-        image: "https://randomuser.me/api/portraits/women/30.jpg",
+        image: "https://randomuser.me/api/portraits/women/20.jpg",
       },
       {
         name: "John Doe",
@@ -115,6 +115,31 @@ export const PROJECTS = [
         name: "John Doe",
         email: "john.doe@example.com",
         image: "https://randomuser.me/api/portraits/men/34.jpg",
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        image: "https://randomuser.me/api/portraits/women/3.jpg",
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        image: "https://randomuser.me/api/portraits/men/4.jpg",
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        image: "https://randomuser.me/api/portraits/men/5.jpg",
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        image: "https://randomuser.me/api/portraits/women/17.jpg",
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        image: "https://randomuser.me/api/portraits/men/9.jpg",
       },
     ],
   },

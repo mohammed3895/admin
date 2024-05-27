@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { ClipboardPlus, Info, LucideMoreHorizontal, Trash } from "lucide-react";
-import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
+import { Info, Trash } from "lucide-react";
 import AddTask from "./AddTask";
 import MoreBtn from "../buttons/MoreBtn";
+import Link from "next/link";
 
 const ProjectCardMenu = ({ id }: { id?: string }) => {
-  const router = useRouter();
-
   return (
     <Popover>
       <PopoverTrigger>
@@ -18,21 +15,17 @@ const ProjectCardMenu = ({ id }: { id?: string }) => {
       <PopoverContent className="w-36 rounded-lg border-none bg-secondary">
         <div className="flex h-full w-full flex-col gap-1">
           <AddTask />
-          <Button
-            variant="ghost"
-            className="flex w-full scroll-m-20 items-center justify-start gap-2 text-sm font-normal uppercase tracking-tight text-zinc-800 hover:bg-zinc-200 dark:text-zinc-100 dark:hover:bg-zinc-700"
-            onClick={() => router.push(`/projects/${id}`)}
+          <Link
+            href={`/projects/${id}`}
+            className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-sm font-normal uppercase transition-all ease-in-out hover:bg-background hover:opacity-95 dark:text-white"
           >
-            <Info className="h-4 w-4" />
+            <Info size={20} strokeWidth={1.35} className="h-5 w-5" />
             Details
-          </Button>
-          <Button
-            variant="destructive"
-            className="flex w-full scroll-m-20 items-center justify-start gap-2 text-sm font-normal uppercase tracking-tight"
-          >
-            <Trash className="h-4 w-4" />
+          </Link>
+          <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-sm font-normal uppercase transition-all ease-in-out hover:bg-background hover:opacity-95 dark:text-white">
+            <Trash size={20} strokeWidth={1.35} className="h-5 w-5" />
             Delete
-          </Button>
+          </div>
         </div>
       </PopoverContent>
     </Popover>

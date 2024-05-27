@@ -32,7 +32,7 @@ interface Props {
 
 const ActivityCard = ({ activity }: Props) => {
   return (
-    <div className="mb-3 flex w-full flex-col items-start gap-1 rounded-xl border border-border p-4">
+    <div className="mb-3 flex w-full flex-col items-start gap-1 rounded-xl bg-background p-4">
       <div className="mb-1 flex w-full items-center justify-between">
         <h2 className="font-medium tracking-tight dark:text-gray-50">
           {activity.name}

@@ -19,10 +19,10 @@ const TasksTab = ({ project }: ProjectProps) => {
   }
 
   return (
-    <div className="flex w-full flex-col space-y-2 px-4">
-      <div className="flex h-16 w-full items-center justify-start gap-3  pb-3">
+    <div className="flex w-full flex-col space-y-2">
+      {/* <div className="flex h-16 w-full items-center justify-start gap-3  pb-3">
         <AddTask />
-      </div>
+      </div> */}
       {tasks.map((task, i) => (
         <TaskCard
           key={i}

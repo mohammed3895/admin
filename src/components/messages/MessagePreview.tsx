@@ -53,8 +53,8 @@ const MessagePreview = ({ message }: MessageProps) => {
         </ScrollArea>
 
         {/* TOOL BAR */}
-        <div className="mb-16 h-16 w-full flex-initial">
-          <div className="flex h-full w-full items-center justify-between rounded-md bg-accent px-4">
+        <div className="mb-16 h-14 w-full flex-initial md:h-16">
+          <div className="flex h-full w-full items-center justify-between rounded-md bg-accent px-2">
             <Input
               className="w-1/2 border-none bg-transparent px-2 tracking-wide"
               placeholder="Type a Message ..."
@@ -62,7 +62,9 @@ const MessagePreview = ({ message }: MessageProps) => {
             <div className="flex items-center justify-end gap-3 text-muted-foreground">
               <ImageIcon />
               <Mic />
-              <Button type="submit">Send</Button>
+              <Button type="submit" className="dark:text-white">
+                Send
+              </Button>
             </div>
           </div>
         </div>

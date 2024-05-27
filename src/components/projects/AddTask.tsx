@@ -20,7 +20,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 
-const AddTaskShcema = z.object({
+export const AddTaskShcema = z.object({
   name: z.string(),
   rounds: z.object({}),
 });
@@ -37,10 +37,10 @@ const AddTask = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="flex scroll-m-20 items-center justify-center gap-2 font-medium uppercase transition-all ease-in-out hover:opacity-95 dark:text-white">
-          <Plus className="h-5 w-5" />
+        <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-sm font-normal uppercase transition-all ease-in-out hover:bg-background hover:opacity-95 dark:text-white">
+          <Plus size={20} strokeWidth={1.35} className="h-5 w-5" />
           New Task
-        </Button>
+        </div>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>

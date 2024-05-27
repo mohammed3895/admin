@@ -65,9 +65,9 @@ const BarChartComponent = () => {
         data={data}
         barGap={5}
         barCategoryGap={5}
-        stackOffset="wiggle"
+        stackOffset="sign"
         className="m-0 p-0"
-        margin={{ top: 25 }}
+        margin={{ top: 12, left: 6, right: 6 }}
       >
         <Bar
           dataKey="sales"
@@ -76,8 +76,8 @@ const BarChartComponent = () => {
           stackId="stack"
           strokeWidth={5}
           type="stack"
-          radius={15}
-          barSize={18}
+          radius={12}
+          barSize={10}
           background={{
             fill: "transparent",
           }}
@@ -91,7 +91,7 @@ const BarChartComponent = () => {
           strokeWidth={5}
           type="stack"
           radius={15}
-          barSize={18}
+          barSize={14}
           background={{
             fill: "transparent",
           }}

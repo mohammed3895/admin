@@ -1,10 +1,18 @@
 "use client";
-import { Activity, FolderClosed, ListChecks, Settings } from "lucide-react";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowRight,
+  FolderClosed,
+  ListChecks,
+  Settings,
+} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import ActivityTab from "~/components/projects/tabs/ActivityTab";
 import FilesTab from "~/components/projects/tabs/FilesTab";
 import SettingsTab from "~/components/projects/tabs/SettingsTab";
 import TasksTab from "~/components/projects/tabs/TasksTab";
+import { Button } from "~/components/ui/button";
 import { PROJECTS } from "~/constants/projects";
 import { cn } from "~/lib/utils";
 interface ParamsProp {
@@ -38,7 +46,7 @@ const tabsList = [
 ];
 
 const ProjectDetailsPage = ({ params }: ParamsProp) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState<number>(0);
   const [tabList, setTabList] = useState<typeof tabsList>([]);
 
   const project = PROJECTS.find((el) => {
@@ -49,28 +57,60 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
     setTabList(tabsList);
   }, []);
 
+  const incrementTabHandeller = () => {
+    if (activeTab + 1 === tabList.length) {
+      return;
+    }
+
+    setActiveTab(activeTab + 1);
+  };
+  const decrementTabHandeller = () => {
+    if (activeTab === 0) {
+      return;
+    }
+
+    setActiveTab(activeTab - 1);
+  };
+
   return (
-    <div defaultValue="tasks">
-      <ul className="mx-2 mb-6 flex h-full w-fit flex-wrap justify-start gap-1.5 rounded-sm bg-accent p-1">
-        {/* <ScrollArea className="flex w-full items-center"> */}
+    <div>
+      <div className=" flex h-full w-full items-center justify-between gap-6 bg-background p-4">
         {tabList.map((tab, i) => (
           <div
             key={i}
             className={cn(
-              "flex cursor-pointer items-center justify-center gap-1.5 rounded bg-background px-3.5 py-2 text-purple-1 transition-colors ease-in-out hover:bg-purple-1 hover:text-white",
-              { "bg-purple-1 text-white": activeTab === i },
+              "hidden w-fit cursor-pointer items-center justify-start gap-1.5 py-2 text-purple-1",
+              { flex: activeTab === i },
             )}
-            onClick={() => setActiveTab(i)}
           >
-            <tab.icon size={16} />
-            <span className="text-xs">{tab.name.toUpperCase()}</span>
+            <tab.icon size={20} className="" />
+            <span className="text-sm font-medium tracking-tight">
+              {tab.name.toUpperCase()}
+            </span>
           </div>
         ))}
-        {/* </ScrollArea> */}
-      </ul>
+        <div className="flex items-center justify-end gap-2">
+          <button
+            onClick={decrementTabHandeller}
+            className={cn(
+              "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+            )}
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <button
+            onClick={incrementTabHandeller}
+            className={cn(
+              "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+            )}
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
       {tabsList.map((tab, i) => (
         <div key={i} className={cn("hidden w-full", { flex: activeTab === i })}>
-          <div className="w-full">
+          <div className="w-full bg-accent px-4 py-6 md:rounded-md">
             <tab.component loading project={project!} />
           </div>
         </div>

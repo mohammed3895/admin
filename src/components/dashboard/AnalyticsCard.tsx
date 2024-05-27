@@ -24,16 +24,16 @@ const AnalyticsCard = ({
   onClick,
 }: AnalyticsCardProps) => {
   return (
-    <Card
+    <div
       className={cn(
-        " invisible h-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0  animate-in fade-in-0 dark:border-none dark:bg-neutral-800",
+        "invisible h-full w-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0  animate-in fade-in-0 dark:border-none dark:bg-neutral-800",
         { visible: loading },
         className,
       )}
     >
-      <CardHeader className="">
-        <div className="flex w-full items-center justify-between">
-          <h2 className="text-nowrap text-base font-medium capitalize text-black-1 dark:text-white lg:text-lg">
+      <CardHeader className="p-0">
+        <div className="flex w-full items-center justify-between p-3.5">
+          <h2 className="text-nowrap text-sm font-normal capitalize text-black-1 dark:text-white lg:text-base">
             {title}
           </h2>
           <div>
@@ -54,7 +54,7 @@ const AnalyticsCard = ({
       <CardContent className="w-full p-0">
         <div className="flex h-full w-full items-center">{children}</div>
       </CardContent>
-    </Card>
+    </div>
   );
 };
 

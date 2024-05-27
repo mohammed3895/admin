@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const SidePanel = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="hidden h-dvh w-[30rem] flex-col justify-between gap-6 overflow-hidden border-r border-dashed bg-background px-3 py-6 dark:border-zinc-700 lg:flex">
+    <div className="hidden h-dvh w-[24rem] flex-col justify-between gap-6 overflow-hidden border-r border-dashed bg-background px-3 py-6 dark:border-zinc-700 xl:flex xl:w-[26rem]">
       {/* USER INFO */}
       <div className=" w-full">
         <div className="flex flex-col items-start justify-start">

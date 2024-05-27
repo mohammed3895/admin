@@ -5,7 +5,7 @@ import { Calendar } from "lucide-react";
 
 const ActivityTab = () => {
   return (
-    <div className="h-full w-full px-4">
+    <div className="h-full w-full">
       <div className="flex w-full flex-col items-start justify-start rounded-xl">
         {ACTIVITIES.map((event, i) => (
           <div key={i} className="mb-2.5 flex w-full flex-col justify-center">

@@ -52,7 +52,7 @@ export const CustomLegend = (props: props) => {
           key={i}
         >
           <div
-            className="h-3 w-3 rounded-full"
+            className="h-2.5 w-2.5 rounded-full"
             style={{ backgroundColor: entry.color }}
           />
           <h2 className="text-base font-normal capitalize tracking-tight text-black-1 dark:text-white">
@@ -66,7 +66,7 @@ export const CustomLegend = (props: props) => {
 
 const RadialChartComponent = () => {
   return (
-    <ResponsiveContainer width="100%" height={320} className="relative">
+    <ResponsiveContainer width="100%" height={450} className="relative">
       <RadialBarChart
         width={400}
         height={400}

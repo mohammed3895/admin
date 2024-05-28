@@ -42,6 +42,7 @@ const Search = () => {
       onOpenChange={(open) => {
         if (!open) setSearchField("");
       }}
+      open={isOpen}
     >
       <DialogTrigger>
         <button

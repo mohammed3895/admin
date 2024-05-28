@@ -5,7 +5,7 @@ import { type ProjectProps } from "../projects/tabs/TasksTab";
 import Link from "next/link";
 
 const SearchCard = ({ project }: ProjectProps) => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const tasksCompleted = project.tasks?.filter(function (el) {
     return el.status === "done";
@@ -16,6 +16,7 @@ const SearchCard = ({ project }: ProjectProps) => {
   return (
     <Link
       href={`/projects/${project.id}`}
+      onClick={() => setIsOpen(false)}
       className="flex w-full items-center justify-start gap-3 rounded-md p-3 hover:bg-purple-2"
     >
       <div className="flex h-12 w-12 items-center justify-center rounded-md bg-purple-2">

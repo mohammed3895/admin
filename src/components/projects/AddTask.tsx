@@ -25,7 +25,6 @@ const AddTask = () => {
     resolver: zodResolver(AddTaskShcema),
     defaultValues: {
       name: "",
-      rounds: {},
     },
   });
 

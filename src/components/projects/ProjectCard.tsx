@@ -26,7 +26,7 @@ const ProjectCard = ({ project, loading }: ProjectProps) => {
   return (
     <Card
       className={cn(
-        "invisible rounded-md border border-border bg-transparent py-2.5 shadow-none duration-500 ease-linear animate-in fade-in-0",
+        "invisible rounded-md border-none bg-background py-2.5 shadow-none duration-500 ease-linear animate-in fade-in-0",
         { visible: loading },
       )}
     >

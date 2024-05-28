@@ -35,8 +35,8 @@ export default function Home() {
   if (loading) return <Loading />;
 
   return (
-    <div className="mb-16 block h-full w-full flex-col p-4">
-      <div className="mb-8 flex w-full flex-col items-center gap-5 border-b pb-8 md:flex-row">
+    <div className="mb-16 flex h-full w-full flex-col gap-6 px-4 py-4 md:px-0">
+      <div className=" flex w-full flex-col items-center gap-5 md:flex-row">
         <WelcomeBanner />
         <ProfileCard />
       </div>
@@ -47,7 +47,7 @@ export default function Home() {
         <AnalyticsCard
           loading
           title="Latest Events"
-          actions="button"
+          actions="link"
           btnText="View All"
           className="w-full bg-transparent md:bg-card lg:col-span-2"
         >

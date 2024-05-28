@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { type z } from "zod";
 import { Form, FormControl, FormField, FormItem } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { AddTaskShcema } from "../AddTask";
@@ -20,13 +20,15 @@ const SettingsTab = () => {
     resolver: zodResolver(AddTaskShcema),
     defaultValues: {
       name: "",
-      rounds: {},
+      email: "",
+      phone: "",
+      assignTo: "",
     },
   });
 
   return (
     <div className="mb-16 h-full w-full">
-      <div className="flex w-full items-center justify-start gap-3 rounded-md border-t bg-background p-4">
+      <div className="flex w-full items-center justify-start gap-3 rounded-md bg-background p-4">
         <div className="flex h-10 w-10 min-w-10 items-center justify-center rounded-md border">
           <UserCheck2 className="h-5 w-5" />
         </div>
@@ -39,7 +41,7 @@ const SettingsTab = () => {
       </div>
 
       {/*  */}
-      <div className="flex w-full flex-col items-center justify-center py-4">
+      <div className="my-2 flex w-full flex-col items-center justify-center rounded-md border border-dashed p-4">
         <div className="flex h-14 w-14 min-w-14 items-center justify-center rounded-md bg-background">
           <CloudUpload strokeWidth={1} className="h-6 w-6" />
         </div>
@@ -56,7 +58,7 @@ const SettingsTab = () => {
       {/*  */}
       <div className="w-full">
         <Form {...form}>
-          <form className="flex flex-col items-start gap-1.5 bg-background p-4 pt-6">
+          <form className="flex flex-col items-start gap-1.5 rounded-lg bg-background p-4 pt-6">
             <FormField
               control={form.control}
               name="name"
@@ -79,7 +81,7 @@ const SettingsTab = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="email"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
@@ -99,7 +101,7 @@ const SettingsTab = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="phone"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
@@ -119,7 +121,7 @@ const SettingsTab = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="assignTo"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}

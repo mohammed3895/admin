@@ -3,6 +3,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NavItems from "./NavItems";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { MoreHorizontal } from "lucide-react";
+import { cn } from "~/lib/utils";
 
 const Sidebar = () => {
   return (
@@ -25,6 +28,15 @@ const Sidebar = () => {
           </div>
           <div className="flex w-full flex-col items-center">
             <NavItems tooltipSide="right" />
+            <Popover>
+              <PopoverTrigger>
+                <MoreHorizontal
+                  strokeWidth={1.5}
+                  className="mt-2 h-5 w-5 text-muted-foreground"
+                />
+              </PopoverTrigger>
+              <PopoverContent className="w-28 "></PopoverContent>
+            </Popover>
           </div>
         </div>
 

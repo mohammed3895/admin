@@ -1,13 +1,6 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { Button } from "../ui/button";
-import {
-  CircleFadingPlus,
-  Clipboard,
-  ClipboardPlus,
-  Plus,
-  User,
-} from "lucide-react";
+import { CircleFadingPlus, Clipboard, Plus } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -22,7 +15,9 @@ import { Input } from "../ui/input";
 
 export const AddTaskShcema = z.object({
   name: z.string(),
-  rounds: z.object({}),
+  email: z.string().optional(),
+  phone: z.string().optional(),
+  assignTo: z.string().optional(),
 });
 
 const AddTask = () => {
@@ -37,7 +32,7 @@ const AddTask = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-sm font-normal uppercase transition-all ease-in-out hover:bg-background hover:opacity-95 dark:text-white">
+        <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-xs font-normal uppercase transition-all ease-in-out hover:bg-accent hover:opacity-95 dark:text-white">
           <Plus size={20} strokeWidth={1.35} className="h-5 w-5" />
           New Task
         </div>

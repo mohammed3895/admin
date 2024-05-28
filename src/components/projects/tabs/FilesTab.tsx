@@ -70,7 +70,7 @@ export const Files = [
 
 const FilesTab = () => {
   return (
-    <div className="mb-16 flex h-full w-full flex-col gap-3">
+    <div className="mb-16 flex h-full w-full flex-col gap-1">
       {Files.map((file, i) => (
         <FilesCard key={i} file={file} />
       ))}

@@ -19,7 +19,7 @@ export const STATS = [
   },
   {
     name: "Followers",
-    value: 123456,
+    value: "22.3K",
     iconName: Users,
     iconColor: "yellow-1",
     iconBg: "yellow-2",
@@ -35,7 +35,7 @@ export const STATS = [
 
 const StatusCardWrapper = () => {
   return (
-    <div className="grid w-full grid-cols-1 gap-4 pb-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {STATS.map((stat, i) => (
         <StatusCard stat={stat} key={i} />
       ))}

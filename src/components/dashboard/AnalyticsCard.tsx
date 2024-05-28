@@ -3,11 +3,12 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import CalendarItems from "./CalendarItems";
 import { cn } from "~/lib/utils";
+import Link from "next/link";
 
 interface AnalyticsCardProps {
   title: string;
   children: React.ReactNode;
-  actions: "button" | "calendar";
+  actions: "link" | "calendar";
   btnText?: string;
   className?: string;
   loading: boolean;
@@ -32,19 +33,19 @@ const AnalyticsCard = ({
       )}
     >
       <CardHeader className="p-0">
-        <div className="flex w-full items-center justify-between p-3.5">
-          <h2 className="text-nowrap text-sm font-normal capitalize text-black-1 dark:text-white lg:text-base">
+        <div className="mb-2 flex w-full items-center justify-between p-3.5 md:mb-0">
+          <h2 className="text-nowrap text-base font-medium capitalize text-black-1 dark:text-white lg:text-base">
             {title}
           </h2>
           <div>
-            {actions === "button" ? (
-              <Button
-                variant="secondary"
-                className="border-none text-xs shadow-none outline-none"
+            {actions === "link" ? (
+              <Link
+                href="/"
+                className="border-none text-sm font-normal shadow-none outline-none"
                 onClick={onClick}
               >
                 {btnText}
-              </Button>
+              </Link>
             ) : (
               <CalendarItems />
             )}

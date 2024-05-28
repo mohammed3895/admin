@@ -7,6 +7,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -16,6 +17,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -28,6 +30,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -40,6 +43,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -52,6 +56,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -65,6 +70,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -76,6 +82,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -89,6 +96,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -108,6 +116,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Sara James",
       avatarUrl: "https://randomuser.me/api/portraits/women/52.jpg",
       email: "sara@james.com",
@@ -117,6 +126,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, the 2nd phase will start at next week",
         sender: {
+          online: true,
           name: "Sara James",
           avatarUrl: "https://randomuser.me/api/portraits/women/52.jpg",
           email: "sara@james.com",
@@ -129,6 +139,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Ok, i will be ready after 2 days",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/17.jpg",
           email: "jhon@doe.com",
@@ -141,6 +152,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "can you help me to speed up the workflow?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -153,6 +165,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -166,6 +179,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -177,6 +191,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -190,6 +205,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -210,6 +226,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -219,6 +236,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -231,6 +249,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -243,6 +262,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -255,6 +275,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -268,6 +289,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -279,6 +301,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -292,6 +315,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -312,6 +336,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -321,6 +346,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -333,6 +359,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -345,6 +372,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -357,6 +385,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -370,6 +399,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -381,6 +411,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -394,6 +425,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -414,6 +446,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -423,6 +456,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -435,6 +469,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -447,6 +482,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -459,6 +495,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -472,6 +509,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -483,6 +521,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -496,6 +535,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -516,6 +556,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -525,6 +566,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -537,6 +579,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -549,6 +592,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -561,6 +605,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -574,6 +619,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -585,6 +631,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -598,6 +645,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -618,6 +666,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -627,6 +676,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -639,6 +689,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -651,6 +702,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -663,6 +715,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -676,6 +729,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -687,6 +741,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -700,6 +755,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -720,6 +776,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -729,6 +786,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -741,6 +799,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -753,6 +812,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -765,6 +825,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -778,6 +839,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -789,6 +851,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -802,6 +865,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -822,6 +886,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -831,6 +896,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -843,6 +909,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -855,6 +922,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -867,6 +935,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -880,6 +949,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -891,6 +961,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -904,6 +975,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -924,6 +996,7 @@ export const CONVERSATIONS = [
       email: "jhon@doe.com",
     },
     sender: {
+      online: true,
       name: "Jane Smith",
       avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
       email: "jane@smith.com",
@@ -933,6 +1006,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -945,6 +1019,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -957,6 +1032,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -969,6 +1045,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -982,6 +1059,7 @@ export const CONVERSATIONS = [
         isMe: true,
         type: "image",
         sender: {
+          online: true,
           name: "John Doe",
           avatarUrl: "https://randomuser.me/api/portraits/men/42.jpg",
           email: "jhon@doe.com",
@@ -993,6 +1071,7 @@ export const CONVERSATIONS = [
         type: "text",
         content: "Hey John, how are you?",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",
@@ -1006,6 +1085,7 @@ export const CONVERSATIONS = [
         isMe: false,
         type: "image",
         sender: {
+          online: true,
           name: "Jane Smith",
           avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
           email: "jane@smith.com",

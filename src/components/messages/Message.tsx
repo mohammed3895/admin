@@ -64,9 +64,9 @@ const Message = ({ message, reversed }: MessageProps) => {
           >
             <div
               className={cn(
-                "flex w-full rounded-full rounded-bl-none bg-accent px-4 py-3 text-sm font-normal tracking-wide text-black-1 dark:text-gray-100",
+                "flex w-full rounded-full rounded-bl-none bg-background px-4 py-2 text-sm font-normal tracking-wide text-black-1 dark:text-gray-100 md:bg-accent",
                 {
-                  "flex-row-reverse rounded-bl-full rounded-br-none bg-primary text-white":
+                  "flex-row-reverse rounded-bl-full rounded-br-none bg-primary text-white md:bg-primary":
                     message.isMe,
                 },
                 { "rounded-lg px-0 py-0": message.type === "image" },

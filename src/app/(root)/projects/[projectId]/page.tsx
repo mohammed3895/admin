@@ -12,7 +12,6 @@ import ActivityTab from "~/components/projects/tabs/ActivityTab";
 import FilesTab from "~/components/projects/tabs/FilesTab";
 import SettingsTab from "~/components/projects/tabs/SettingsTab";
 import TasksTab from "~/components/projects/tabs/TasksTab";
-import { Button } from "~/components/ui/button";
 import { PROJECTS } from "~/constants/projects";
 import { cn } from "~/lib/utils";
 interface ParamsProp {
@@ -74,7 +73,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
 
   return (
     <div>
-      <div className=" flex h-full w-full items-center justify-between gap-6 bg-background p-4">
+      <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4">
         {tabList.map((tab, i) => (
           <div
             key={i}
@@ -110,7 +109,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
       </div>
       {tabsList.map((tab, i) => (
         <div key={i} className={cn("hidden w-full", { flex: activeTab === i })}>
-          <div className="w-full bg-accent px-4 py-6 md:rounded-md">
+          <div className="mt-14 w-full bg-accent p-4 md:rounded-md">
             <tab.component loading project={project!} />
           </div>
         </div>

@@ -114,7 +114,7 @@ const SignUpForm = () => {
               )}
             />
 
-            <Button type="submit" className=" w-full font-semibold">
+            <Button type="submit" className=" w-full f">
               {isPending ? (
                 <div className="flex items-center justify-center gap-3.5">
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -131,9 +131,9 @@ const SignUpForm = () => {
             </div>
             <GoogleBtn />
 
-            <p className="mt-4 text-center text-xs font-medium text-muted-foreground md:text-sm">
+            <p className="mt-4 text-center text-xs font-normal text-muted-foreground md:text-sm">
               Allready have an account?{" "}
-              <Link href="/sign-in" className="ml-1 font-medium text-primary">
+              <Link href="/sign-in" className="  text-primary">
                 Login Now
               </Link>
             </p>

@@ -29,33 +29,36 @@ interface ConversationProps {
 
 const MessageCard = ({ conversation }: ConversationProps) => {
   return (
-    <Link
-      href={`/messages/${conversation.id}`}
-      className="flex w-full items-start justify-between gap-2.5 rounded-lg border-[0] p-4 transition-colors duration-200 ease-in-out hover:bg-purple-2 dark:border-border md:flex-row md:items-center md:border"
-    >
+    <div className="flex h-full w-full items-start justify-between gap-2.5 rounded-xl border-[0] bg-background p-4 transition-colors duration-200 ease-in-out hover:bg-purple-2 dark:border-border md:flex-row md:items-center">
       <div className="flex w-3/4 flex-col items-start justify-start gap-1 md:flex-row md:items-center md:gap-6">
         <div className="flex items-center justify-start gap-2.5">
-          <Star size={16} strokeWidth={1} className="h-3 w-3" />
-          <Image
-            src={conversation.sender.avatarUrl}
-            alt=""
-            width={30}
-            height={30}
-            className="h-9 w-9 rounded-md object-cover md:h-6 md:w-6"
-          />
-          <div className="flex flex-col items-start justify-start">
-            <h2 className="text-sm font-medium capitalize text-black-1 dark:text-white">
+          {/* <Star size={16} strokeWidth={1} className="h-3 w-3" /> */}
+          <div className="relative h-10 w-10 min-w-10 rounded-md">
+            <Image
+              src={conversation.sender.avatarUrl}
+              alt=""
+              width={30}
+              height={30}
+              className="h-full w-full rounded-md object-cover md:h-6 md:w-6"
+            />
+            <div className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full border-2 border-background bg-green-1" />
+          </div>
+          <Link
+            href={`/messages/${conversation.id}`}
+            className="flex flex-col items-start justify-start"
+          >
+            <h2 className="text-base font-medium capitalize text-black-1 dark:text-white">
               {conversation.sender.name}
             </h2>
-            <p className="text-xs font-medium text-purple-1 md:hidden">
+            <p className="text-xs font-medium text-muted-foreground md:hidden">
               {conversation.messages[0]?.content}
             </p>
-          </div>
+          </Link>
         </div>
 
         {/*  */}
         <div className="hidden items-center justify-start gap-3 truncate md:flex">
-          <h3 className="text-sm font-medium text-purple-1">
+          <h3 className="text-sm font-normal text-muted-foreground">
             {conversation.messages[0]?.content}
           </h3>
         </div>
@@ -71,7 +74,7 @@ const MessageCard = ({ conversation }: ConversationProps) => {
         </span>
         <MoreBtn className="hidden md:flex" />
       </div>
-    </Link>
+    </div>
   );
 };
 

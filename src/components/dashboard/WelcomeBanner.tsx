@@ -6,8 +6,8 @@ import { buttonVariants } from "../ui/button";
 
 const WelcomeBanner = () => {
   return (
-    <div className="flex h-64 w-full min-w-80 justify-center rounded-xl bg-purple-2 text-black-1 md:h-80">
-      <div className="flex w-full items-center justify-between px-4 py-6 md:px-6 md:py-8">
+    <div className="flex h-64 w-full min-w-80 justify-center rounded-xl bg-background text-black-1 md:h-80">
+      <div className="flex w-full items-center justify-between px-4 py-6 md:px-8 md:py-7 lg:px-12">
         <div className="flex flex-col items-start justify-start gap-4">
           <h1 className="text-3xl font-medium tracking-tight text-purple-1 md:text-4xl">
             Welcome

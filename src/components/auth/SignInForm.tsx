@@ -88,7 +88,7 @@ const SignInForm = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className=" w-full font-semibold">
+            <Button type="submit" className=" w-full font-normal">
               {isPending ? (
                 <div className="flex items-center justify-center gap-3.5">
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -105,7 +105,7 @@ const SignInForm = () => {
             </div>
             <GoogleBtn />
 
-            <p className="mt-4 text-center text-xs font-medium text-muted-foreground md:text-sm">
+            <p className="mt-4 text-center text-xs font-normal text-muted-foreground md:text-sm">
               Don&apos;t have an account?{" "}
               <Link href="/sign-up" className="ml-1 font-medium text-primary">
                 Create One

@@ -11,7 +11,7 @@ const DeskTopAddMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex h-9 w-9 items-center justify-center rounded-md bg-background text-purple-1">
+        <button className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-purple-1">
           <CirclePlus className="h-4 w-4" />
         </button>
       </DropdownMenuTrigger>

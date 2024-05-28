@@ -46,7 +46,7 @@ const Search = () => {
       <DialogTrigger>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-9 w-9 items-center justify-center rounded-md bg-background text-purple-1"
+          className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-muted-foreground"
         >
           <SearchIcon className="h-4 w-4" />
         </button>

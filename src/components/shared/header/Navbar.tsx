@@ -12,11 +12,15 @@ const Navbar = () => {
   const isHomePage = pathname === "/" ? true : false;
 
   return (
-    <div className="bg-backgrund relative mb-0 flex h-14 w-full items-center justify-between px-0">
+    <div className="bg-backgrund relative mb-0 flex h-14 w-full items-center justify-between px-0 md:bg-transparent">
       <div
         className={cn(
           "fixed z-50 flex h-14 w-full items-center justify-between bg-background p-4 shadow-none md:hidden",
           { "shadow-md": pathname === "/" },
+          {
+            hidden:
+              pathname.split("/")[1] === "messages" && pathname.length === 2,
+          },
         )}
       >
         <Search />
@@ -29,7 +33,7 @@ const Navbar = () => {
       </div>
 
       {/* DESKTOP NAV */}
-      <div className="hidden h-14 w-full items-center justify-between rounded-md bg-background px-4 md:flex">
+      <div className="hidden h-14 w-full items-center justify-between rounded-md px-4 md:flex">
         <div className="flex items-center justify-between gap-3.5 md:justify-start">
           <div className="flex items-center justify-start gap-3">
             <h2 className="text-lg font-medium capitalize text-black-1 dark:text-white md:text-xl md:font-semibold">

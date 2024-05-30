@@ -2,21 +2,21 @@
 import React from "react";
 import {
   ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
   Legend,
   Tooltip,
-  Label,
-  LabelList,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 import { CustomTooltip } from "./CustomToolTip";
 import { type Payload } from "recharts/types/component/DefaultLegendContent";
+import { CustomLegend } from "./CustomLegend";
 
 const data = [
   {
     name: "online",
     date: new Date(),
-    fill: "#FF808A",
+    fill: "#F6CB36",
     sales: 3001,
     sales_2: 2000,
   },
@@ -37,66 +37,66 @@ const data = [
   },
 ];
 
-interface props {
-  payload?: Payload[];
-}
-
-export const CustomLegend = (props: props) => {
-  const { payload } = props;
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}: {
+  cx: number;
+  cy: number;
+  midAngle: number;
+  innerRadius: number;
+  outerRadius: number;
+  percent: number;
+  index: number;
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * -11;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
-    <div className="flex w-full items-center justify-center gap-4 border-t border-dashed pt-3.5 dark:border-zinc-700">
-      {payload?.map((entry, i) => (
-        <div
-          className="flex h-full items-center justify-center gap-1.5"
-          key={i}
-        >
-          <div
-            className="h-2.5 w-2.5 rounded-full"
-            style={{ backgroundColor: entry.color }}
-          />
-          <h2 className="text-base font-normal capitalize tracking-tight text-black-1 dark:text-white">
-            {entry.value}
-          </h2>
-        </div>
-      ))}
-    </div>
+    <text
+      x={x}
+      y={y}
+      fill={data[index]?.fill}
+      textAnchor="middle"
+      className=" text-lg text-muted-foreground"
+    >
+      {`${(percent * 100).toFixed(1)}%`}
+    </text>
   );
 };
 
 const RadialChartComponent = () => {
   return (
     <ResponsiveContainer width="100%" height={450} className="relative">
-      <RadialBarChart
-        width={400}
-        height={400}
-        data={data}
-        innerRadius={60}
-        outerRadius={120}
-        cy="40%"
-        startAngle={0}
-        endAngle={360}
-        barSize={10}
-        barGap={10}
-        margin={{ bottom: 0 }}
-      >
-        <RadialBar
+      <PieChart width={400} height={400} barSize={2}>
+        <Pie
+          data={data}
           dataKey="sales"
           height={300}
-          fillRule="nonzero"
-          type="stack"
-          radius={10}
+          innerRadius={110}
+          outerRadius={120}
+          labelLine={false}
+          label={renderCustomizedLabel}
           strokeLinecap="round"
-          strokeLinejoin="round"
-          stitchTiles={10}
-          stackId="stack"
-          cornerRadius={10}
+          fill="#8884d8"
+          paddingAngle={1}
           className="relative"
-        />
+        >
+          {data.map((entry, index) => (
+            <Cell stroke="5" strokeWidth={1} key={`cell-${index}`} />
+          ))}
+        </Pie>
 
         <Legend iconType="circle" iconSize={10} content={<CustomLegend />} />
         <Tooltip content={<CustomTooltip />} />
-      </RadialBarChart>
+      </PieChart>
     </ResponsiveContainer>
   );
 };

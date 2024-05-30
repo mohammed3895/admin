@@ -1,6 +1,7 @@
 import React from "react";
 import MoreBtn from "../buttons/MoreBtn";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 interface Props {
   activity:
@@ -47,19 +48,35 @@ const ActivityCard = ({ activity }: Props) => {
       </div>
 
       {activity.images && (
-        <div className="mt-2 grid w-full grid-cols-3 items-center justify-start gap-2.5">
+        <div className="mt-2 grid w-fit grid-cols-3 items-start justify-start gap-2.5">
           {activity.images.map((img, i) => (
-            <div className="h-20 w-20 rounded-lg md:h-36 md:w-40" key={i}>
-              <Image
-                src={img.src}
-                alt={`Activity image ${i + 1}`}
-                width={300}
-                height={175}
-                objectFit="cover"
-                quality={80}
-                className="h-full w-full rounded-lg object-cover"
-              />
-            </div>
+            <Dialog key={i}>
+              <DialogTrigger asChild>
+                <div className="h-20 w-20 rounded-lg md:h-36 md:w-40" key={i}>
+                  <Image
+                    src={img.src}
+                    alt={`Activity image ${i + 1}`}
+                    width={300}
+                    height={175}
+                    objectFit="cover"
+                    quality={80}
+                    className="h-full w-full rounded-lg object-cover"
+                  />
+                </div>
+              </DialogTrigger>
+              <DialogContent className="h-fit w-3/4 p-0">
+                <div className="h-full w-full" key={i}>
+                  <Image
+                    src={img.src}
+                    alt={`Activity image ${i + 1}`}
+                    width={900}
+                    height={900}
+                    objectFit="contain"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       )}

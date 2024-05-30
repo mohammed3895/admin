@@ -1,6 +1,13 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { CircleFadingPlus, Clipboard, Plus } from "lucide-react";
+import {
+  CircleFadingPlus,
+  Clipboard,
+  Mail,
+  Phone,
+  Plus,
+  Users2,
+} from "lucide-react";
 import {
   Form,
   FormControl,
@@ -25,6 +32,9 @@ const AddTask = () => {
     resolver: zodResolver(AddTaskShcema),
     defaultValues: {
       name: "",
+      email: "",
+      phone: "",
+      assignTo: "",
     },
   });
 
@@ -39,9 +49,9 @@ const AddTask = () => {
       <DialogContent>
         <Form {...form}>
           <form className="flex flex-col items-start gap-3 pt-4">
-            <h1 className="mb-4 flex items-center justify-start gap-3 text-xl font-normal tracking-tight text-black-1 dark:text-gray-50">
+            <h1 className="mb-4 flex items-center justify-start gap-3 text-xl font-light tracking-tight text-black-1 dark:text-white">
               New Task
-              <CircleFadingPlus className="h-6 w-6" />
+              <CircleFadingPlus className="h-6 w-6 text-primary" />
             </h1>
             <FormField
               control={form.control}
@@ -55,9 +65,9 @@ const AddTask = () => {
                         type="text"
                         placeholder="Task Title"
                         {...field}
-                        className="relative rounded-md border px-3 text-sm font-light text-muted-foreground"
+                        className="relative rounded-md border px-6 text-sm font-light text-muted-foreground"
                       />
-                      <Clipboard className="absolute bottom-3 right-2  h-4 w-4 text-gray-700" />
+                      <Clipboard className="absolute bottom-3 left-1  h-4 w-4 text-primary" />
                     </div>
                   </FormControl>
 
@@ -67,19 +77,19 @@ const AddTask = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="email"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
                   <FormControl>
                     <div className="relative w-full">
                       <Input
-                        type="text"
-                        placeholder="Task Description"
+                        type="email"
+                        placeholder="Client Email"
                         {...field}
-                        className="relative rounded-md border px-3 text-sm font-light text-muted-foreground"
+                        className="relative rounded-md border px-6 text-sm font-light text-muted-foreground"
                       />
-                      <Clipboard className="absolute bottom-3 right-2  h-4 w-4 text-gray-700" />
+                      <Mail className="absolute bottom-3 left-1  h-4 w-4 text-primary" />
                     </div>
                   </FormControl>
 
@@ -89,7 +99,7 @@ const AddTask = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="phone"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
@@ -97,10 +107,11 @@ const AddTask = () => {
                     <div className="relative w-full">
                       <Input
                         type="text"
-                        placeholder="Task Title"
+                        placeholder="Client Phone Number"
                         {...field}
-                        className="relative rounded-md border px-3 text-sm font-light text-muted-foreground"
+                        className="relative rounded-md border px-6 text-sm font-light text-muted-foreground"
                       />
+                      <Phone className="absolute bottom-3 left-1  h-4 w-4 text-primary" />
                     </div>
                   </FormControl>
 
@@ -110,7 +121,7 @@ const AddTask = () => {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="assignTo"
               render={({ field }) => (
                 <FormItem className="mb-2.5 w-full md:mb-4">
                   {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
@@ -118,31 +129,11 @@ const AddTask = () => {
                     <div className="relative w-full">
                       <Input
                         type="text"
-                        placeholder="Task Title"
+                        placeholder="Choose Developers"
                         {...field}
-                        className="relative rounded-md border px-3 text-sm font-light text-muted-foreground"
+                        className="relative rounded-md border px-6 text-sm font-light text-muted-foreground"
                       />
-                    </div>
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem className="mb-2.5 w-full md:mb-4">
-                  {/* <FormLabel className="text-sm text-black-1">Email</FormLabel> */}
-                  <FormControl>
-                    <div className="relative w-full">
-                      <Input
-                        type="text"
-                        placeholder="Task Title"
-                        {...field}
-                        className="relative rounded-md border px-3 text-sm font-light text-muted-foreground"
-                      />
+                      <Users2 className="absolute bottom-3 left-1  h-4 w-4 text-primary" />
                     </div>
                   </FormControl>
 

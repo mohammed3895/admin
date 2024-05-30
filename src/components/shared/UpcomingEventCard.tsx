@@ -3,7 +3,7 @@ import MoreBtn from "../buttons/MoreBtn";
 
 const UpcomingEventCard = () => {
   return (
-    <div className="my-1 flex w-full flex-col items-start justify-start gap-1 rounded-lg bg-purple-2 px-4 py-5">
+    <div className="my-1 flex w-full flex-col items-start justify-start gap-1 rounded-lg bg-accent px-4 py-5">
       <div className="flex w-full items-center justify-between">
         <div className="flex w-full items-center justify-start gap-2.5">
           <div className="h-2 w-2 rounded-full bg-green-1" />
@@ -11,10 +11,10 @@ const UpcomingEventCard = () => {
         </div>
         <MoreBtn />
       </div>
-      <h1 className="text-base font-normal tracking-tight text-black-1 dark:text-white">
+      <h1 className="text-sm font-normal tracking-tight text-black-1 dark:text-white">
         Meeting with client
       </h1>
-      <h1 className="text-sm font-light text-muted-foreground">
+      <h1 className="text-xs font-light text-muted-foreground">
         You have Meeting with new client at 9:30 AM
       </h1>
     </div>

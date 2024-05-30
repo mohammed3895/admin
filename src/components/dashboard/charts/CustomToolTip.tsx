@@ -13,7 +13,7 @@ export const CustomTooltip = ({
 }: TooltipProps<ValueType, NameType>) => {
   if (active) {
     return (
-      <div className="flex h-16 w-fit items-center justify-center gap-1 rounded-xl bg-background/80 px-4 shadow-lg backdrop-blur-lg">
+      <div className="flex h-16 w-fit items-center justify-center gap-1 rounded-xl bg-background/80 px-4 shadow-lg backdrop-blur-md ">
         <div className="flex items-end justify-center gap-3">
           <p className="text-sm font-normal text-muted-foreground">
             {dayjs(label as unknown as Date).format("MMMM DD")}

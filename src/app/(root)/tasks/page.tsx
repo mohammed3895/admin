@@ -48,7 +48,7 @@ const TasksPage = () => {
 
   return (
     <div>
-      <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4">
+      <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4 md:relative md:top-4">
         {tabList.map((tab, i) => (
           <div
             key={i}
@@ -82,8 +82,11 @@ const TasksPage = () => {
         </div>
       </div>
       {tabsList.map((tab, i) => (
-        <div key={i} className={cn("hidden w-full", { flex: activeTab === i })}>
-          <div className="mt-14 w-full bg-accent p-4 md:rounded-md">
+        <div
+          key={i}
+          className={cn("hidden h-full w-full", { flex: activeTab === i })}
+        >
+          <div className="mt-14 h-full w-full">
             <tab.component />
           </div>
         </div>

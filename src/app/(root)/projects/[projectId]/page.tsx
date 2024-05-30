@@ -73,7 +73,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
 
   return (
     <div>
-      <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4">
+      <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4 md:relative md:top-0 md:bg-transparent">
         {tabList.map((tab, i) => (
           <div
             key={i}
@@ -92,7 +92,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
           <button
             onClick={decrementTabHandeller}
             className={cn(
-              "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+              "flex h-8 w-8 items-center justify-center rounded-md bg-accent text-purple-1",
             )}
           >
             <ArrowLeft className="h-4 w-4" />
@@ -100,7 +100,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
           <button
             onClick={incrementTabHandeller}
             className={cn(
-              "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+              "flex h-8 w-8 items-center justify-center rounded-md bg-accent text-purple-1",
             )}
           >
             <ArrowRight className="h-4 w-4" />
@@ -109,7 +109,7 @@ const ProjectDetailsPage = ({ params }: ParamsProp) => {
       </div>
       {tabsList.map((tab, i) => (
         <div key={i} className={cn("hidden w-full", { flex: activeTab === i })}>
-          <div className="mt-14 w-full bg-accent p-4 md:rounded-md">
+          <div className="w-full bg-accent p-4 md:rounded-md">
             <tab.component loading project={project!} />
           </div>
         </div>

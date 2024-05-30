@@ -21,7 +21,7 @@ export interface TaskProps {
 
 const TaskCard = ({ task, user }: TaskProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg bg-background p-3 md:flex-row">
+    <div className="flex w-full flex-col items-center justify-between gap-2.5 rounded-lg border bg-background px-4 py-5 md:flex-row">
       <div className="flex w-full items-center justify-start gap-2.5 md:w-1/3">
         <Checkbox
           id={task.name}
@@ -34,18 +34,20 @@ const TaskCard = ({ task, user }: TaskProps) => {
           {task.name}
         </Label>
       </div>
-      <div className="flex w-full flex-row-reverse items-center justify-end gap-3 text-nowrap text-purple-1 md:w-3/4 md:flex-row md:gap-5">
-        <div className="flex items-center justify-center gap-1.5 text-xs md:text-sm">
-          <ListChecks size={16} />
-          <span>3 / 9</span>
-        </div>
-        <div className="flex items-center justify-center gap-1.5 text-xs md:text-sm">
-          <Link2 size={16} />
-          <span>4</span>
-        </div>
-        <div className="flex items-center justify-center gap-1.5 text-xs md:text-sm">
-          <MessagesSquare size={16} />
-          <span>3</span>
+      <div className="flex w-full flex-row-reverse items-center justify-between gap-3 text-nowrap text-purple-1 md:w-3/4 md:flex-row md:gap-5">
+        <div className="flex items-center justify-center gap-3.5">
+          <div className="flex items-center justify-center gap-1.5 text-xs">
+            <ListChecks size={16} />
+            <span>3/9</span>
+          </div>
+          <div className="flex items-center justify-center gap-1.5 text-xs">
+            <Link2 size={16} />
+            <span>4</span>
+          </div>
+          <div className="flex items-center justify-center gap-1.5 text-xs">
+            <MessagesSquare size={16} />
+            <span>3</span>
+          </div>
         </div>
 
         <div

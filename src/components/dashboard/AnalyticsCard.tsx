@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from "../ui/card";
-import { Button } from "../ui/button";
+import { CardContent, CardHeader } from "../ui/card";
 import CalendarItems from "./CalendarItems";
 import { cn } from "~/lib/utils";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import Link from "next/link";
 interface AnalyticsCardProps {
   title: string;
   children: React.ReactNode;
-  actions: "link" | "calendar";
+  actions?: "link" | "calendar";
   btnText?: string;
   className?: string;
   loading: boolean;
@@ -27,18 +26,18 @@ const AnalyticsCard = ({
   return (
     <div
       className={cn(
-        "invisible h-full w-full rounded-md border border-accent bg-white pb-4 shadow-none outline-none ring-0  animate-in fade-in-0 dark:border-none dark:bg-neutral-800",
+        "invisible h-full w-full rounded-2xl border-none bg-background pb-4 shadow-xl shadow-gray-1 outline-none ring-0 animate-in  fade-in-0 dark:border-none dark:shadow-zinc-900",
         { visible: loading },
         className,
       )}
     >
       <CardHeader className="p-0">
-        <div className="mb-2 flex w-full items-center justify-between p-3.5 md:mb-0">
-          <h2 className="text-nowrap text-base font-medium capitalize text-black-1 dark:text-white lg:text-base">
+        <div className="mb-2 flex w-full items-center justify-between">
+          <h2 className="text-nowrap text-base font-medium capitalize text-black-1 dark:text-white lg:text-lg">
             {title}
           </h2>
           <div>
-            {actions === "link" ? (
+            {actions === "link" && (
               <Link
                 href="/"
                 className="border-none text-sm font-normal shadow-none outline-none"
@@ -46,9 +45,8 @@ const AnalyticsCard = ({
               >
                 {btnText}
               </Link>
-            ) : (
-              <CalendarItems />
             )}
+            {actions === "calendar" && <CalendarItems />}
           </div>
         </div>
       </CardHeader>

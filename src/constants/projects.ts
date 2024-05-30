@@ -3,6 +3,7 @@ export const PROJECTS = [
     id: "31few3f4ew546e5t",
     title: "Reddit Clone",
     role: "Front End Development",
+    status: "pending",
     image: "/assets/icons/reddit.svg",
     tasks: [
       {
@@ -147,6 +148,7 @@ export const PROJECTS = [
     id: "shgrsehrfg45t",
     title: "FaceBook Clone",
     role: "Front End",
+    status: "done",
     image: "/assets/icons/facebook.svg",
     tasks: [
       {
@@ -261,6 +263,7 @@ export const PROJECTS = [
     id: "gda97465d4g8s6rg47",
     title: "Figma Clone",
     role: "Front End ",
+    status: "done",
     image: "/assets/icons/figma.svg",
     tasks: [
       {
@@ -375,6 +378,7 @@ export const PROJECTS = [
     id: "arwgw4retya435q",
     title: "Social App",
     role: "Full Stack ",
+    status: "done",
     image: "/assets/icons/pinterest.svg",
     tasks: [
       {
@@ -484,6 +488,7 @@ export const PROJECTS = [
     id: "agtreh544regqreh8t4e8h",
     title: "Youtube Clone",
     role: "Back End",
+    status: "done",
     image: "/assets/icons/youtube.svg",
     tasks: [
       {
@@ -598,6 +603,7 @@ export const PROJECTS = [
     id: "ey5thhaok0nksf-j",
     title: "DropBox",
     role: "Front End",
+    status: "done",
     image: "/assets/icons/dropbox.svg",
     tasks: [
       {
@@ -728,6 +734,7 @@ export const PROJECTS = [
     title: "New Project",
     role: "Front End Development",
     image: "/assets/icons/pinterest.svg",
+    status: "done",
 
     tasks: [
       {
@@ -847,6 +854,7 @@ export const PROJECTS = [
     id: "bshkiyhshrthrtsst",
     title: "Reddit Clone",
     role: "Front End",
+    status: "done",
     image: "/assets/icons/reddit.svg",
     tasks: [
       {
@@ -961,6 +969,7 @@ export const PROJECTS = [
     id: "sthtsrhthtrtshsht",
     title: "Figma Clone",
     role: "Front End ",
+    status: "done",
     image: "/assets/icons/reddit.svg",
     tasks: [
       {
@@ -1075,6 +1084,7 @@ export const PROJECTS = [
     id: "bfdshththaqththsht",
     title: "Social App",
     role: "Full Stack ",
+    status: "done",
     image: "/assets/icons/reddit.svg",
     tasks: [
       {
@@ -1184,6 +1194,7 @@ export const PROJECTS = [
     id: "htshththshfdsdgfdsh",
     title: "Youtube Clone",
     role: "Back End",
+    status: "done",
     image: "/assets/icons/reddit.svg",
     tasks: [
       {
@@ -1299,6 +1310,7 @@ export const PROJECTS = [
     title: "DropBox",
     role: "Front End",
     image: "/assets/icons/reddit.svg",
+    status: "done",
 
     tasks: [
       {

@@ -1,4 +1,5 @@
 import {
+  CreditCard,
   FilePlus2,
   MapPinned,
   UserCircle,
@@ -35,5 +36,11 @@ export const eventsData = [
     data: "New Madietion",
     details: "$350.00",
     icon: MapPinned,
+  },
+  {
+    title: "New depusit from paypal",
+    data: "New Madietion",
+    details: "$2400.00",
+    icon: CreditCard,
   },
 ];

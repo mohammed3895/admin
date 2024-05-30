@@ -10,7 +10,7 @@ const TaskListing = ({ status }: { status: "all" | "pending" | "done" }) => {
   }
 
   return (
-    <div className="mb-16 flex flex-col gap-1">
+    <div className="mb-16 flex h-full w-full flex-col gap-1">
       {tasks
         ?.filter((task) => {
           if (status === "all") return true;

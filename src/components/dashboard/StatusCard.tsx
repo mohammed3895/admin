@@ -1,5 +1,5 @@
 import React from "react";
-import { STATS } from "./StatusCardWrapper";
+import { type STATS } from "./StatusCardWrapper";
 
 interface StatProps {
   stat: (typeof STATS)[number];
@@ -7,7 +7,7 @@ interface StatProps {
 
 const StatusCard = ({ stat }: StatProps) => {
   return (
-    <div className="flex h-32 w-full items-center justify-between rounded-xl bg-background px-6 py-4">
+    <div className="flex h-32 w-full items-center justify-between rounded-2xl bg-background px-6 py-4 shadow-lg shadow-gray-1 dark:shadow-zinc-900">
       <div className="flex flex-col items-start justify-start">
         <h1 className="text-xl font-medium capitalize text-black-1 dark:text-white">
           {stat.value}

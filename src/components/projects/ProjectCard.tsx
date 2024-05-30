@@ -26,7 +26,7 @@ const ProjectCard = ({ project, loading }: ProjectProps) => {
   return (
     <Card
       className={cn(
-        "invisible rounded-md border-none bg-background py-2.5 shadow-none duration-500 ease-linear animate-in fade-in-0",
+        "invisible rounded-2xl border border-gray-100 bg-background py-2.5 shadow-lg shadow-gray-1 duration-500 ease-linear animate-in fade-in-0 dark:border-zinc-800 dark:shadow-zinc-900",
         { visible: loading },
       )}
     >
@@ -34,7 +34,7 @@ const ProjectCard = ({ project, loading }: ProjectProps) => {
         <div className="flex w-full flex-col items-center gap-3">
           <div className="flex w-full items-start justify-between gap-3 pt-3">
             <Progress
-              className="h-1.5 w-10 bg-input text-green-1 dark:bg-neutral-800"
+              className="h-1 w-10 bg-input text-green-1 dark:bg-neutral-800"
               indicatorBg={getProgressColor(task)}
               value={task * 10}
               max={tasksNum * 10}

@@ -42,12 +42,11 @@ const Search = () => {
       onOpenChange={(open) => {
         if (!open) setSearchField("");
       }}
-      open={isOpen}
     >
       <DialogTrigger>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-muted-foreground"
+          className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-muted-foreground md:bg-background"
         >
           <SearchIcon className="h-4 w-4" />
         </button>

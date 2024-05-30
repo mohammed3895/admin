@@ -37,14 +37,14 @@ export interface MessageProps {
 
 const Message = ({ message, reversed }: MessageProps) => {
   return (
-    <div className="my-2.5 flex h-full w-full items-center justify-start self-end py-2 duration-300 animate-in fade-in-0">
+    <div className="my-2.5 flex h-full w-full items-center justify-start self-end p-2 duration-300 animate-in fade-in-0">
       <div
-        className={cn("flex w-full items-center justify-start gap-3", {
+        className={cn("flex w-full items-center justify-start gap-1.5", {
           "justify-end": message.isMe,
         })}
       >
         <div
-          className={cn("flex w-max items-center gap-3", {
+          className={cn("flex w-full items-center gap-3", {
             "flex-row-reverse": message.isMe,
           })}
         >
@@ -58,15 +58,15 @@ const Message = ({ message, reversed }: MessageProps) => {
             />
           </div>
           <div
-            className={cn("flex w-full flex-col items-start justify-start", {
+            className={cn("flex w-3/4 flex-col items-start justify-start", {
               "items-end justify-end": message.isMe,
             })}
           >
             <div
               className={cn(
-                "flex w-full rounded-full rounded-bl-none bg-background px-4 py-2 text-sm font-normal tracking-wide text-black-1 dark:text-gray-100 md:bg-accent",
+                "flex w-full rounded-xl rounded-bl-none bg-background px-4 py-2 text-sm font-normal tracking-wide text-black-1 dark:text-gray-100 md:bg-accent",
                 {
-                  "flex-row-reverse rounded-bl-full rounded-br-none bg-primary text-white md:bg-primary":
+                  "flex-row-reverse rounded-bl-xl rounded-br-none bg-primary text-white md:bg-primary":
                     message.isMe,
                 },
                 { "rounded-lg px-0 py-0": message.type === "image" },

@@ -16,7 +16,7 @@ const MessagePreview = ({ message }: MessageProps) => {
   return (
     <div className=" flex h-full w-full flex-col items-center justify-center rounded-xl">
       <div className="relative flex h-full w-full grow flex-col justify-start gap-0 md:rounded-xl md:bg-background">
-        <div className="fixed left-0 right-0 top-14 z-50 flex h-14 w-full items-center justify-between border-t bg-background md:relative md:top-0 md:rounded-t-md md:border-b md:border-t-0 ">
+        <div className="fixed left-0 right-0 top-0 z-50 flex h-14 w-full items-center justify-between border-t bg-background md:relative md:top-0 md:rounded-t-md md:border-b md:border-t-0 ">
           <div className="flex items-start justify-start gap-1.5 p-4">
             <Link
               href="/messages"
@@ -46,7 +46,7 @@ const MessagePreview = ({ message }: MessageProps) => {
         </div>
 
         {/* CONVERSATION BODY */}
-        <ScrollArea className="my-auto flex h-full w-full flex-col-reverse justify-end self-start px-4 pb-28 pt-14 md:pb-0 md:pt-0">
+        <ScrollArea className="my-auto flex h-full w-full flex-col-reverse justify-end self-start pb-28 md:pb-0 md:pt-0">
           {message.messages.reverse().map((message, i) => (
             <Message reversed message={message} key={i} />
           ))}

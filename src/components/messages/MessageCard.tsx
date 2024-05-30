@@ -33,15 +33,15 @@ const MessageCard = ({ conversation }: ConversationProps) => {
       <div className="flex w-3/4 flex-col items-start justify-start gap-1 md:flex-row md:items-center md:gap-6">
         <div className="flex items-center justify-start gap-2.5">
           {/* <Star size={16} strokeWidth={1} className="h-3 w-3" /> */}
-          <div className="relative h-10 w-10 min-w-10 rounded-md">
+          <div className="relative h-10 w-10 min-w-10 rounded-lg">
             <Image
               src={conversation.sender.avatarUrl}
               alt=""
               width={30}
               height={30}
-              className="h-full w-full rounded-md object-cover md:h-6 md:w-6"
+              className="h-full w-full rounded-lg object-cover "
             />
-            <div className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full border-2 border-background bg-green-1" />
+            <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-background bg-green-1" />
           </div>
           <Link
             href={`/messages/${conversation.id}`}

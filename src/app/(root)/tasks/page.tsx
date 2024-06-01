@@ -47,7 +47,7 @@ const TasksPage = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="fixed top-14 flex h-14 w-full items-center justify-between gap-6 border-t bg-background p-4 md:relative md:top-4">
         {tabList.map((tab, i) => (
           <div
@@ -67,6 +67,7 @@ const TasksPage = () => {
             onClick={decrementTabHandeller}
             className={cn(
               "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+              { "cursor-not-allowed": activeTab === 0 },
             )}
           >
             <ArrowLeft className="h-4 w-4" />
@@ -75,6 +76,7 @@ const TasksPage = () => {
             onClick={incrementTabHandeller}
             className={cn(
               "flex h-8 w-8  items-center justify-center rounded-md bg-accent text-purple-1",
+              { "cursor-not-allowed": activeTab === tabList.length - 1 },
             )}
           >
             <ArrowRight className="h-4 w-4" />
@@ -86,7 +88,7 @@ const TasksPage = () => {
           key={i}
           className={cn("hidden h-full w-full", { flex: activeTab === i })}
         >
-          <div className="mt-14 h-full w-full">
+          <div className="mt-14 h-full w-full p-4">
             <tab.component />
           </div>
         </div>

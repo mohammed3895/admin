@@ -13,7 +13,6 @@ const ProjectCard = ({ project, loading }: ProjectProps) => {
     return el.status === "done";
   });
   const task = Array.from(tasksCompleted ?? []).length;
-  console.log(task);
 
   function getProgressColor(
     task: number,

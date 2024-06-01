@@ -26,7 +26,7 @@ const NavItems = ({
             <TooltipTrigger asChild>
               <div
                 className={cn(
-                  "flex h-full w-full items-center justify-center border-t border-transparent transition-all duration-500 ease-in-out md:w-20 md:justify-center md:border-r md:border-t-0",
+                  "flex h-full w-full items-center justify-center border-t border-transparent transition-all duration-500 ease-in-out md:w-16 md:justify-center md:border-r md:border-t-0",
                   {
                     "border-purple-1": tab.path === pathname.split("/")[1],
                   },
@@ -35,14 +35,14 @@ const NavItems = ({
                 <Link
                   href={`/${tab.path}`}
                   className={cn(
-                    "flex h-10 w-10 items-center justify-center rounded bg-transparent text-muted-foreground transition-all duration-500 hover:text-purple-1",
+                    "flex h-8 w-8 min-w-8 items-center justify-center rounded-lg bg-transparent text-muted-foreground transition-all duration-500 hover:text-purple-1 md:h-10 md:w-10 md:min-w-10",
                     {
                       "bg-purple-2 text-purple-1":
                         tab.path === pathname.split("/")[1],
                     },
                   )}
                 >
-                  <tab.icon strokeWidth={1.5} className="h-5 w-5 " />
+                  <tab.icon className="h-5 w-5 " />
                 </Link>
               </div>
             </TooltipTrigger>

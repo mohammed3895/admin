@@ -12,7 +12,7 @@ interface EventCardprops {
 
 const EventsCard = ({ event }: EventCardprops) => {
   return (
-    <div className="flex w-full cursor-pointer items-center justify-start gap-3 rounded-xl bg-accent p-4 md:bg-transparent md:py-1">
+    <div className="flex w-full cursor-pointer items-center justify-start gap-3 rounded-xl bg-accent p-4 md:bg-transparent md:px-0 md:py-2">
       <div className="flex w-full items-start justify-between gap-2">
         <div className="flex w-full items-center gap-2">
           <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-xl bg-purple-2">

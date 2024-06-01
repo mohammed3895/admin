@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import MobileDrawerMenu from "./menu/MobileDrawerMenu";
 import MenuItems from "./menu/MenuItems";
 import DeskTopAddMenu from "./menu/DeskTopAddMenu";
 import Search from "../Search";
 import { cn } from "~/lib/utils";
+import SidePanel from "../SidePanel";
+import SettingsMenu from "~/components/settings/SettingsMenu";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -23,13 +25,11 @@ const Navbar = () => {
           },
         )}
       >
-        <Search />
+        <SidePanel />
         <h2 className="text-lg font-medium capitalize  text-black-1 dark:text-white md:text-xl md:font-semibold">
           {isHomePage ? "Dashboard" : pathname.split("/")[1]}
         </h2>
-        <MobileDrawerMenu>
-          <MenuItems />
-        </MobileDrawerMenu>
+        <SettingsMenu />
       </div>
 
       {/* DESKTOP NAV */}
@@ -42,8 +42,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center justify-end gap-3">
-          <Search />
-          <DeskTopAddMenu />
+          <SidePanel />
+          <SettingsMenu />
         </div>
       </div>
     </div>

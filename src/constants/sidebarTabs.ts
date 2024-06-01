@@ -1,47 +1,45 @@
-import {
-  BriefcaseBusiness,
-  Clipboard,
-  Cog,
-  LayoutDashboard,
-  Mails,
-  Trello,
-  UserRound,
-} from "lucide-react";
+import { HiBriefcase } from "react-icons/hi";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { GoTasklist } from "react-icons/go";
+import { BsKanbanFill } from "react-icons/bs";
+import { BiSolidMessageSquareDetail } from "react-icons/bi";
+import { IoIosCog } from "react-icons/io";
+import { FaUser } from "react-icons/fa";
 
 export const SidebarTabs = [
   {
     name: "Dashboard",
     path: "",
-    icon: LayoutDashboard,
+    icon: RiDashboardHorizontalFill,
   },
   {
     name: "Projects",
     path: "projects",
-    icon: BriefcaseBusiness,
+    icon: HiBriefcase,
   },
   {
     name: "Tasks",
     path: "tasks",
-    icon: Clipboard,
+    icon: GoTasklist,
   },
   {
     name: "Kanban",
     path: "kanban",
-    icon: Trello,
+    icon: BsKanbanFill,
   },
   {
     name: "Messages",
     path: "messages",
-    icon: Mails,
+    icon: BiSolidMessageSquareDetail,
   },
   {
     name: "Settings",
     path: "settings",
-    icon: Cog,
+    icon: IoIosCog,
   },
   {
     name: "Profile",
     path: "profile",
-    icon: UserRound,
+    icon: FaUser,
   },
 ];

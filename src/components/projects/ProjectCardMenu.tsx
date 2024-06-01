@@ -12,7 +12,7 @@ const ProjectCardMenu = ({ id }: { id?: string }) => {
       <PopoverTrigger>
         <MoreBtn />
       </PopoverTrigger>
-      <PopoverContent className="w-36 rounded-lg border-none bg-background">
+      <PopoverContent className="w-36 rounded-xl border-none bg-card">
         <div className="flex h-full w-full flex-col gap-1">
           <AddTask />
           <Link

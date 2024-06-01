@@ -53,7 +53,7 @@ export default function Home() {
           title="Latest Events"
           actions="link"
           btnText="View All"
-          className="flex h-fit w-full flex-col shadow-none md:p-6 md:shadow-xl lg:col-span-2"
+          className="flex h-full w-full flex-col p-4 shadow-xl shadow-gray-1 dark:shadow-zinc-900 md:p-6 lg:col-span-2"
         >
           <div className="flex w-full flex-col gap-1.5 lg:mt-3">
             {eventsData.map((event, i) => (
@@ -71,7 +71,7 @@ export default function Home() {
           loading
           title="Your sales"
           actions="calendar"
-          className="col-span-1 md:p-6"
+          className="col-span-1 p-4 md:p-6"
         >
           <RadialChartComponent />
         </AnalyticsCard>
@@ -79,7 +79,7 @@ export default function Home() {
           loading
           title="Income breakdown"
           actions="calendar"
-          className="col-span-1 md:p-6"
+          className="col-span-1 p-4 md:p-6"
         >
           <BarChartComponent />
         </AnalyticsCard>
@@ -87,7 +87,7 @@ export default function Home() {
           loading
           title="Income breakdown"
           actions="calendar"
-          className="md:col-span-2 md:p-6"
+          className="p-4 md:col-span-2 md:p-6"
         >
           <BarChartComponent />
         </AnalyticsCard>
@@ -96,14 +96,14 @@ export default function Home() {
           loading
           title="Income Details"
           actions="calendar"
-          className="md:col-span-2 md:p-6"
+          className="p-4 md:col-span-2 md:p-6"
         >
           <AreaChartComponent />
         </AnalyticsCard>
         <AnalyticsCard
           loading
           title="Latest Projects"
-          className="col-span-1 h-fit md:p-6"
+          className="col-span-1 h-fit p-4 md:p-6"
         >
           <LatestProjects />
         </AnalyticsCard>

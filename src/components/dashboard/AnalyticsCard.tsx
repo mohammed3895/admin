@@ -26,7 +26,7 @@ const AnalyticsCard = ({
   return (
     <div
       className={cn(
-        "invisible h-full w-full rounded-2xl border-none bg-background pb-4 shadow-xl shadow-gray-1 outline-none ring-0 animate-in  fade-in-0 dark:border-none dark:shadow-zinc-900",
+        "invisible h-full w-full rounded-2xl border bg-background pb-4 shadow-xl shadow-gray-1 outline-none ring-0 animate-in  fade-in-0 dark:border-none dark:shadow-zinc-900",
         { visible: loading },
         className,
       )}

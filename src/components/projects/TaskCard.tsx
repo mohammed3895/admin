@@ -79,15 +79,15 @@ const TaskCard = ({ task, user }: TaskProps) => {
                 className="h-full w-full rounded-md object-cover"
               />
             </HoverCardTrigger>
-            <HoverCardContent>
-              <div className="flex items-center justify-center gap-3 rounded-md">
-                <div className="h-12 w-12 min-w-12 rounded-full">
+            <HoverCardContent className="bg-accent shadow-lg">
+              <div className="flex items-center justify-center gap-3 rounded-xl">
+                <div className="h-12 w-12 min-w-12 rounded-xl">
                   <Image
                     src={user.image}
                     alt=""
                     width={50}
                     height={50}
-                    className="h-full w-full rounded-full object-cover"
+                    className="h-full w-full rounded-xl object-cover"
                   />
                 </div>
                 <div className="flex flex-col items-start justify-start">

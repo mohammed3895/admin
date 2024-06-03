@@ -26,7 +26,7 @@ const Navbar = () => {
         )}
       >
         <SidePanel />
-        <h2 className="text-lg font-medium capitalize  text-black-1 dark:text-white md:text-xl md:font-semibold">
+        <h2 className="w-full text-center text-lg  font-medium capitalize text-black-1 dark:text-white md:text-xl md:font-semibold">
           {isHomePage ? "Dashboard" : pathname.split("/")[1]}
         </h2>
         <SettingsMenu />
@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="hidden h-14 w-full items-center justify-between rounded-md px-4 md:flex">
         <div className="flex items-center justify-between gap-3.5 md:justify-start">
           <div className="flex items-center justify-start gap-3">
-            <h2 className="text-lg font-medium capitalize text-black-1 dark:text-white md:text-xl md:font-semibold">
+            <h2 className="w-full text-center text-lg font-medium capitalize text-black-1 dark:text-white md:text-xl md:font-semibold">
               {isHomePage ? "Dashboard" : pathname.split("/")[1]}
             </h2>
           </div>

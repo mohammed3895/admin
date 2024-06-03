@@ -8,7 +8,7 @@ import ProfileProjects from "~/components/profile/ProfileProjects";
 import Skills from "~/components/profile/Skills";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
-export const PROFILETABS = [
+const PROFILETABS = [
   {
     id: 1,
     title: "About",

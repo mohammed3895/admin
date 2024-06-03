@@ -1,7 +1,12 @@
 import { Inbox, Pen } from "lucide-react";
+import { type Metadata } from "next";
 import React from "react";
 import MessageCard from "~/components/messages/MessageCard";
 import { CONVERSATIONS } from "~/constants/conversations";
+
+export const metadata: Metadata = {
+  title: "Admin - Messages",
+};
 
 const MessagesPage = () => {
   return (
@@ -27,7 +32,7 @@ const MessagesPage = () => {
           </span>
         </div>
 
-        <div className="my-16 flex w-full flex-col gap-1.5 md:my-6">
+        <div className="my-16 flex w-full flex-col gap-1.5 p-4 md:my-6">
           {CONVERSATIONS.map((conversation) => (
             <MessageCard conversation={conversation} key={conversation.id} />
           ))}

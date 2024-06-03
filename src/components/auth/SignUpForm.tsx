@@ -21,6 +21,7 @@ import { Loader2, Lock, Mail, User } from "lucide-react";
 import AuthTitle from "./AuthTitle";
 import GoogleBtn from "./GoogleBtn";
 import Link from "next/link";
+import BackToHome from "./BackToHome";
 
 const SignUpForm = () => {
   const form = useForm<z.infer<typeof singinformSchema>>({
@@ -40,9 +41,9 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-xl bg-white pb-4 pt-10 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-r-xl lg:rounded-t-none lg:rounded-tr-xl">
+    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-2xl bg-background pb-4 pt-10 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-r-xl lg:rounded-t-none lg:rounded-tr-xl">
       <div className="flex min-w-80 max-w-md flex-col items-center justify-center px-3">
-        {/* <AuthTitle title="Create New Account" /> */}
+        <AuthTitle title="Create New Account" />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
             <FormField
@@ -114,7 +115,7 @@ const SignUpForm = () => {
               )}
             />
 
-            <Button type="submit" className=" w-full f">
+            <Button type="submit" className=" f w-full">
               {isPending ? (
                 <div className="flex items-center justify-center gap-3.5">
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -124,12 +125,6 @@ const SignUpForm = () => {
                 "Sign Up"
               )}
             </Button>
-            <div className="my-2 flex w-full items-center justify-center gap-2.5 text-sm text-input md:my-3.5">
-              <div className="h-px w-full bg-input" />
-              OR
-              <div className="h-px w-full bg-input" />
-            </div>
-            <GoogleBtn />
 
             <p className="mt-4 text-center text-xs font-normal text-muted-foreground md:text-sm">
               Allready have an account?{" "}
@@ -137,6 +132,7 @@ const SignUpForm = () => {
                 Login Now
               </Link>
             </p>
+            <BackToHome />
           </form>
         </Form>
       </div>

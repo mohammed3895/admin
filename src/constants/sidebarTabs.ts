@@ -1,9 +1,8 @@
 import { HiBriefcase } from "react-icons/hi";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
-import { GoTasklist } from "react-icons/go";
+import { GrTasks } from "react-icons/gr";
 import { BsKanbanFill } from "react-icons/bs";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
-import { IoIosCog } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 
 export const SidebarTabs = [
@@ -20,7 +19,7 @@ export const SidebarTabs = [
   {
     name: "Tasks",
     path: "tasks",
-    icon: GoTasklist,
+    icon: GrTasks,
   },
   {
     name: "Kanban",
@@ -32,11 +31,7 @@ export const SidebarTabs = [
     path: "messages",
     icon: BiSolidMessageSquareDetail,
   },
-  {
-    name: "Settings",
-    path: "settings",
-    icon: IoIosCog,
-  },
+
   {
     name: "Profile",
     path: "profile",

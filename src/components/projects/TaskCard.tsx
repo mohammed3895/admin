@@ -33,8 +33,17 @@ const TaskCard = ({ task, user }: TaskProps) => {
         >
           {task.name}
         </Label>
+        <div
+          className={cn(
+            "flex items-center justify-center rounded-md bg-green-2 px-2 py-1 text-[8px] capitalize text-green-1 md:hidden md:text-xs",
+            { "bg-purple-2 text-purple-1": task.status === "on hold" },
+            { "bg-yellow-2 text-yellow-1": task.status === "pending" },
+          )}
+        >
+          <span>{task.status}</span>
+        </div>
       </div>
-      <div className="flex w-full flex-row-reverse items-center justify-between gap-3 text-nowrap text-purple-1 md:w-3/4 md:flex-row md:gap-5">
+      <div className="flex w-full flex-row-reverse items-center justify-end gap-3 text-nowrap text-purple-1 md:w-3/4 md:flex-row md:justify-between md:gap-5">
         <div className="flex items-center justify-center gap-3.5">
           <div className="flex items-center justify-center gap-1.5 text-xs">
             <ListChecks size={16} />
@@ -52,7 +61,7 @@ const TaskCard = ({ task, user }: TaskProps) => {
 
         <div
           className={cn(
-            "flex items-center justify-center rounded-md bg-green-2 px-2 py-1 text-[8px] capitalize text-green-1 md:text-xs",
+            "hidden items-center justify-center rounded-md bg-green-2 px-2 py-1 text-[8px] capitalize text-green-1 md:flex md:text-xs",
             { "bg-purple-2 text-purple-1": task.status === "on hold" },
             { "bg-yellow-2 text-yellow-1": task.status === "pending" },
           )}

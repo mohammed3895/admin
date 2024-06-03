@@ -31,9 +31,10 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 300);
+    function loadingHandeler() {
+      setInterval(() => setLoading(false), 75);
+    }
+    loadingHandeler();
   }, []);
 
   if (loading) return <Loading />;

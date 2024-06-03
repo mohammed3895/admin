@@ -2,7 +2,7 @@ import { cn } from "~/lib/utils";
 import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "../ui/button";
-import { Home } from "lucide-react";
+import { IoArrowUndo } from "react-icons/io5";
 
 const BackToHome = () => {
   return (
@@ -11,10 +11,11 @@ const BackToHome = () => {
         href="/"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "flex items-center gap-4 text-muted-foreground",
+          "my-2 flex items-center gap-2 text-xs text-primary underline",
         )}
       >
-        <Home /> Back To Home
+        <IoArrowUndo className="h-3 w-3 text-muted-foreground md:h-4 md:w-4" />
+        Back To Home
       </Link>
     </div>
   );

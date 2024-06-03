@@ -1,11 +1,10 @@
 "use client";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import TaskCard from "~/components/projects/TaskCard";
 import AllTasks from "~/components/tasks/AllTasks";
 import DoneTasks from "~/components/tasks/DoneTasks";
+import OnHoldTasks from "~/components/tasks/OnHoldTasks";
 import PendingTasks from "~/components/tasks/PendingTasks";
-import { PROJECTS } from "~/constants/projects";
 import { cn } from "~/lib/utils";
 
 const tabsList = [
@@ -16,6 +15,10 @@ const tabsList = [
   {
     name: "pending",
     component: PendingTasks,
+  },
+  {
+    name: "on hold",
+    component: OnHoldTasks,
   },
   {
     name: "done",

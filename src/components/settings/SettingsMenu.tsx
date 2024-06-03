@@ -14,10 +14,10 @@ const SettingsMenu = () => {
       <DropdownMenuTrigger>
         <button
           className={cn(
-            "flex h-8 w-8 min-w-8 items-center justify-center rounded-md bg-border shadow-none transition-opacity ease-linear hover:opacity-80",
+            "flex h-8 w-8 min-w-8 items-center justify-center rounded-md bg-gray-1 shadow-none transition-opacity ease-linear hover:opacity-80 dark:bg-accent",
           )}
         >
-          <IoSettings className="h-5 w-5 text-primary" />
+          <IoSettings className="h-5 w-5 text-purple-1" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-52 rounded-xl bg-background p-3.5">

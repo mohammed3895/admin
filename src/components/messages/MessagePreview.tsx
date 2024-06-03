@@ -7,7 +7,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { ArrowLeft, ImageIcon, Mic, SendHorizonal } from "lucide-react";
 import Link from "next/link";
-
+import { AiFillPhone } from "react-icons/ai";
+import { BsInfoLg } from "react-icons/bs";
 export interface MessageProps {
   message: (typeof CONVERSATIONS)[number];
 }
@@ -20,7 +21,7 @@ const MessagePreview = ({ message }: MessageProps) => {
           <div className="flex items-start justify-start gap-1.5 p-4">
             <Link
               href="/messages"
-              className="flex h-6 w-6 items-center justify-center"
+              className="flex h-6 w-6 items-center justify-center rounded-md bg-accent"
             >
               <ArrowLeft className="h-4 w-4 text-muted-foreground" />
             </Link>
@@ -43,6 +44,20 @@ const MessagePreview = ({ message }: MessageProps) => {
               </h1>
             </div>
           </div>
+          <div className="mr-2 flex items-center justify-end gap-2.5">
+            <Button
+              variant="secondary"
+              className="flex items-center justify-center rounded-md p-2.5"
+            >
+              <AiFillPhone className="h-4 w-4 text-muted-foreground" />
+            </Button>
+            <Button
+              variant="secondary"
+              className="flex items-center justify-center rounded-md p-2.5"
+            >
+              <BsInfoLg className="h-4 w-4 text-muted-foreground" />
+            </Button>
+          </div>
         </div>
 
         {/* CONVERSATION BODY */}
@@ -53,8 +68,8 @@ const MessagePreview = ({ message }: MessageProps) => {
         </ScrollArea>
 
         {/* TOOL BAR */}
-        <div className="fixed bottom-14 left-0 right-0 h-14 w-full flex-initial bg-background md:relative md:bottom-0 md:h-16  md:rounded-b-xl md:border-t">
-          <div className="flex w-full items-center justify-between p-2">
+        <div className="fixed bottom-14 left-0 right-0 h-12 w-full flex-initial bg-background md:relative md:bottom-0 md:h-16  md:rounded-b-xl md:border-t">
+          <div className="flex h-full w-full items-center justify-between p-2">
             <Input
               className="w-1/2 border-none bg-transparent px-2 tracking-wide"
               placeholder="Type a Message ..."

@@ -9,8 +9,8 @@ import {
   Cell,
 } from "recharts";
 import { CustomTooltip } from "./CustomToolTip";
-import { type Payload } from "recharts/types/component/DefaultLegendContent";
 import { CustomLegend } from "./CustomLegend";
+import { cn } from "~/lib/utils";
 
 const data = [
   {
@@ -65,7 +65,7 @@ const renderCustomizedLabel = ({
       y={y}
       fill={data[index]?.fill}
       textAnchor="middle"
-      className=" text-lg text-muted-foreground"
+      className={cn("invisible text-lg text-muted-foreground")}
     >
       {`${(percent * 100).toFixed(1)}%`}
     </text>

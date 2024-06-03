@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ParamsProp) {
 }
 
 const Page = () => {
-  return <div>metadata</div>;
+  return "";
 };
 
 export default Page;

@@ -2,7 +2,11 @@ import React from "react";
 import TaskCard from "../projects/TaskCard";
 import { PROJECTS } from "~/constants/projects";
 
-const TaskListing = ({ status }: { status: "all" | "pending" | "done" }) => {
+const TaskListing = ({
+  status,
+}: {
+  status: "all" | "pending" | "done" | "on hold";
+}) => {
   const tasks = PROJECTS[0]?.tasks;
 
   function getRandomInt(max: number) {

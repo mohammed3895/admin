@@ -19,11 +19,11 @@ const ProjectCardMenu = ({ id }: { id?: string }) => {
             href={`/projects/${id}`}
             className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-xs font-normal uppercase transition-all ease-in-out hover:bg-accent hover:opacity-95 dark:text-white"
           >
-            <Info size={20} strokeWidth={1.35} className="h-5 w-5" />
+            <Info size={20} strokeWidth={1.35} className="h-4 w-4" />
             Details
           </Link>
           <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-xs font-normal uppercase transition-all ease-in-out hover:bg-accent hover:opacity-95 dark:text-white">
-            <Trash size={20} strokeWidth={1.35} className="h-5 w-5" />
+            <Trash size={20} strokeWidth={1.35} className="h-4 w-4" />
             Delete
           </div>
         </div>

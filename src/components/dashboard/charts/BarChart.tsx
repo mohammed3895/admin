@@ -65,7 +65,7 @@ const BarChartComponent = () => {
         data={data}
         barGap={5}
         barCategoryGap={5}
-        stackOffset="sign"
+        stackOffset="positive"
         className="m-0 p-0"
         margin={{ top: 12, left: 6, right: 6 }}
       >
@@ -77,7 +77,7 @@ const BarChartComponent = () => {
           strokeWidth={5}
           type="stack"
           radius={12}
-          barSize={10}
+          barSize={14}
           background={{
             fill: "transparent",
           }}

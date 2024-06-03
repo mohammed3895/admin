@@ -33,7 +33,7 @@ const ProfileCard = () => {
               Followers
             </p>
           </div>
-          <div className="h-full w-px bg-muted-foreground" />
+          <div className="h-3/4 w-px bg-gray-1" />
           <div className="flex flex-col items-center">
             <h1 className="text-2xl font-medium tracking-wide text-black-1 dark:text-white">
               4.3K

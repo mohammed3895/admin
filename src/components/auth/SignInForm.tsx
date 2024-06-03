@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { type z } from "zod";
 import { singinformSchema } from "~/lib/validations";
 import {
   Form,
@@ -15,9 +15,11 @@ import { Input } from "../ui/input";
 import { login } from "~/actions/login.action";
 import { Button } from "../ui/button";
 import { Loader2, Lock, User } from "lucide-react";
-import AuthTitle from "./AuthTitle";
 import GoogleBtn from "./GoogleBtn";
 import Link from "next/link";
+import AuthTitle from "./AuthTitle";
+import { Checkbox } from "../ui/checkbox";
+import BackToHome from "./BackToHome";
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof singinformSchema>>({
@@ -37,11 +39,11 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-xl bg-white pb-4 pt-10 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-l-xl lg:rounded-t-none lg:rounded-tl-xl">
+    <div className="mt-auto flex h-fit w-full items-center justify-center rounded-t-2xl bg-background pb-4 pt-10 lg:mt-0 lg:h-full lg:w-1/2 lg:rounded-l-xl lg:rounded-t-none lg:rounded-tl-xl">
       <div className="flex min-w-80 max-w-md flex-col items-center justify-center px-3">
-        {/* <AuthTitle title="Login to your account" /> */}
+        <AuthTitle title="Login to your account" />
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full ">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
             <FormField
               control={form.control}
               name="email"
@@ -88,6 +90,14 @@ const SignInForm = () => {
                 </FormItem>
               )}
             />
+            <div className="my-3 flex w-full items-center justify-between gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center justify-start gap-2">
+                <Checkbox /> <span>Remember me</span>
+              </div>
+              <Link href="/forgot-password" className="text-primary">
+                Forgot Password?
+              </Link>
+            </div>
             <Button type="submit" className=" w-full font-normal">
               {isPending ? (
                 <div className="flex items-center justify-center gap-3.5">
@@ -98,19 +108,22 @@ const SignInForm = () => {
                 "Log in"
               )}
             </Button>
-            <div className="my-2 flex w-full items-center justify-center gap-2.5 text-input">
-              <div className="h-px w-full bg-input" />
-              OR
+            <div className="my-3 flex w-full items-center justify-center gap-2.5 text-nowrap text-xs text-muted-foreground">
+              <div className="h-px w-full bg-input text-xs" />
+              OR SIGN IN WITH
               <div className="h-px w-full bg-input" />
             </div>
-            <GoogleBtn />
+            <div className="flex w-full items-center justify-center gap-2">
+              <GoogleBtn />
+            </div>
 
-            <p className="mt-4 text-center text-xs font-normal text-muted-foreground md:text-sm">
+            <p className="mt-2.5 text-center text-xs font-normal text-muted-foreground md:text-sm">
               Don&apos;t have an account?{" "}
-              <Link href="/sign-up" className="ml-1 font-medium text-primary">
+              <Link href="/sign-up" className="font-medium text-primary">
                 Create One
               </Link>
             </p>
+            <BackToHome />
           </form>
         </Form>
       </div>

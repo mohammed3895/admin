@@ -13,14 +13,14 @@ const SidePanel = ({ children }: { children?: React.ReactNode }) => {
       <SheetTrigger>
         <button
           className={cn(
-            "flex h-8 w-8 min-w-8 items-center justify-center rounded-md bg-border shadow-none transition-opacity ease-linear hover:opacity-80",
+            "flex h-8 w-8 min-w-8 items-center justify-center rounded-md bg-gray-1 shadow-none transition-opacity ease-linear hover:opacity-80 dark:bg-accent",
           )}
         >
-          <HiBell className="h-5 w-5 text-primary" />
+          <HiBell className="h-5 w-5 text-purple-1" />
         </button>
       </SheetTrigger>
-      <SheetContent className="p-2">
-        <div className="flex h-full w-full flex-col justify-start gap-4 overflow-y-scroll bg-background py-6">
+      <SheetContent className="w-[400px] min-w-[400px] p-2 md:w-[600px] md:min-w-[600px]">
+        <div className="flex h-full w-full flex-col justify-start gap-4 overflow-y-scroll bg-background px-3 py-6">
           {/* USER INFO */}
           <div className=" w-full">
             <div className="flex flex-col items-start justify-start">

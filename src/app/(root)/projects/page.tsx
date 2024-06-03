@@ -8,12 +8,12 @@ const ProjectsPage = () => {
   const [projects, setProjects] = useState<typeof PROJECTS>([]);
   const [loading, setLoading] = useState(true);
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 300);
-
   useEffect(() => {
+    function loadingHandeler() {
+      setInterval(() => setLoading(false), 75);
+    }
     setProjects(PROJECTS);
+    loadingHandeler();
   }, []);
 
   if (loading) return <Loading />;

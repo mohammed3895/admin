@@ -42,7 +42,7 @@ const AddTask = () => {
     <Dialog>
       <DialogTrigger asChild>
         <div className="flex cursor-pointer items-center justify-start gap-2 text-nowrap rounded-md p-2.5 text-xs font-normal uppercase transition-all ease-in-out hover:bg-accent hover:opacity-95 dark:text-white">
-          <Plus size={20} strokeWidth={1.35} className="h-5 w-5" />
+          <Plus size={20} strokeWidth={1.35} className="h-4 w-4" />
           New Task
         </div>
       </DialogTrigger>

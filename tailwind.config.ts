@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        profile: "url('/assets/images/profile-bg.svg')",
+      },
       boxShadow: {
         inside: "inset 0 4px 20px 12px rgba(0, 0, 0, 0.3)",
       },

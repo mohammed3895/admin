@@ -27,7 +27,7 @@ const SettingsTab = () => {
   });
 
   return (
-    <div className="mb-16 h-full w-full">
+    <div className="mb-16 flex h-full w-full flex-col justify-between gap-4">
       <div className="flex w-full items-center justify-start gap-3 rounded-md bg-background p-4">
         <div className="flex h-10 w-10 min-w-10 items-center justify-center rounded-md border">
           <UserCheck2 className="h-5 w-5" />
@@ -41,7 +41,7 @@ const SettingsTab = () => {
       </div>
 
       {/*  */}
-      <div className="my-2 flex w-full flex-col items-center justify-center rounded-md border border-dashed p-4">
+      <div className="my-2 flex w-full flex-col items-center justify-center rounded-md border border-dashed border-muted-foreground p-4">
         <div className="flex h-14 w-14 min-w-14 items-center justify-center rounded-md bg-background">
           <CloudUpload strokeWidth={1} className="h-6 w-6" />
         </div>

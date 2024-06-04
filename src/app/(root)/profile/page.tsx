@@ -37,12 +37,12 @@ const PROFILETABS = [
 
 const ProfilePage = () => {
   return (
-    <div className="h-full w-full p-4">
-      <div className="flex h-full w-full flex-col items-center gap-6">
+    <div className="h-full w-full rounded-xl p-4">
+      <div className="flex h-full w-full flex-col items-center gap-4 rounded-xl">
         {/*  */}
-        <div className="flex h-64 w-full flex-col items-center justify-center rounded-xl bg-profile bg-cover p-0 shadow-lg shadow-gray-1 dark:shadow-zinc-900">
-          <div className="flex h-full w-full flex-col items-center justify-end rounded-xl border-none outline-none ring-0 ring-offset-0">
-            <div className="mb-8 flex w-full flex-col items-center gap-2">
+        <div className="flex h-64 w-full flex-col items-center justify-center rounded-xl bg-profile bg-cover p-0 md:h-80 ">
+          <div className="flex h-full w-full flex-col items-center justify-between rounded-xl border-none outline-none ring-0 ring-offset-0">
+            <div className="mb-8 flex h-full w-full flex-col items-center justify-center gap-2 md:mb-0 md:items-start md:justify-end md:p-8 ">
               <div className="h-20 w-20 rounded-full border-2 border-background ">
                 <Image
                   src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -56,13 +56,13 @@ const ProfilePage = () => {
                 Sam Smith
               </h1>
             </div>
-            <div className="flex w-full items-center justify-between gap-3 rounded-b-xl bg-background p-4">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <IoMdMail className=" text-primary" />
+            <div className="flex w-full items-center justify-between gap-3 rounded-b-xl bg-purple-2 p-4 backdrop-blur-lg md:justify-start">
+              <div className="flex items-center gap-2 text-background">
+                <IoMdMail className=" h-5 w-5 text-purple-1" />
                 <p className="text-sm font-medium ">Sam@Smith.com</p>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <FaBriefcase className=" text-primary" />
+              <div className="flex items-center gap-2 text-background">
+                <FaBriefcase className=" h-5 w-5 text-purple-1" />
                 <p className="text-sm font-medium ">FrontEnd Developer</p>
               </div>
             </div>
@@ -71,7 +71,7 @@ const ProfilePage = () => {
 
         {/*  */}
         <Tabs
-          className="w-full rounded-xl border bg-background p-0 shadow-xl shadow-gray-1 dark:shadow-zinc-900"
+          className="h-full w-full rounded-xl bg-background p-0"
           defaultValue="about"
         >
           <TabsList className="flex w-full justify-between gap-0 rounded-none bg-transparent p-0">
@@ -89,7 +89,7 @@ const ProfilePage = () => {
             <TabsContent
               key={tab.id}
               value={tab.title.toLowerCase()}
-              className="mb-16 p-4"
+              className="mb-16 h-full w-full p-4 md:mb-0"
             >
               {<tab.page />}
             </TabsContent>

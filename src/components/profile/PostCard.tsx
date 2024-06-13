@@ -51,7 +51,7 @@ const PostCard = ({ post }: PostProps) => {
           </p>
         </div>
         {/* IMAGE SECTION */}
-        <div className="aspect-video w-full">
+        <div className="aspect-[9/6] w-full">
           <Image
             src={post.image}
             alt=""

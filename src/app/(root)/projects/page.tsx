@@ -9,11 +9,11 @@ const ProjectsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    function loadingHandeler() {
-      setInterval(() => setLoading(false), 75);
-    }
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 75);
     setProjects(PROJECTS);
-    loadingHandeler();
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) return <Loading />;

@@ -37,34 +37,34 @@ export interface MessageProps {
 
 const Message = ({ message, reversed }: MessageProps) => {
   return (
-    <div className="my-2.5 flex h-full w-full items-center justify-start self-end p-2 duration-300 animate-in fade-in-0">
+    <div className="my-4 flex h-full w-full items-center justify-start self-end p-4 duration-300 animate-in fade-in-0">
       <div
-        className={cn("flex w-full items-center justify-start gap-1.5", {
+        className={cn("flex w-full items-center justify-start gap-2", {
           "justify-end": message.isMe,
         })}
       >
         <div
-          className={cn("flex w-full items-center gap-3", {
+          className={cn("flex w-full items-center gap-4", {
             "flex-row-reverse": message.isMe,
           })}
         >
-          <div className="h-6 w-6 rounded-full">
+          <div className="h-10 w-10 overflow-hidden rounded-full">
             <Image
               src={message.sender.avatarUrl}
               className="h-full w-full rounded-full object-cover"
-              width={30}
-              height={30}
-              alt=""
+              width={40}
+              height={40}
+              alt={`${message.sender.name}'s avatar`}
             />
           </div>
           <div
-            className={cn("flex w-3/4 flex-col items-start justify-start", {
+            className={cn("flex w-4/5 flex-col items-start justify-start", {
               "items-end justify-end": message.isMe,
             })}
           >
             <div
               className={cn(
-                "flex w-full rounded-xl rounded-bl-none bg-background px-4 py-2 text-sm font-normal tracking-wide text-black-1 dark:text-gray-100 md:bg-accent",
+                "flex w-fit max-w-full rounded-xl rounded-bl-none bg-background px-6 py-3 text-sm font-medium tracking-wide text-black-1 dark:text-gray-100 md:bg-accent",
                 {
                   "flex-row-reverse rounded-bl-xl rounded-br-none bg-primary text-white md:bg-primary":
                     message.isMe,
@@ -78,20 +78,20 @@ const Message = ({ message, reversed }: MessageProps) => {
             >
               {message.type === "text" ? <p>{message.content}</p> : null}
               {message.type === "image" ? (
-                <div className="h-40 w-52 rounded-xl">
+                <div className="h-52 w-64 rounded-xl">
                   <Image
                     src={message.url!}
-                    quality={75}
-                    alt=""
-                    width={300}
-                    height={300}
+                    quality={100}
+                    alt="Sent image"
+                    width={400}
+                    height={400}
                     className="h-full w-full rounded-lg object-cover"
                   />
                 </div>
               ) : null}
             </div>
-            <p className="mt-1.5 text-[12px] font-thin text-muted-foreground">
-              {dayjs(message.timestamp).format("ddd,  HH:MM").toString()}
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              {dayjs(message.timestamp).format("ddd, HH:mm").toString()}
             </p>
           </div>
         </div>

@@ -62,7 +62,7 @@ const MessagePreview = ({ message }: MessageProps) => {
 
         {/* CONVERSATION BODY */}
         <ScrollArea className="my-auto flex h-full w-full flex-col-reverse justify-end self-start pb-28 md:pb-0 md:pt-0">
-          {message.messages.reverse().map((message, i) => (
+          {[...message.messages].reverse().map((message, i) => (
             <Message reversed message={message} key={i} />
           ))}
         </ScrollArea>

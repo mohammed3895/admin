@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Loading from "./loading";
 import { useEffect, useState } from "react";
 import WelcomeBanner from "~/components/dashboard/WelcomeBanner";
-import Image from "next/image";
 import ProfileCard from "~/components/shared/ProfileCard";
 import StatusCardWrapper from "~/components/dashboard/StatusCardWrapper";
 import LatestProjects from "~/components/dashboard/LatestProjects";
@@ -31,10 +30,11 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    function loadingHandeler() {
-      setInterval(() => setLoading(false), 75);
-    }
-    loadingHandeler();
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 75);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) return <Loading />;

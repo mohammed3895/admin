@@ -6,6 +6,7 @@ import NavItems from "./NavItems";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { MoreHorizontal } from "lucide-react";
 import { cn } from "~/lib/utils";
+import { buttonVariants } from "../ui/button";
 
 const Sidebar = () => {
   return (
@@ -22,7 +23,7 @@ const Sidebar = () => {
                 alt="logo"
                 width={20}
                 height={20}
-                className="h-10 w-10 text-primary"
+                className="h-9 w-9 text-primary"
               />
             </Link>
           </div>
@@ -35,7 +36,16 @@ const Sidebar = () => {
                   className="mt-2 h-5 w-5 text-muted-foreground"
                 />
               </PopoverTrigger>
-              <PopoverContent className="w-28 "></PopoverContent>
+              <PopoverContent className="w-28 rounded-lg p-2">
+                <div className="flex flex-col gap-2">
+                  <Link
+                    className={cn(buttonVariants({ variant: "ghost" }))}
+                    href="/sign-in"
+                  >
+                    SignIn
+                  </Link>
+                </div>
+              </PopoverContent>
             </Popover>
           </div>
         </div>
